@@ -1,0 +1,81 @@
+.layoutNavbar {
+  height: 75px;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  left: 0;
+}
+.logo {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+}
+.logoText {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111111;
+  margin-right: auto;
+}
+.layoutNavbar ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.layoutNavbar-links {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid red;
+  border-radius: 50%;
+  padding: 10px 0;
+  margin: 0 10px;
+  color: #555555;
+  cursor: pointer;
+}
+.layoutNavbar-links:hover {
+  background-color: #ccc;
+  animation-name: links;
+  animation-duration: 1s;
+}
+@keyframes links {
+  0% {
+    transform: scale(1);
+    border-color: #555555;
+  }
+  50% {
+    transform: scale(1.1);
+    border-color: #212121;
+  }
+  100% {
+    transform: scale(1);
+    border-color: red;
+  }
+}
+#home {
+  padding: 0 12px;
+}
+#blog {
+  border: 0;
+}
+#blog:hover {
+  background-color: #ffffff;
+}
+#courses {
+  color: #555555;
+  cursor: pointer;
+  font-size: 20px;
+}
+#search {
+  color: #555555;
+  cursor: pointer;
+  padding: 7px 15px;
+  border-radius: 7px;
+  margin: 0 30px;
+}
+#mode{
+    padding: 10px 10px;
+}
+#login{
+    padding: 2px 15px;
+}
