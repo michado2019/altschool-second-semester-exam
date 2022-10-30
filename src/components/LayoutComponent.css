@@ -6,7 +6,7 @@
   left: 0;
 }
 .logo {
-  width: 75px;
+  width: 50px;
   height: 75px;
   cursor: pointer;
 }
@@ -65,6 +65,40 @@
   color: #555555;
   cursor: pointer;
   font-size: 20px;
+}
+#coursesContents {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 20px;
+  background-color: #cccccc;
+  border-color: red;
+  border-radius: 5px;
+  padding: 10px 20px;
+  animation-name: courses;
+  animation-duration: 0.1s;
+}
+@keyframes courses {
+  0% {
+    transform: skewX(-45deg)
+  }
+  100% {
+    transform: skewX(0deg)
+  }
+}
+
+.coursesDiv{
+  display: flex;
+  flex-direction: column;
+}
+.expand{
+  display: flex;
+  align-items: center;
+}
+.coursesContents {
+  font-size: 10px;
+  font-weight: 700;
 }
 #search {
   color: #555555;
