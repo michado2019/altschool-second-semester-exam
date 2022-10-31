@@ -51,7 +51,8 @@
   margin-top: 50px;
 }
 .homeCourses-contents {
-  width: 25%;
+  width: 20%;
+  height: 20%;
   box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
   border-radius: 10px;
   padding: 20px;
@@ -184,7 +185,7 @@
     box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
 }
 .footerSocial {
-    width: 200%;
+    width: 150%;
     padding: 50px 30px;
     margin-top: 100px;
     position: sticky;
