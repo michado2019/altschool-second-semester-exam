@@ -48,7 +48,7 @@ export const Navbar = () => {
           <Link to='/'>
           <img src={appLogo} alt="logo" className="logo" />
           </Link>
-          <h1 className="logoText">C-Broker</h1>
+          <h1 className="logoText">C-Breaker</h1>
           <CustomNavbarLink to="/" className="layoutNavbar-links">
             <HomeOutlined id="home" />
           </CustomNavbarLink>

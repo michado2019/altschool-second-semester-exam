@@ -1,0 +1,39 @@
+.homeWrapper{
+    margin : 50px 10px;
+}
+.homeAbout-div{
+    display: flex;
+    justify-content: center;
+}
+.homeAbout{
+    margin: 2% 15% 2% 5%;
+    border-radius: 10px;
+    width: 30%;
+    height: auto;
+    box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
+    padding: 20px;
+}
+.aboutDesign{
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    float: right;
+}
+.About-title{
+    font-size: 24px;
+    font-weight: 700;
+    color: #111111;
+    margin: 10px 0;
+}
+.About-details{
+    font-size: 18px;
+    font-weight: 500;
+    color: #555555;
+    margin: 10px 0;
+}
+.homeAbout-img{
+    width: 80%;
+    height: 80%;
+    border-radius: 10px;
+}
