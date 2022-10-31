@@ -11,6 +11,7 @@ import {
 } from "@mui/icons-material";
 
 export const Navbar = () => {
+  
   //Set state for the dropdown menu
   const [expandCourses, setExpandCourses] = useState(false);
 
