@@ -20,7 +20,7 @@ function App() {
       background: "#ffffff",
     },
     dark: {
-      foreground: "#ffffff",
+      foreground: "#737737",
       background: "#000000",
     }
   };
