@@ -6,7 +6,7 @@
   justify-content: center;
 }
 .homeAbout {
-  margin: 2% 15% 2% 5%;
+  margin: 7% 15% 2% 5%;
   border-radius: 10px;
   width: 60%;
   height: auto;
@@ -63,7 +63,7 @@
     padding: 20px;
     width: 80%;
     margin-left: 8%;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 .homeFAQs-gen_title {
     margin-left: 40px;
