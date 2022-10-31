@@ -4,6 +4,7 @@ import "./LayoutComponent.css";
 import appLogo from "../images/logoImg.png";
 import {
   DarkMode,
+  LightMode,
   HomeOutlined,
   Login,
   ExpandMore,
@@ -14,7 +15,15 @@ export const Navbar = () => {
   
   //Set state for the dropdown menu
   const [expandCourses, setExpandCourses] = useState(false);
+  
+  //Set state for the darkmode
+  const [darkMode, setDarkMode] = useState(false);
 
+  //Handle the darkmode
+  const handleDarkMode = (e) => {
+    e.preventDefault();
+    setDarkMode((prev) => !prev);
+  }
   //Handle the dropdown menu
   const handleCoursesExpand = (e) => {
     e.preventDefault();
@@ -72,7 +81,13 @@ export const Navbar = () => {
           <form>
           <input type="search" placeholder="Search" id="search" />
           </form>
-          <DarkMode className="layoutNavbar-links" id="mode" />
+          <div onClick={handleDarkMode}>
+          {
+            darkMode ? 
+          <LightMode className="layoutNavbar-links" id='lightMode' /> :
+          <DarkMode className="layoutNavbar-links" id="darkMode" /> 
+          }
+          </div>
           <CustomNavbarLink to="/sign" className="layoutNavbar-links">
             <Login id="login" />
           </CustomNavbarLink>

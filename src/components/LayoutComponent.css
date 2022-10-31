@@ -106,8 +106,8 @@
   border-radius: 7px;
   margin: 0 30px;
 }
-#mode{
-    padding: 10px 10px;
+#lightMode, #darkMode {
+  padding: 10px 10px;
 }
 #login{
     padding: 2px 15px;
