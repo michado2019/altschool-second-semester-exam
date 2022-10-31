@@ -11,19 +11,11 @@ import {
   ExpandLess,
 } from "@mui/icons-material";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   
   //Set state for the dropdown menu
   const [expandCourses, setExpandCourses] = useState(false);
   
-  //Set state for the darkmode
-  const [darkMode, setDarkMode] = useState(false);
-
-  //Handle the darkmode
-  const handleDarkMode = (e) => {
-    e.preventDefault();
-    setDarkMode((prev) => !prev);
-  }
   //Handle the dropdown menu
   const handleCoursesExpand = (e) => {
     e.preventDefault();
@@ -81,9 +73,9 @@ export const Navbar = () => {
           <form>
           <input type="search" placeholder="Search" id="search" />
           </form>
-          <div onClick={handleDarkMode}>
+          <div onClick={props.toggle}>
           {
-            darkMode ? 
+            props.darkMode ?
           <LightMode className="layoutNavbar-links" id='lightMode' /> :
           <DarkMode className="layoutNavbar-links" id="darkMode" /> 
           }
