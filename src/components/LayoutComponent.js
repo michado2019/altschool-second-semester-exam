@@ -69,7 +69,9 @@ export const Navbar = () => {
               <h1 className="coursesContents">JAVASCRIPT</h1>
             </div>
           </div>
+          <form>
           <input type="search" placeholder="Search" id="search" />
+          </form>
           <DarkMode className="layoutNavbar-links" id="mode" />
           <CustomNavbarLink to="/sign" className="layoutNavbar-links">
             <Login id="login" />

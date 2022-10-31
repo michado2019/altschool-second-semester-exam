@@ -1,0 +1,20 @@
+.blogWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    animation-name: blog;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+@keyframes blog {
+    0% {
+        transform: scale(1);
+        color: #111111;
+    }
+    100% {
+        transform: scale(1);
+        color: red
+    }
+}
