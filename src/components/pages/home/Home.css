@@ -22,11 +22,11 @@
 }
 .About-title {
   font-weight: 700;
-  color: #111111;
+  color: #737373;
   margin: 10px 0;
 }
 .About-details {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   color: #555555;
   margin: 10px 0;
@@ -42,7 +42,7 @@
 }
 .homeCourses-gen_title {
   font-weight: 700;
-  color: #111111;
+  color: #737373;
   text-align: center;
 }
 .homeCoursesFlex {
@@ -57,6 +57,12 @@
   padding: 20px;
   cursor: pointer;
 }
+.homeCourses-titles{
+  color: #737373;
+}
+.homeCourses-details{
+    font-size: 20px
+}
 .homeFAQs{
   box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
     border-radius: 10px;
@@ -67,6 +73,7 @@
 }
 .homeFAQs-gen_title {
     margin-left: 40px;
+    color: #737373;
 }
 .homeFAQs-main_flex{
     display: flex;
@@ -109,6 +116,7 @@
 .homeContacts-gen_title{
     text-align: center;
     margin: 50px 0;
+    color: #737373;
 }
 .homeContacts-flex{
     display: flex;

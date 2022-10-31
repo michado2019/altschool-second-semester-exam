@@ -15,10 +15,17 @@ function App() {
 
   //Styles
   const darkModeStyle = {
-    backgroundColor: darkMode ? "#000" : "#fff",
+    light: {
+      foreground: "#000000",
+      background: "#ffffff",
+    },
+    dark: {
+      foreground: "#ffffff",
+      background: "#000000",
+    }
   };
   return (
-    <div className="App" style={darkModeStyle}>
+    <div className="App" style={darkMode ? {backgroundColor: darkModeStyle.dark.background, color: darkModeStyle.dark.foreground} : {backgroundColor: darkModeStyle.light.background, color: darkModeStyle.light.foreground} }>
       <Navbar toggle={handleDarkMode} darkMode={darkMode} />
       <AppRouter />
     </div>
