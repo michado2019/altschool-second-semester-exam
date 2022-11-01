@@ -1,0 +1,42 @@
+.htmlWrapper{
+    margin: 20px auto;
+    height: 100vh;
+}
+.htmlGreeting{
+    color: #737373;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    font-size: 10px;
+}
+.htmlUser-img_div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.htmlUser-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #737373;
+    padding: 5px;
+}
+.htmlCourse-outline_title{
+    color: #737373;
+    font-size: 20px;
+    text-align: center;
+}
+.htmlCourse-grid{
+ display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 20%;
+    line-height: 42px;
+}
+.htmlCourse-links{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10%;
+}

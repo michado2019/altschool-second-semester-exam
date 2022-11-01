@@ -1,0 +1,11 @@
+.htmlExample-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 20px 40px;
+}
+.htmlExample-img{
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+}

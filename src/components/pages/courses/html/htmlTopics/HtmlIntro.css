@@ -1,0 +1,28 @@
+.htmlIntro-wrapper{
+    padding: 20px 40px;
+    padding-bottom: 100px;
+}
+.htmlIntro-title, .htmlIntro-subtitle{
+    font-weight: bold;
+    color: #737373;
+}
+.htmlIntro-wrapper ul li{
+    margin: 10px 0;
+    list-style-type:circle;
+}
+.htmlIntro-wrapper ul li::marker{
+    color: red;
+    font-size: 30px;
+}
+.htmlExample-btn{
+    padding: 10px 24px;
+    background-color: green;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+.htmlExample-btn:hover{
+    background-color: #ffffff;
+    color: green;
+    border: 2px solid green;
+}
