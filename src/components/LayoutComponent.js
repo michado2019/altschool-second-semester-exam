@@ -50,6 +50,9 @@ export const Navbar = (props) => {
             <img src={appLogo} alt="logo" className="logo" />
           </Link>
           <h1 className="logoText">C-Breaker</h1>
+          <form>
+            <input type="search" placeholder="Search" id="search" />
+          </form>
           <CustomNavbarLink to="/" className="layoutNavbar-links">
             <HomeOutlined id="home" />
           </CustomNavbarLink>
@@ -84,9 +87,6 @@ export const Navbar = (props) => {
               </CustomNavbarLink>
             </div>
           </div>
-          <form>
-            <input type="search" placeholder="Search" id="search" />
-          </form>
           <div onClick={props.toggle}>
             {props.darkMode ? (
               <LightMode className="layoutNavbar-links" id="lightMode" />
