@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./LayoutComponent.css";
 import appLogo from "../images/logoImg.png";
-import {
-  DarkMode,
-  LightMode,
-  HomeOutlined,
-  Login,
-  ExpandMore,
-  ExpandLess,
-} from "@mui/icons-material";
+import {DarkMode,LightMode,HomeOutlined,Login,ExpandMore,ExpandLess} from "@mui/icons-material";
 
 export const Navbar = (props) => {
   //Set state for the dropdown menu
@@ -94,7 +87,7 @@ export const Navbar = (props) => {
               <DarkMode className="layoutNavbar-links" id="darkMode" />
             )}
           </div>
-          <CustomNavbarLink to="/sign" className="layoutNavbar-links">
+          <CustomNavbarLink className="layoutNavbar-links">
             <Login id="login" />
           </CustomNavbarLink>
         </li>
