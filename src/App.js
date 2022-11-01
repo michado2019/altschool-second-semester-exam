@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Navbar } from "./components/LayoutComponent";
 import AppRouter from "./components/routes/Index";
+import {ErrorBoundary, useErrorHandler} from 'react-error-boundary';
 
+// ErrorBoundary
+const ErrorBoundaryComponent = ({ error }) => {
+    return (
+        <div role='alert' className="errorBoundary">
+            <h1 className="errorBoundary-title">Something went wrong!</h1>
+            <p className="errorBoundary-message">{error.message}</p>
+        </div>
+    )
+}
 function App() {
+
+  const handleError = useErrorHandler();
+
+  // ErrorBoundary useEffect
+  useEffect(() => {
+      handleError()
+  }, [handleError]);
+
   //Set state for the darkmode
   const [darkMode, setDarkMode] = useState(false);
 
@@ -26,8 +44,10 @@ function App() {
   };
   return (
     <div className="App" style={darkMode ? {backgroundColor: darkModeStyle.dark.background, color: darkModeStyle.dark.foreground} : {backgroundColor: darkModeStyle.light.background, color: darkModeStyle.light.foreground} }>
+      <ErrorBoundary FallbackComponent={ErrorBoundaryComponent}>
       <Navbar toggle={handleDarkMode} darkMode={darkMode} />
       <AppRouter />
+      </ErrorBoundary>
     </div>
   );
 }
