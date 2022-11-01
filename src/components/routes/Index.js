@@ -10,6 +10,7 @@ import HtmlIntro from "../pages/courses/html/htmlTopics/HtmlIntro";
 import HtmlExample from "../pages/courses/html/htmlTopics/HtmlExample";
 import HtmlBasic from '../pages/courses/html/htmlTopics/HtmlBasic';
 import HtmlBasicExample from '../pages/courses/html/htmlTopics/HtmlBasicExample';
+import ErrorPage from "../pages/errorPage/ErrorPage";
 
 export default function AppRouter() {
   return (
@@ -35,7 +36,8 @@ export default function AppRouter() {
           <Route path="/links/example" element={<HtmlLinks />} />
         </Route> */}
         <Route path="/courses/css" element={<Css />} />
-        <Route path="/courses/javascript" element={<JavaScript />} /> */}
+        <Route path="/courses/javascript" element={<JavaScript />} /> 
+        <Route path="*" element={<ErrorPage />} />
         </Routes>
     </div>
   );

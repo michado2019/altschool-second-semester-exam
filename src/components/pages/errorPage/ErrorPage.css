@@ -1,0 +1,12 @@
+.errorPage-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.errorPage-img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
