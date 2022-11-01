@@ -1,5 +1,5 @@
 .htmlWrapper{
-    margin: 20px auto;
+    margin: 7% auto;
     height: 100vh;
 }
 .htmlGreeting{
@@ -38,5 +38,4 @@
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
-    margin-left: 10%;
 }

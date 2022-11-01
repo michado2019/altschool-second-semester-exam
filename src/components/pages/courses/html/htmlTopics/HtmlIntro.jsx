@@ -11,7 +11,7 @@ export default function HtmlIntro() {
     const handleNavigateToExample = (e) => {
     e.preventDefault();
     //Navigate to html example
-      navigate('/intro/example');
+      navigate('/htmlIntro/example');
     }
   return (
     <div className="htmlIntro-wrapper">

@@ -1,0 +1,28 @@
+.htmlBasic-wrapper{
+    padding: 20px 40px;
+    padding-bottom: 100px;
+}
+.htmlBasic-title, .htmlBasic-subtitle{
+    font-weight: bold;
+    color: #737373;
+}
+.htmlBasic-wrapper ul li{
+    margin: 10px 0;
+    list-style-type:circle;
+}
+.htmlBasic-wrapper ul li::marker{
+    color: red;
+    font-size: 30px;
+}
+.htmlBasicExample-btn{
+    padding: 10px 24px;
+    background-color: green;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+}
+.htmlBasicExample-btn:hover{
+    background-color: #ffffff;
+    color: green;
+    border: 2px solid green;
+}

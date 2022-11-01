@@ -8,6 +8,8 @@ import Css from "../pages/courses/css/Css";
 import JavaScript from "../pages/courses/javascript/JavaScript";
 import HtmlIntro from "../pages/courses/html/htmlTopics/HtmlIntro";
 import HtmlExample from "../pages/courses/html/htmlTopics/HtmlExample";
+import HtmlBasic from '../pages/courses/html/htmlTopics/HtmlBasic';
+import HtmlBasicExample from '../pages/courses/html/htmlTopics/HtmlBasicExample';
 
 export default function AppRouter() {
   return (
@@ -17,12 +19,24 @@ export default function AppRouter() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/sign" element={<Sign />} />
         <Route path="/courses/html" element={<Html />} />
-        <Route path="/intro" element={<HtmlIntro />}>
-          <Route path="/intro/example" element={<HtmlExample />} />
+        <Route path="/htmlIntro" element={<HtmlIntro />}>
+          <Route path="/htmlIntro/example" element={<HtmlExample />} />
         </Route>
+
+        <Route exact path="/htmlBasic" element={<HtmlBasic />}>
+          <Route path="/htmlBasic/example" element={<HtmlBasicExample />} />
+        </Route>
+
+        {/* {/* <Route path="/htmlCss" element={<HtmlCss />}>
+          <Route path="/css/example" element={<CssExample />} />
+        </Route>
+
+        <Route path="/htmlLinks" element={<HtmlLinks />}>
+          <Route path="/links/example" element={<HtmlLinks />} />
+        </Route> */}
         <Route path="/courses/css" element={<Css />} />
-        <Route path="/courses/javascript" element={<JavaScript />} />
-      </Routes>
+        <Route path="/courses/javascript" element={<JavaScript />} /> */}
+        </Routes>
     </div>
   );
 }

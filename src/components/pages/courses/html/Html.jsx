@@ -16,37 +16,18 @@ export default function Html() {
       <div className="htmlCourse-outline">
         <h1 className="htmlCourse-outline_title">Course Outline</h1>
         <ol className="htmlCourse-grid">
-          <Link to='/intro'>
+          <Link to='/htmlIntro'>
           <li className='htmlCourse-links'>HTML Introduction</li>
           </Link>
-          <Link>
-          
-          </Link>
-          <Link>
-          
-          </Link>
-          <Link>
-          
-          </Link>
-          <Link>
-          
-          </Link>
-          <Link>
-          
-          </Link>
-          <Link>
-          
-          </Link>
-          <Link>
-          
-          </Link>
+          <Link to='/htmlBasic'>
           <li className='htmlCourse-links'>HTML Basic</li>
+          </Link>
+          <Link to='/htmlCss'>
           <li className='htmlCourse-links'>HTML CSS</li>
+          </Link>
+          <Link to='/htmlLinks'>
           <li className='htmlCourse-links'>HTML Links</li>
-          <li className='htmlCourse-links'>HTML Images</li>
-          <li className='htmlCourse-links'>HTML Tables</li>
-          <li className='htmlCourse-links'>HTML Forms</li>
-          <li className='htmlCourse-links'>HTML Media</li>
+          </Link>
         </ol>
       </div>
     </div>
