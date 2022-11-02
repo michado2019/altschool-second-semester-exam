@@ -55,7 +55,7 @@ export default function Home() {
               will teach you CSS from basic to advanced.
             </p>
           </div>
-          <div className="homeCourses-contents" id='javascript'>
+          <div className="homeCourses-contents" id="javascript">
             <div className="aboutDesign"></div>
             <h3 className="homeCourses-titles">JAVASCRIPT</h3>
             <p className="homeCourses-details">
@@ -136,30 +136,46 @@ export default function Home() {
               alt="contactImg"
               className="homeContacts-img"
             />
-                <div className="footerSocial">
-      <div className="footerSocial-flex">
-      <a
-        href="https://twitter.com/Mike_Adeshina"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img src="twitter--icon.png" alt="img" className="footerSocial-img" />
-      </a>
-      <a href="https://github.com/michado2019" target="_blank" rel="noreferrer">
-        <img src="github--icon.png" alt="img" className="footerSocial-img" />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/michado2019"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img src="linked--in_icon.png" alt="img" className="footerSocial-img" />
-      </a>
-      </div>
-      <footer className="footerCopyright">
-        <p className="copyright"> &copy;Michado 2022</p>
-      </footer>
-    </div>
+            <div className="footerSocial">
+              <div className="footerSocial-flex">
+                <a
+                  href="https://twitter.com/Mike_Adeshina"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="twitter--icon.png"
+                    alt="img"
+                    className="footerSocial-img"
+                  />
+                </a>
+                <a
+                  href="https://github.com/michado2019"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="github--icon.png"
+                    alt="img"
+                    className="footerSocial-img"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/michado2019"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="linked--in_icon.png"
+                    alt="img"
+                    className="footerSocial-img"
+                  />
+                </a>
+              </div>
+              <footer className="footerCopyright">
+                <p className="copyright"> &copy;Michado 2022</p>
+              </footer>
+            </div>
           </div>
           <div className="homeContact-newsletter">
             <h3 className="homeContact-newsletter-title">

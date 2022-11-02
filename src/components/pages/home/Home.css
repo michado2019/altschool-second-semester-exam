@@ -234,6 +234,9 @@
   .homeCourses-details {
     font-size: 16px;
   }
+  .footerSocial{
+    width: 90%;
+  }
 }
 @media screen and (max-width: 768px) {
   .homeCoursesFlex {
@@ -278,6 +281,24 @@
   .homeFAQs-img{
     display: none;
   }
+  .homeContacts-flex {
+    flex-direction: column-reverse;
+  }
+  .homeContacts-img{
+    display: none;
+  }
+  .footerSocial{
+    width: 100%;
+    position: sticky;
+    left: 0;
+    top: 100%;
+    margin-bottom: -50px;
+  }
+    .homeContact-newsletter{
+      width: 88%;
+      margin: 0 0;
+      margin-left: 5%;
+    }
 }
 @media screen and (max-width: 480px) {
   .homeAbout {
@@ -286,25 +307,34 @@
   }
 }
 @media screen and (max-width: 375px) {
+  .homeAbout {
+    width: 100%;
+    margin: 0 0 0 0;
+  }
   #javascript {
     width: 100%;
     margin-left: 2%;
   }
+  .homeFAQs {
+    width: 91%;
+    margin-left: -3%;
+  }
   .homeCourses-contents {
-    width: 100%;
+    width: 98%;
     height: 320px;
   }
   .homeCourses-details {
     font-size: 20px;
   }
-}
-@media screen and (max-width: 320px) {
-  .homeAbout {
-    width: 100%;
-    margin: 7% 0 2% 0;
+  .homeContact-newsletter {
+    width: 101%;
+    margin: 0 0;
+    margin-left: 0;
   }
-  .homeFAQs {
+}
+@media screen and (max-width: 319px) {
+  .homeContact-newsletter{
     width: 90%;
-    margin-left: -3%;
+    margin: 0 5%;
   }
 }
