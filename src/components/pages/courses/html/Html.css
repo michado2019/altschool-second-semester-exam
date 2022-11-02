@@ -40,26 +40,35 @@
     font-size: 20px;
     font-weight: bold;
 }
-.links{
-    text-decoration: none;
-}
 
 /*Media Queries*/
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 600px){
+    .htmlWrapper{
+        margin: 50px;
+    }
+    .htmlGreeting{
+        padding: 0 0;
+    }
     .htmlCourse-grid{
-        margin-top: 70px;
-       }
+        grid-template-columns: 1fr;
+        margin-left: 20%;
+        margin-top: 40px;
+    }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px){
     .htmlCourse-grid{
-           display: grid;
-           grid-template-columns: 1fr;
-           margin-left: 20%;
-           line-height: 42px;
-           margin-top: 50px;
-       }
-    .htmlCourse-links{
+        grid-template-columns: 1fr;
+        margin-left: 15%;
+        margin-top: 40px;
+    }
+    .htmlCourse-grid .link{
         font-size: 20px;
-        font-weight: bold;
+    }
+}
+@media screen and (max-width: 319px){
+    .htmlCourse-grid{
+        grid-template-columns: 1fr;
+        margin-left: 10%;
+        margin-top: 40px;
     }
 }
