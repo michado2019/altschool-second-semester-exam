@@ -1,11 +1,18 @@
 .htmlExample-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    padding: 20px 40px;
-}
-.htmlExample-img{
-    width: 90%;
-    height: 90%;
+    padding: 50px 0;
+ }
+.htmlExample{
+    background-color: #212121;
+    color: #f2f2f2;
     border-radius: 5px;
-}
+    text-decoration: none;
+    padding: 10px 5px;
+    max-width: 400px;
+    font-weight: 600;
+    box-shadow: 2px 1px 1px 1px red;
+ }
+ .htmlExample:hover{
+    background-color: #f2f2f2;
+    color: #212121;
+    box-shadow: 2px 1px 1px 1px green;
+ }
