@@ -23,15 +23,12 @@ export default function AppRouter() {
         <Route path="/htmlIntro" element={<HtmlIntro />}>
           <Route path="/htmlIntro/example" element={<HtmlExample />} />
         </Route>
-
         <Route exact path="/htmlBasic" element={<HtmlBasic />}>
           <Route path="/htmlBasic/example" element={<HtmlBasicExample />} />
         </Route>
-
         {/* {/* <Route path="/htmlCss" element={<HtmlCss />}>
           <Route path="/css/example" element={<CssExample />} />
         </Route>
-
         <Route path="/htmlLinks" element={<HtmlLinks />}>
           <Route path="/links/example" element={<HtmlLinks />} />
         </Route> */}

@@ -213,3 +213,28 @@
     padding-bottom: 30;
     padding-top: 40px;
   }
+
+  /*Media Queries*/
+  @media screen and (max-width: 940px) {
+    .homeAbout {
+      margin: 7% 15% 2% 15%;
+    }
+    .homeAbout-img {
+      display: none;
+    }
+   
+    
+  }
+    
+  @media screen and (max-width: 480px) {
+    .homeAbout {
+      width: 90%;
+      margin: 7% 0 2% 0;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .homeAbout {
+      width: 100%;
+      margin: 7% 0 2% 0;
+    }
+  }

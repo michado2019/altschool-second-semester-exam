@@ -116,7 +116,7 @@ export const Navbar = (props) => {
         <Link to="/">
           <h1 className="displayControlled-navbar_text">Home</h1>
         </Link>
-        <Link to="/blog">
+        <Link to="blog">
           <h1 className="displayControlled-navbar_text">Blog</h1>
         </Link>
         <Link to="sign">
