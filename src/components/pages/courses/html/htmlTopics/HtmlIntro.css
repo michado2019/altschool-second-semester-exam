@@ -27,3 +27,10 @@
     color: green;
     border: 2px solid green;
 }
+
+@media screen and (max-width: 480px){
+    .htmlIntro-title, .htmlIntro-subtitle{
+        font-size: 22px;
+    }
+}
+    
