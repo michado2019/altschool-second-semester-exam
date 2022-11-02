@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Home.css";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   //Set state for the dropdown menu
@@ -37,34 +38,40 @@ export default function Home() {
       <div className="homeCourses">
         <h1 className="homeCourses-gen_title">Available Courses</h1>
         <div className="homeCoursesFlex">
-          <div className="homeCourses-contents">
-            <div className="aboutDesign"></div>
-            <h3 className="homeCourses-titles">HTML</h3>
-            <p className="homeCourses-details">
-              HTML is the standard markup language for Web pages. With HTML you
-              can create your own Website. HTML is easy to learn - You will
-              enjoy it!
-            </p>
-          </div>
-          <div className="homeCourses-contents">
-            <div className="aboutDesign"></div>
-            <h3 className="homeCourses-titles">CSS</h3>
-            <p className="homeCourses-details">
-              CSS is the language we use to style an HTML document. CSS
-              describes how HTML elements should be displayed. This tutorial
-              will teach you CSS from basic to advanced.
-            </p>
-          </div>
-          <div className="homeCourses-contents" id="javascript">
-            <div className="aboutDesign"></div>
-            <h3 className="homeCourses-titles">JAVASCRIPT</h3>
-            <p className="homeCourses-details">
-              JavaScript is the world's most popular programming language.
-              JavaScript is the programming language of the Web. JavaScript is
-              easy to learn. This tutorial will teach you JavaScript from basic
-              to advanced.
-            </p>
-          </div>
+          <Link to="/courses/html" className="link">
+            <div className="homeCourses-contents">
+              <div className="aboutDesign"></div>
+              <h3 className="homeCourses-titles">HTML</h3>
+              <p className="homeCourses-details">
+                HTML is the standard markup language for Web pages. With HTML
+                you can create your own Website. HTML is easy to learn - You
+                will enjoy it!
+              </p>
+            </div>
+          </Link>
+          <Link to="/courses/css" className="link">
+            <div className="homeCourses-contents">
+              <div className="aboutDesign"></div>
+              <h3 className="homeCourses-titles">CSS</h3>
+              <p className="homeCourses-details">
+                CSS is the language we use to style an HTML document. CSS
+                describes how HTML elements should be displayed. This tutorial
+                will teach you CSS from basic to advanced.
+              </p>
+            </div>
+          </Link>
+          <Link to="/courses/javascript" className="link">
+            <div className="homeCourses-contents" id="javascript">
+              <div className="aboutDesign"></div>
+              <h3 className="homeCourses-titles">JAVASCRIPT</h3>
+              <p className="homeCourses-details">
+                JavaScript is the world's most popular programming language.
+                JavaScript is the programming language of the Web. JavaScript is
+                easy to learn. This tutorial will teach you JavaScript from
+                basic to advanced.
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
       <div className="homeFAQs">

@@ -113,13 +113,13 @@ export const Navbar = (props) => {
         </li>
       </ul>
       <div className="displayControlled-navbar" style={{display: menuContentsDisplay ? 'flex' : 'none'}}>
-        <Link to="/">
+        <Link to="/" className="link">
           <h1 className="displayControlled-navbar_text">Home</h1>
         </Link>
-        <Link to="blog">
+        <Link to="blog" className="link">
           <h1 className="displayControlled-navbar_text">Blog</h1>
         </Link>
-        <Link to="sign">
+        <Link to="sign" className="link">
           <h1 className="displayControlled-navbar_text">Sign in</h1>
         </Link>
       </div>
