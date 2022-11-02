@@ -27,6 +27,7 @@
     color: #737373;
     font-size: 20px;
     text-align: center;
+    margin-top: 40px;
 }
 .htmlCourse-grid{
  display: grid;
@@ -38,4 +39,27 @@
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
+}
+.links{
+    text-decoration: none;
+}
+
+/*Media Queries*/
+@media screen and (max-width: 940px) {
+    .htmlCourse-grid{
+        margin-top: 70px;
+       }
+}
+@media screen and (max-width: 600px) {
+    .htmlCourse-grid{
+           display: grid;
+           grid-template-columns: 1fr;
+           margin-left: 20%;
+           line-height: 42px;
+           margin-top: 50px;
+       }
+    .htmlCourse-links{
+        font-size: 20px;
+        font-weight: bold;
+    }
 }

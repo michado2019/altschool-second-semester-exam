@@ -16,16 +16,16 @@ export default function Html() {
       <div className="htmlCourse-outline">
         <h1 className="htmlCourse-outline_title">Course Outline</h1>
         <ol className="htmlCourse-grid">
-          <Link to='/htmlIntro'>
+          <Link to='/htmlIntro' className="links">
           <li className='htmlCourse-links'>HTML Introduction</li>
           </Link>
-          <Link to='/htmlBasic'>
+          <Link to='/htmlBasic' className="links">
           <li className='htmlCourse-links'>HTML Basic</li>
           </Link>
-          <Link to='/htmlCss'>
+          <Link to='/htmlCss' className="links">
           <li className='htmlCourse-links'>HTML CSS</li>
           </Link>
-          <Link to='/htmlLinks'>
+          <Link to='/htmlLinks' className="links">
           <li className='htmlCourse-links'>HTML Links</li>
           </Link>
         </ol>
