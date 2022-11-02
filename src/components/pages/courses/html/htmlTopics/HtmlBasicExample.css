@@ -1,14 +1,18 @@
-/* .htmlBasicExample-wrapper{
-   padding: 50px 0;
-}
-.htmlExample{
-   background-color: #212121;
-   margin-left: -20px;
-   color: #f2f2f2;
-   border-radius: 5px;
-   text-decoration: none;
-   padding: 10px 5px;
-   max-width: 400px;
-   font-weight: 600;
-   box-shadow: 2px 1px 1px 1px red;
-} */
+.htmlExample-wrapper{
+    padding: 50px 0;
+ }
+.htmlBasic-example{
+    background-color: #212121;
+    color: #f2f2f2;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px 5px;
+    max-width: 400px;
+    font-weight: 600;
+    box-shadow: 2px 1px 1px 1px red;
+ }
+ .htmlBasic-example:hover{
+    background-color: #f2f2f2;
+    color: #212121;
+    box-shadow: 2px 1px 1px 1px green;
+ }

@@ -2,10 +2,10 @@ import React from "react";
 import "./HtmlBasicExample.css";
 export default function HtmlBasicExample() {
   return (
-    <div className="htmlBasicExample-wrapper">
+    <div className="htmlBasic-example_wrapper">
       <a
-        href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_intro"
-        className="htmlBasicExample"
+        href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic_document"
+        className="htmlBasic-example"
         target="_blank"
         rel="noreferrer"
       >
