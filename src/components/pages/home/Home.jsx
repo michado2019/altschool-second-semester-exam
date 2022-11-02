@@ -55,7 +55,7 @@ export default function Home() {
               will teach you CSS from basic to advanced.
             </p>
           </div>
-          <div className="homeCourses-contents">
+          <div className="homeCourses-contents" id='javascript'>
             <div className="aboutDesign"></div>
             <h3 className="homeCourses-titles">JAVASCRIPT</h3>
             <p className="homeCourses-details">
