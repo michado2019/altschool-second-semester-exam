@@ -3,8 +3,8 @@ import './Css.css'
 
 export default function Css() {
   return (
-    <div className='htlmWrapper'>
-       css
+    <div className='cssWrapper'>
+       <h1 className='cssCss'>Upcoming!</h1>
     </div>
   )
 }
