@@ -312,16 +312,17 @@
     margin: 0 0 0 0;
   }
   #javascript {
-    width: 100%;
-    margin-left: 2%;
+    width: 98%;
+    margin-left: -6%;
   }
   .homeFAQs {
     width: 91%;
     margin-left: -3%;
   }
   .homeCourses-contents {
-    width: 98%;
+    width: 96%;
     height: 320px;
+    margin-left: -5%;
   }
   .homeCourses-details {
     font-size: 20px;
@@ -332,9 +333,8 @@
     margin-left: 0;
   }
 }
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 320px) {
   .homeContact-newsletter{
-    width: 90%;
-    margin: 0 5%;
+    margin: 0 0;
   }
 }
