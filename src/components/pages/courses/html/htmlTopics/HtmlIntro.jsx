@@ -1,6 +1,7 @@
 import React from "react";
 import "./HtmlIntro.css";
 import {Outlet, useNavigate} from 'react-router-dom'
+import { Helmet } from "react-helmet-async";
 
 export default function HtmlIntro() {
 
@@ -15,6 +16,11 @@ export default function HtmlIntro() {
     }
   return (
     <div className="htmlIntro-wrapper">
+      <Helmet>
+        <title>Introduction to HTML</title>
+        <meta name="description" content="Introducing you to HTML" />
+        <link rel="canonical" href="/htmlIntro" />
+      </Helmet>
       <h1 className='htmlIntro-title'>HTML Introduction</h1>
       <h2 className='htmlIntro-subtitle'>What is HTML?</h2>
       <ul>
