@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./Home.css";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
+  
   //Set state for the dropdown menu
   const [expandFAQs, setExpandFAQs] = useState(false);
 
@@ -19,6 +21,11 @@ export default function Home() {
   };
   return (
     <div className="homeWrapper">
+      <Helmet>
+        <title>Homepage</title>
+        <meta name="description" content="Welcome to my Homepage" />
+        <link rel="canonical" href="/" />
+      </Helmet>
       <div className="homeAbout-div">
         <div className="homeAbout">
           <div className="aboutDesign"></div>

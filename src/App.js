@@ -3,6 +3,7 @@ import "./App.css";
 import { Navbar } from "./components/LayoutComponent";
 import AppRouter from "./components/routes/Index";
 import {ErrorBoundary, useErrorHandler} from 'react-error-boundary';
+import {HelmetProvider} from 'react-helmet-async';
 
 // ErrorBoundary
 const ErrorBoundaryComponent = ({ error }) => {
@@ -45,8 +46,10 @@ function App() {
   return (
     <div className="App" style={darkMode ? {backgroundColor: darkModeStyle.dark.background, color: darkModeStyle.dark.foreground} : {backgroundColor: darkModeStyle.light.background, color: darkModeStyle.light.foreground} }>
       <ErrorBoundary FallbackComponent={ErrorBoundaryComponent}>
+      <HelmetProvider>
       <Navbar toggle={handleDarkMode} darkMode={darkMode} />
       <AppRouter />
+      </HelmetProvider>
       </ErrorBoundary>
     </div>
   );
