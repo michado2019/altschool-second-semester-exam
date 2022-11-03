@@ -1,6 +1,7 @@
 import React from "react";
 import "./HtmlBasic.css";
 import { Outlet, useNavigate } from "react-router-dom";
+import {Helmet} from 'react-helmet-async'
 
 export default function HtmlBasic() {
   //Call useNavigate hook
@@ -15,6 +16,11 @@ export default function HtmlBasic() {
   };
   return (
     <div className="htmlBasic-wrapper">
+      <Helmet>
+        <title>HTML Basics</title>
+        <meta name="description" content="Introducing you to basic HTML" />
+        <link rel="canonical" href="/htmlBasic" />
+      </Helmet>
       <h1 className="htmlBasic-title">HTML Basic</h1>
       <h2 className="htmlBasic-subtitle">HTML Document</h2>
       <ul>
