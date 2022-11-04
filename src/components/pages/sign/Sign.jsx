@@ -32,6 +32,7 @@ export default function Sign() {
           placeholder="yourname@gmail.com"
           className="signInput"
           id="email"
+          required
         />
         <label htmlFor="message" className='signForm-labels'>Message</label>
         <textarea
