@@ -4,6 +4,7 @@ import { Navbar } from "./components/LayoutComponent";
 import AppRouter from "./components/routes/Index";
 import {ErrorBoundary, useErrorHandler} from 'react-error-boundary';
 import {HelmetProvider} from 'react-helmet-async';
+import { ArrowUpward } from "@mui/icons-material";
 
 // ErrorBoundary
 const ErrorBoundaryComponent = ({ error }) => {
@@ -45,9 +46,11 @@ function App() {
   };
   return (
     <div className="App" style={darkMode ? {backgroundColor: darkModeStyle.dark.background, color: darkModeStyle.dark.foreground} : {backgroundColor: darkModeStyle.light.background, color: darkModeStyle.light.foreground} }>
+      <div id='topRegion-locator'></div>
       <ErrorBoundary FallbackComponent={ErrorBoundaryComponent}>
       <HelmetProvider>
       <Navbar toggle={handleDarkMode} darkMode={darkMode} />
+      <a href="#topRegion-locator" id='topRegion'><ArrowUpward /></a>
       <AppRouter />
       </HelmetProvider>
       </ErrorBoundary>
