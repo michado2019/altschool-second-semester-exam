@@ -19,3 +19,7 @@ body {
   margin: 0 20px;
   padding: 3px 7px;
 }
+#topRegion:hover{
+  background-color: #555555;
+  color: #ffffff;
+}

@@ -26,12 +26,6 @@ export default function AppRouter() {
         <Route exact path="/htmlBasic" element={<HtmlBasic />}>
           <Route path="/htmlBasic/example" element={<HtmlBasicExample />} />
         </Route>
-        {/* {/* <Route path="/htmlCss" element={<HtmlCss />}>
-          <Route path="/css/example" element={<CssExample />} />
-        </Route>
-        <Route path="/htmlLinks" element={<HtmlLinks />}>
-          <Route path="/links/example" element={<HtmlLinks />} />
-        </Route> */}
         <Route path="/courses/css" element={<Css />} />
         <Route path="/courses/javascript" element={<JavaScript />} /> 
         <Route path="*" element={<ErrorPage />} />
