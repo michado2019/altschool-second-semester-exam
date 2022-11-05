@@ -133,7 +133,7 @@ export const Navbar = (props) => {
             </CustomNavbarLink>
           ) : (
             <CustomNavbarLink className="layoutNavbar-links" id="logout">
-              <Logout />
+              <Logout onClick={handleSignout} />
             </CustomNavbarLink>
           )}
           {menuContentsDisplay ? (

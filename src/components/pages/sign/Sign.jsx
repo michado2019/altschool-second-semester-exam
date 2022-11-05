@@ -6,6 +6,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Sign() {
+
   //Navigation
   const navigate = useNavigate();
 
@@ -31,10 +32,6 @@ export default function Sign() {
 
   //Handle submit event
   const handleSubmit = (e) => {
-    if (!inputs.firstName || !inputs.lastName || !inputs.email) {
-      e.preventDefault();
-      alert("Please fill out all the fields");
-    }
     e.preventDefault();
     setUser(inputs);
     setUserLoggedIn((prev) => {
