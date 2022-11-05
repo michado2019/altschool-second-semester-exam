@@ -13,6 +13,7 @@ import HtmlBasicExample from '../pages/courses/html/htmlTopics/HtmlBasicExample'
 import ErrorPage from "../pages/errorPage/ErrorPage";
 
 export default function AppRouter() {
+
   return (
     <div>
       <Routes>
