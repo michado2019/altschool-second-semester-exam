@@ -95,6 +95,14 @@
   cursor: pointer;
   font-size: 20px;
 }
+#loginFirst{
+  width: 70px;
+  height: 90px;
+  border-radius: 30%;
+  padding: 5px 7px;
+  margin-top: 40px;
+  position: absolute;
+}
 #coursesContents {
   display: flex;
   flex-direction: column;
@@ -119,7 +127,7 @@
   font-size: 12px;
   font-weight: 900;
 }
-#login {
+#login, #logout {
   padding: 3px 10px;
 }
 .menuIcon {
