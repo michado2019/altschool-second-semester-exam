@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import useForm from "../../hooks/useForm";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { Hidden } from "@mui/material";
 
 export default function Sign() {
 
@@ -15,9 +16,10 @@ export default function Sign() {
 
   //Set states
   const [user, setUser] = useState({});
-  const { state, dispatch } = useUserContext;
+  const {state, dispatch } = useUserContext;
   const [userLoggedIn, setUserLoggedIn] = useState(state);
-
+  const [currentUser, setCurrentUser] = useState({});
+  const [style, setStyle] = useState(false)
   //useForm data
   const { inputs, handleChange } = useForm({
     firstName: "",
@@ -40,11 +42,15 @@ export default function Sign() {
         user,
       };
     });
+    if(user){
+      setCurrentUser(user)
+    }
+    setStyle(prev => !prev)
     if (userLoggedIn) {
       dispatch("LOGIN");
-      navigate('/')
     }
   };
+  const userStyle = {visibility: style ? 'visible' : Hidden}
   return (
     <div className="signWrapper">
       <Helmet>
@@ -52,6 +58,10 @@ export default function Sign() {
         <meta name="description" content="Sign in here" />
         <link rel="canonical" href="/sign" />
       </Helmet>
+      <div className="currentUser" style={userStyle}>
+        <h1 className="currentUser-name">{`Welcome, ${currentUser.firstName} ${currentUser.lastName}!`}</h1>
+        <button className="currentUser-btn" onClick={() => navigate('/')}>Click to go home and explore our courses</button>
+      </div>
       <form className="signForm" onSubmit={handleSubmit}>
         <label htmlFor="first_name" className="signForm-labels">
           First name

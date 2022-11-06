@@ -11,16 +11,9 @@ export default function Html() {
         <meta name="description" content="Learn HTML with easy" />
         <link rel="canonical" href="/courses/html" />
       </Helmet>
-      <div className="htmlGreeting">
-        <h1 className="htmlWelcome">Hi, {}</h1>
-        <h1 className="htmlWelcome">You are welcome</h1>
-      </div>
-      <div className="htmlUser-img_div">
-        <img src="/public/faqs.jpg" alt="html" className="htmlUser-img" />
-        <div></div>
-      </div>
       <div className="htmlCourse-outline">
-        <h1 className="htmlCourse-outline_title">Course Outline</h1>
+        <h1 className="htmlCourse-outline_hint">Number one and two have the implementation of nested routes</h1>
+        <h2 className="htmlCourse-outline_title">Course Outline</h2>
         <ol className="htmlCourse-grid">
           <Link to="/htmlIntro" className="link">
             <li className="htmlCourse-links">HTML Introduction</li>

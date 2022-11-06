@@ -254,6 +254,9 @@
   }
 }
 @media screen and (max-width: 600px) {
+  .homeWrapper{
+    max-width: 100%;
+  }
   .homeCoursesFlex {
     display: flex;
     flex-direction: column;
