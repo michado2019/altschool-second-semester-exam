@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export default function Home() {
-  
   //Set state for the dropdown menu
   const [expandFAQs, setExpandFAQs] = useState(false);
 
@@ -26,6 +25,11 @@ export default function Home() {
         <meta name="description" content="Welcome to my Homepage" />
         <link rel="canonical" href="/" />
       </Helmet>
+      <h1 className="homeWelcome-address">
+        Welcome to my site. This is where you can learn about any programming
+        course of your choice. So, check out our courses and you will not
+        regret. Note: our blog section is coming soon!
+      </h1>
       <div className="homeAbout-div">
         <div className="homeAbout">
           <div className="aboutDesign"></div>
