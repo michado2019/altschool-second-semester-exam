@@ -138,10 +138,10 @@
   display: none !important;
 }
 .displayControlled-navbar {
-  display: none;
+  visibility: hidden;
 }
-
 /*Media Queries*/
+
 @media screen and (max-width: 940px) {
   .layoutNavbar-links {
     display: none;
@@ -155,12 +155,12 @@
   }
   .displayControlled-navbar {
     margin-top: -30px;
-    display: none;
     justify-content: center;
     align-items: center;
     padding: 20px 40px;
     animation-name: menu;
     animation-duration: 0.1s;
+     visibility: visible;
   }
   @keyframes menu {
     0% {
