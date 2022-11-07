@@ -127,17 +127,15 @@ export const Navbar = (props) => {
               </div>
             )}
           </div>
-          {userLoggedIn ?  (
-            <CustomNavbarLink className="layoutNavbar-links" id="logout">
-              <Logout onClick={handleSignout} />
-            </CustomNavbarLink>
-          ): 
-          (
+          {userLoggedIn ? (
             <CustomNavbarLink to="/sign" className="layoutNavbar-links">
               <Login id="login" />
             </CustomNavbarLink>
-          ) 
-          }
+          ) : (
+            <CustomNavbarLink className="layoutNavbar-links" id="logout">
+              <Logout onClick={handleSignout} />
+            </CustomNavbarLink>
+          )}
           {menuContentsDisplay ? (
             <CancelOutlined
               className="menuIcon"
