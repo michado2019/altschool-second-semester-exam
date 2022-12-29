@@ -16,6 +16,7 @@ import {
 } from "@mui/icons-material";
 
 export const Navbar = (props) => {
+
   //use context
   const { state, dispatch } = useContext(AuthContext);
   const [userLoggedIn, setUserLoggedIn] = useState(true);
@@ -76,7 +77,7 @@ export const Navbar = (props) => {
           <Link to="/">
             <img src={appLogo} alt="logo" className="logo" />
           </Link>
-          <h1 className="logoText">C-Breaker</h1>
+          <h1 className="logoText">Codemiller</h1>
           <CustomNavbarLink to="/" className="layoutNavbar-links">
             <HomeOutlined id="home" />
           </CustomNavbarLink>
@@ -95,7 +96,7 @@ export const Navbar = (props) => {
               <h1 to="/courses" id="courses">
                 Courses
               </h1>
-              {expandCourses ? <ExpandLess /> : <ExpandMore />}
+              {expandCourses ? <ExpandLess className='expand' /> : <ExpandMore className='expand' />}
             </div>
             {userLoggedIn ? (
               <div style={style} className="layoutNavbar-links" id="loginFirst">
