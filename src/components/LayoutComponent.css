@@ -43,7 +43,6 @@
   cursor: pointer;
 }
 .layoutNavbar-links:hover {
-  background-color: #ccc;
   animation-name: links;
   animation-duration: 1s;
 }
