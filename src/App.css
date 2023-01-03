@@ -1,3 +1,6 @@
+.App{
+    padding-bottom: 10px;
+}
 .errorBoundary{
     display: flex;
     flex-direction: column;

@@ -35,9 +35,12 @@ export const Navbar = (props) => {
   //Handle the dropdown menu
   const handleCoursesExpand = (e) => {
     e.preventDefault();
-    setExpandCourses((prev) => !prev);
+    setExpandCourses(true);
   };
-
+  const handleCoursesClose = (e) => {
+    e.preventDefault();
+    setExpandCourses(false);
+  };
   //Handle menu display
   const handleDisplayMenuContents = (e) => {
     e.preventDefault();
@@ -91,13 +94,14 @@ export const Navbar = (props) => {
               <DarkMode className="layoutNavbar-links" id="darkMode" />
             )}
           </div>
-          <div className="coursesDiv">
-            <div className="expand" onClick={handleCoursesExpand}>
+          <div className="coursesDiv" onMouseLeave={handleCoursesClose}>
+            <div className="expand" onMouseOver={handleCoursesExpand} >
               <h1 to="/courses" id="courses">
                 Courses
               </h1>
               {expandCourses ? <ExpandLess className='expand' /> : <ExpandMore className='expand' />}
             </div>
+            <div className='coursesDisplayDiv'>
             {userLoggedIn ? (
               <div style={style} className="layoutNavbar-links" id="loginFirst">
                 Login to view courses!
@@ -127,6 +131,7 @@ export const Navbar = (props) => {
                 </CustomNavbarLink>
               </div>
             )}
+            </div>
           </div>
           {userLoggedIn ? (
             <CustomNavbarLink to="/sign" className="layoutNavbar-links">

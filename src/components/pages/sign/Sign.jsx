@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 import useForm from "../../hooks/useForm";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { Hidden } from "@mui/material";
 
 export default function Sign() {
 
@@ -20,6 +19,7 @@ export default function Sign() {
   const [userLoggedIn, setUserLoggedIn] = useState(state);
   const [currentUser, setCurrentUser] = useState({});
   const [style, setStyle] = useState(false)
+
   //useForm data
   const { inputs, handleChange } = useForm({
     firstName: "",
@@ -50,7 +50,7 @@ export default function Sign() {
       dispatch("LOGIN");
     }
   };
-  const userStyle = {visibility: style ? 'visible' : Hidden}
+  const userStyle = {visibility: style ? 'visible' : 'hidden'}
   return (
     <div className="signWrapper">
       <Helmet>

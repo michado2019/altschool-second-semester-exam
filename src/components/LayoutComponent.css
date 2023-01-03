@@ -92,11 +92,15 @@
   display: flex;
   color: #ffffff;
   flex-direction: column;
+  margin-top: -60px;
 }
 .expand {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.coursesDisplayDiv{
+  margin-top: -70px;
 }
 #courses {
   color: #ffffff;
