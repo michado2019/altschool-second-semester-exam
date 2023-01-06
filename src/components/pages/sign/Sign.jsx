@@ -1,23 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Sign.css";
 import { Helmet } from "react-helmet-async";
 import useForm from "../../hooks/useForm";
-import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Sign() {
   //Navigation
   const navigate = useNavigate();
 
-  //Use context
-  const useUserContext = useContext(AuthContext);
-
   //Set states
   const [user, setUser] = useState({});
-  const { state, dispatch } = useUserContext;
-  const [userLoggedIn, setUserLoggedIn] = useState(state);
   const [currentUser, setCurrentUser] = useState({});
-  const [style, setStyle] = useState(false);
 
   //useForm data
   const { inputs, handleChange } = useForm({
@@ -35,21 +28,12 @@ export default function Sign() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setUser(inputs);
-    setUserLoggedIn((prev) => {
-      return {
-        ...prev,
-        user,
-      };
-    });
+    
     if (user) {
       setCurrentUser(user);
     }
-    setStyle((prev) => !prev);
-    if (userLoggedIn) {
-      dispatch("LOGIN");
-    }
+   
   };
-  const userStyle = { visibility: style ? "visible" : "hidden" };
   return (
     <div className="signWrapper">
       <Helmet>
@@ -57,7 +41,7 @@ export default function Sign() {
         <meta name="description" content="Sign in here" />
         <link rel="canonical" href="/sign" />
       </Helmet>
-      <div className="currentUser" style={userStyle}>
+      <div className="currentUser" >
         <h1 className="currentUser-name">{`Welcome, ${currentUser.firstName} ${currentUser.lastName}!`}</h1>
         <button className="currentUser-btn" onClick={() => navigate("/")}>
           Click to go home and explore our courses

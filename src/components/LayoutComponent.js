@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./LayoutComponent.css";
 import appLogo from "../images/logoImg.png";
-import { AuthContext } from "./context/AuthContext";
 import { collection, getDocs } from "@firebase/firestore";
 import { DbContext } from "../App";
 import {
@@ -21,20 +20,9 @@ import {
 
 export const Navbar = (props) => {
 
-  //use contexts
-  const { state, dispatch } = useContext(AuthContext);
-  const [userLoggedIn, setUserLoggedIn] = useState(true);
-
   //Set state for the dropdown menu
   const [expandCourses, setExpandCourses] = useState(false);
   const [menuContentsDisplay, setMenuContentsDisplay] = useState(false);
-
-  useEffect(() => {
-    setUserLoggedIn((prev) => !prev);
-    if (state === null) {
-      dispatch("LOGOUT");
-    }
-  }, [dispatch, state]);
 
   //Handle the dropdown menu
   const handleCoursesExpand = (e) => {
@@ -55,7 +43,6 @@ export const Navbar = (props) => {
   //Handle signout
   const handleSignout = (e) => {
     e.preventDefault();
-    dispatch("LOGOUT");
   };
 
   const CustomNavbarLink = ({ to, ...props }) => {
@@ -112,7 +99,6 @@ export const Navbar = (props) => {
               )}
             </div>
             <div className="coursesDisplayDiv">
-              {userLoggedIn ? (
                 <div
                   style={style}
                   className="layoutNavbar-links"
@@ -120,7 +106,6 @@ export const Navbar = (props) => {
                 >
                   Login to view courses!
                 </div>
-              ) : (
                 <div id="coursesContents" style={style}>
                   <CustomNavbarLink
                     to="/courses/html"
@@ -144,18 +129,14 @@ export const Navbar = (props) => {
                     <h1 className="coursesContents">JAVASCRIPT</h1>
                   </CustomNavbarLink>
                 </div>
-              )}
             </div>
           </div>
-          {userLoggedIn ? (
             <CustomNavbarLink to="/sign" className="layoutNavbar-links">
               <Login id="login" />
             </CustomNavbarLink>
-          ) : (
             <CustomNavbarLink className="layoutNavbar-links" id="logout">
               <Logout onClick={handleSignout} />
             </CustomNavbarLink>
-          )}
           {menuContentsDisplay ? (
             <CancelOutlined
               className="menuIcon"
@@ -179,11 +160,9 @@ export const Navbar = (props) => {
         <Link to="blog" className="link">
           <h1 className="displayControlled-navbar_text">Blog</h1>
         </Link>
-        {userLoggedIn ? (
           <Link to="sign" className="link">
             <h1 className="displayControlled-navbar_text">Sign in</h1>
           </Link>
-        ) : (
           <Link>
             <h1
               className="displayControlled-navbar_text"
@@ -192,7 +171,6 @@ export const Navbar = (props) => {
               Sign out
             </h1>
           </Link>
-        )}
       </div>
     </nav>
   );
