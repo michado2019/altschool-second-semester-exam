@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import {addDoc, collection} from '@firebase/firestore'
 import { DbContext } from "../../../App";
 
-function Contribute({ contribute, setContribute }) {
+function Contribute({ contribute, setContribute, user, handleAuth }) {
 
    //useContext
    const db = useContext(DbContext)
@@ -50,7 +50,11 @@ function Contribute({ contribute, setContribute }) {
     }
       setContribution()
   }, [setContribute, form])
-  
+
+  useEffect(() => {
+    if(user)
+    console.log(user)
+  }, [user])
   return (
     <div className="contributeWrapper">
       <div className="contributeFlex-1">
@@ -63,7 +67,7 @@ function Contribute({ contribute, setContribute }) {
               Guide
             </button>
             <div className="contributeFlex-2">
-              <button className="contributeGoogleBtn">Sign with Google</button>
+              <button className="contributeGoogleBtn" onClick={handleAuth}>Sign with Google</button>
             </div>
           </div>
         </div>

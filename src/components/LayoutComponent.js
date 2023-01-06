@@ -20,6 +20,7 @@ import {
 } from "@mui/icons-material";
 
 export const Navbar = (props) => {
+
   //use contexts
   const { state, dispatch } = useContext(AuthContext);
   const [userLoggedIn, setUserLoggedIn] = useState(true);
@@ -252,7 +253,7 @@ export const Sidebar = () => {
           </div>
         </div>
         <a
-          href="michado"
+          href="https://github.com/michado2019/altschool-second-semester-exam"
           className="sidebarFooterBtn"
           style={{
             visibility: openSource ? "visible" : "hidden",
