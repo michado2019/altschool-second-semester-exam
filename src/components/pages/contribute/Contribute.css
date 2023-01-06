@@ -1,7 +1,8 @@
 .contributeWrapper {
   margin: 100px 10px;
-  height: 140vh;
+  height: 150vh;
   width: 80%;
+  margin-top: 32%;
 }
 .contributeFlex-1 {
   display: flex;
