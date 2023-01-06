@@ -1,18 +1,25 @@
-.App{
-    padding-bottom: 10px;
+.App {
+  padding-bottom: 10px;
 }
-.errorBoundary{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10% 20%;
+.appRouter {
+  width: 70%;
+  margin-left: 40px;
 }
-.errorBoundary-title{
-    color: #111;
-    font-size: 32px;
+.sidebarAppDiv {
+  display: flex;
 }
-.errorBoundary-message{
-    color: red;
-    font-size: 24px;
+.errorBoundary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10% 20%;
+}
+.errorBoundary-title {
+  color: #111;
+  font-size: 32px;
+}
+.errorBoundary-message {
+  color: red;
+  font-size: 24px;
 }

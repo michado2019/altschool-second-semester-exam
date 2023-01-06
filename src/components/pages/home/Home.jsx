@@ -1,18 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Home.css";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../../context/AuthContext";
+import AppGuide from '../../AppGuide'
 
 export default function Home() {
-  //Set state for the dropdown menu
+
+  // State 
   const [expandFAQs, setExpandFAQs] = useState(false);
+  const [guide, setGuide] = useState(false);
+
+  //use context
+  const { state, dispatch } = useContext(AuthContext);
+  const [userLoggedIn, setUserLoggedIn] = useState(true);
+
+  useEffect(() => {
+    setUserLoggedIn((prev) => !prev);
+    if (state === null) {
+      dispatch("LOGOUT");
+    }
+  }, [dispatch, state]);
 
   //Handle the dropdown menu
   const handleFAQsExpand = (e) => {
     e.preventDefault();
     setExpandFAQs((prev) => !prev);
   };
+
+  // Handle guide display
+  const handleGuide = () => {
+    setGuide(prev => !prev)
+  }
 
   //Styles
   const faqsDisplayStyles = {
@@ -25,28 +45,30 @@ export default function Home() {
         <meta name="description" content="Welcome to my Homepage" />
         <link rel="canonical" href="/" />
       </Helmet>
-      <h1 className="homeWelcome-address">
-        Welcome to my site. This is where you can learn about any programming
-        course of your choice. So, check out our courses and you will not
-        regret. Note: our blog section is coming soon!
-      </h1>
       <div className="homeAbout-div">
         <div className="homeAbout">
-          <div className="aboutDesign"></div>
           <h1 className="About-title">About</h1>
           <p className="About-details">
-            Setup react-router, implement Nested routes, 404 page, and Error
-            boundary. Set up fake userAuthContext using the context API to
-            always carry out a fake authentication, bonus - extract out a custom
-            hook to get the currently logged-in user. Implement SEO and
-            Navigation menu that will show on each page
+            <span className="codeMiller-span">Code miller</span> is an app that permits coders break codes complexity, such that starters would understand. And share via our <Link to='contribute' className="contributeLink">'contribute platform'</Link>.
           </p>
         </div>
         <div>
           <img src="aboutImg.jpg" alt="aboutImg" className="homeAbout-img" />
         </div>
       </div>
-      <div className="homeCourses">
+      <AppGuide guide = {guide}/>
+      <div className="homeBigBtnsDiv">
+        <div className="homeBigBtns">
+        <Link to='contribute' className="contributeLink">
+        <button className="homeBigBtn">Get Started</button>
+        </Link>
+          <button className="homeBigBtn" id="homeBigBtn" onClick={handleGuide}>Guide</button>
+        </div>
+      </div>
+      <div
+        className="homeCourses"
+        style={{ display: userLoggedIn ? "block" : "none" }}
+      >
         <h1 className="homeCourses-gen_title">Available Courses</h1>
         <div className="homeCoursesFlex">
           <Link to="/courses/html" className="link">

@@ -19,13 +19,12 @@ const reducer = (state, action) => {
     default:
       return state;
   }
-}
+};
 export const AuthContextProvider = ({ children }) => {
-    
-    const [state, dispatch] = useReducer(reducer, { user: null });
-    return (
-        <AuthContext.Provider value={{ state, dispatch }}>
-        {children}
-        </AuthContext.Provider>
-    );
-    };
+  const [state, dispatch] = useReducer(reducer, { user: null });
+  return (
+    <AuthContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};

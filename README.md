@@ -1,4 +1,4 @@
 # Courses App
 ## Altschool second semester exam project
-### This app is built to show-case this features: Setup react-router, implement Nested routes, 404 page, and Error boundary. Set up fake userAuthContext using the context API to always carry out a fake authentication, bonus - extract out a custom hook to get the currently logged-in user. Implement SEO and Navigation menu that will show on each page.
+### Code miller app is majorly a blog site. It's an app that allows software engineers share their broken-down codes such that starters would understand, and share via our 'contribute platform'. Are you a coder? Sign in as a contributor and start contributing.
 #### https://altschool-second-semester-exam-michado2019.vercel.app

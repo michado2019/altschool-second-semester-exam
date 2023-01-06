@@ -3,6 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import "./LayoutComponent.css";
 import appLogo from "../images/logoImg.png";
 import { AuthContext } from "./context/AuthContext";
+import { collection, getDocs } from "@firebase/firestore";
+import { DbContext } from "../App";
 import {
   DarkMode,
   LightMode,
@@ -13,11 +15,12 @@ import {
   ExpandLess,
   MenuOutlined,
   CancelOutlined,
+  ExpandCircleDownSharp,
+  ExpandLessRounded,
 } from "@mui/icons-material";
 
 export const Navbar = (props) => {
-
-  //use context
+  //use contexts
   const { state, dispatch } = useContext(AuthContext);
   const [userLoggedIn, setUserLoggedIn] = useState(true);
 
@@ -41,6 +44,7 @@ export const Navbar = (props) => {
     e.preventDefault();
     setExpandCourses(false);
   };
+
   //Handle menu display
   const handleDisplayMenuContents = (e) => {
     e.preventDefault();
@@ -50,8 +54,9 @@ export const Navbar = (props) => {
   //Handle signout
   const handleSignout = (e) => {
     e.preventDefault();
-    dispatch('LOGOUT')
-  }
+    dispatch("LOGOUT");
+  };
+
   const CustomNavbarLink = ({ to, ...props }) => {
     let activeStyle = {
       color: "red",
@@ -85,7 +90,7 @@ export const Navbar = (props) => {
             <HomeOutlined id="home" />
           </CustomNavbarLink>
           <CustomNavbarLink to="/blog" className="layoutNavbar-links" id="blog">
-            Blog
+            <h1>Blogs</h1>
           </CustomNavbarLink>
           <div onClick={props.toggle}>
             {props.darkMode ? (
@@ -95,42 +100,50 @@ export const Navbar = (props) => {
             )}
           </div>
           <div className="coursesDiv" onMouseLeave={handleCoursesClose}>
-            <div className="expand" onMouseOver={handleCoursesExpand} >
+            <div className="expand" onMouseOver={handleCoursesExpand}>
               <h1 to="/courses" id="courses">
                 Courses
               </h1>
-              {expandCourses ? <ExpandLess className='expand' /> : <ExpandMore className='expand' />}
+              {expandCourses ? (
+                <ExpandLess className="expand" />
+              ) : (
+                <ExpandMore className="expand" />
+              )}
             </div>
-            <div className='coursesDisplayDiv'>
-            {userLoggedIn ? (
-              <div style={style} className="layoutNavbar-links" id="loginFirst">
-                Login to view courses!
-              </div>
-            ) : (
-              <div id="coursesContents" style={style}>
-                <CustomNavbarLink
-                  to="/courses/html"
+            <div className="coursesDisplayDiv">
+              {userLoggedIn ? (
+                <div
+                  style={style}
                   className="layoutNavbar-links"
-                  id="coursesLinks1"
+                  id="loginFirst"
                 >
-                  <h1 className="coursesContents">HTML</h1>
-                </CustomNavbarLink>
-                <CustomNavbarLink
-                  to="/courses/css"
-                  className="layoutNavbar-links"
-                  id="coursesLinks2"
-                >
-                  <h1 className="coursesContents">CSS</h1>
-                </CustomNavbarLink>
-                <CustomNavbarLink
-                  to="/courses/javascript"
-                  className="layoutNavbar-links"
-                  id="coursesLinks3"
-                >
-                  <h1 className="coursesContents">JAVASCRIPT</h1>
-                </CustomNavbarLink>
-              </div>
-            )}
+                  Login to view courses!
+                </div>
+              ) : (
+                <div id="coursesContents" style={style}>
+                  <CustomNavbarLink
+                    to="/courses/html"
+                    className="layoutNavbar-links"
+                    id="coursesLinks1"
+                  >
+                    <h1 className="coursesContents">HTML</h1>
+                  </CustomNavbarLink>
+                  <CustomNavbarLink
+                    to="/courses/css"
+                    className="layoutNavbar-links"
+                    id="coursesLinks2"
+                  >
+                    <h1 className="coursesContents">CSS</h1>
+                  </CustomNavbarLink>
+                  <CustomNavbarLink
+                    to="/courses/javascript"
+                    className="layoutNavbar-links"
+                    id="coursesLinks3"
+                  >
+                    <h1 className="coursesContents">JAVASCRIPT</h1>
+                  </CustomNavbarLink>
+                </div>
+              )}
             </div>
           </div>
           {userLoggedIn ? (
@@ -171,10 +184,87 @@ export const Navbar = (props) => {
           </Link>
         ) : (
           <Link>
-            <h1 className="displayControlled-navbar_text" onClick={handleSignout}>Sign out</h1>
+            <h1
+              className="displayControlled-navbar_text"
+              onClick={handleSignout}
+            >
+              Sign out
+            </h1>
           </Link>
         )}
       </div>
     </nav>
+  );
+};
+
+export const Sidebar = () => {
+  // useContext
+  const db = useContext(DbContext);
+  const dbRef = collection(db, "contribution");
+
+  // States
+  const [openSource, setOpenSource] = useState(false);
+  const [AllContributions, setAllContributions] = useState([]);
+
+  //Handle open-source
+  const handleOpenSource = () => {
+    setOpenSource((prev) => !prev);
+  };
+  // useEffect
+  useEffect(() => {
+    try {
+      async function getAllContributions() {
+        const contributions = await getDocs(dbRef);
+        setAllContributions(
+          contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        );
+      }
+      getAllContributions();
+    } catch (error) {
+      console.log(error);
+    }
+  }, [dbRef]);
+
+  const blogs = AllContributions.map((blog) => {
+    return (
+      <div key={blog.id}>
+        <h2>{blog.contributionTitle}</h2>
+      </div>
+    );
+  });
+  return (
+    <div className="sidebarWrapper">
+      <h2 className="sidebarTitle">Blogs:</h2>
+      <div className="sidebarBlog-title_div">
+        <h3>{blogs}</h3>
+        <div></div>
+      </div>
+      <div className="sidebarFooterDiv">
+        <div onClick={handleOpenSource}>
+          <h2 className="sidebarFooter-heading">Open source</h2>
+          <div className="sidebarFooter">
+            <div>
+              {openSource ? (
+                <ExpandLessRounded className="sidebarFooterExpand" />
+              ) : (
+                <ExpandCircleDownSharp className="sidebarFooterExpand" />
+              )}
+            </div>
+          </div>
+        </div>
+        <a
+          href="michado"
+          className="sidebarFooterBtn"
+          style={{
+            visibility: openSource ? "visible" : "hidden",
+            opacity: openSource ? "1" : "0",
+            transition: "all 0.5s",
+          }}
+        >
+          Github Link
+        </a>
+      </div>
+      <h2 className="sidebarFooterUser">Users:</h2>
+    </div>
   );
 };

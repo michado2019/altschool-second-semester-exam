@@ -1,0 +1,129 @@
+.contributeWrapper {
+  margin: 100px 10px;
+  height: 140vh;
+  width: 80%;
+}
+.contributeFlex-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.contributeGuide-div {
+  margin-left: 72px;
+  margin-bottom: 40px;
+}
+.contributeGuide-heading {
+  color: #555555;
+}
+.contributeGuideFlex {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.contributeGuideDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.contributeGuideDiv {
+  width: 100%;
+}
+.contributeFlex-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-left: 72px;
+  justify-content: space-between;
+}
+.contributeGoogleBtn {
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: rgb(73, 88, 73);
+  color: #ffffff;
+  font-weight: 700;
+}
+.contributeGoogleBtn:hover {
+  background-color: #ffffff;
+  color: rgb(73, 88, 73);
+  border: 1px solid rgb(73, 88, 73);
+  transition: all 0.3s;
+}
+.contributeFlex-3 {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 72px;
+  margin-top: 20px;
+}
+.contributeFlex-3 button {
+  border: 0;
+  font-size: 24px;
+  color: #555555;
+  margin-right: 20px;
+  background-color: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.contributeFlex-3 button:hover {
+  border: 1px solid rgb(167, 52, 52);
+  color: rgb(167, 52, 52);
+  background-color: #fff;
+}
+.contributeAuthorizedUser {
+  color: #555555;
+  font-size: 18px;
+  margin-left: 72px;
+}
+.contributeFormDiv {
+  margin-left: 72px;
+  width: 100%;
+}
+.contributeForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contributeFormInput {
+  width: 100%;
+  padding: 15px 15px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  outline: none;
+  color: #555555;
+}
+.contributeTextarea {
+  padding: 15px 15px;
+  border: 1px solid #d7d7d7;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  resize: none;
+  height: 300px;
+}
+.contributeLabel {
+  margin: 20px 0;
+  margin-bottom: -0.1px;
+  font-size: 20px;
+  font-weight: 550;
+  color: #555555;
+}
+#contributeSubmitBtn {
+  padding: 15px 0;
+  margin-top: 40px;
+  margin-left: 2%;
+  width: 100%;
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 700;
+  border: 0;
+  border-radius: 7px;
+  background-color: rgb(167, 52, 52);
+}
+#contributeSubmitBtn:hover {
+  background-color: rgb(189, 29, 29);
+  transition: all 0.3s;
+}

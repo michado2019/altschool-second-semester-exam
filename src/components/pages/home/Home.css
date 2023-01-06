@@ -1,23 +1,5 @@
 .homeWrapper {
-  margin: 50px 10px;
-}
-.homeWelcome-address{
-  font-size: 24px;
-  color: #737373;
-  padding: 20px 40px;
-  animation: welcome;
-  animation-duration: 1s;
-}
-@keyframes welcome {
-  0% {
-    opacity: 0;
-    margin-right: -1000px;
-    color: red;
-  }
-  100% {
-    opacity: 1;
-    margin-right: 0;
-  }
+  margin: 200px 10px;
 }
 .homeAbout-div {
   display: flex;
@@ -26,12 +8,10 @@
   animation-duration: 1s;
 }
 .homeAbout {
-  margin: 7% 15% 2% 5%;
+  margin: 11% 3% 2% 7%;
+  line-height: 32px;
   border-radius: 10px;
-  width: 60%;
-  height: auto;
-  box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
-  padding: 20px;
+  width: 100%;
 }
 .aboutDesign {
   width: 70px;
@@ -41,21 +21,79 @@
   float: right;
 }
 .About-title {
+  font-size: 42px;
   font-weight: 700;
   color: #737373;
   margin: 10px 0;
 }
 .About-details {
-  font-size: 20px;
+  font-size: 28px;
+  line-height: 32px;
   font-weight: 500;
   color: #555555;
   margin: 10px 0;
 }
+.codeMiller-span{
+  color: rgb(167, 52, 52);
+}
+.contributeLink{
+  text-decoration: none;
+  color: rgb(167, 52, 52);
+}
 .homeAbout-img {
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 60%;
   border-radius: 10px;
-  margin-top: 25%;
+  margin-top: 30%;
+}
+.appGuide{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 72px;
+}
+.appGuide-title{
+  color: #555555;
+  margin-bottom: -10px;
+  margin-top: -10px;
+}
+.appGuide-details{
+  font-size: 20px;
+}
+.homeBigBtnsDiv{
+ margin-left: 75px;
+}
+.homeBigBtns{
+  display: flex;
+}
+.homeBigBtn{
+  width: 200px;
+  padding: 15px 25px;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-right: 20px;
+  background-color: rgb(167, 52, 52);
+  color: #ffffff;
+  font-weight: 700;
+}
+.homeBigBtn:hover{
+  background-color: #ffffff;
+  color: rgb(167, 52, 52);
+  border: 1px solid rgb(167, 52, 52);
+  transition: all 0.3s;
+}
+#homeBigBtn{
+  background-color: #ffffff;
+  color: rgb(167, 52, 52);
+  border: 1px solid rgb(167, 52, 52);
+}
+#homeBigBtn:hover{
+  background-color: rgb(167, 52, 52);
+  transition: all 0.3s;
+  color: #ffffff;
+  border: 0;
 }
 .homeCourses {
   margin: 50px 20px;

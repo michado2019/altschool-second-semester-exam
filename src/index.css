@@ -11,7 +11,7 @@ body {
 .link {
   text-decoration: none;
 }
-#topRegion{
+#topRegion {
   position: fixed;
   top: 200px;
   right: 0;
@@ -20,7 +20,7 @@ body {
   margin: 0 20px;
   padding: 3px 7px;
 }
-#topRegion:hover{
+#topRegion:hover {
   background-color: #555555;
   color: #ffffff;
   cursor: pointer;

@@ -10,8 +10,8 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthContextProvider>
-      <App />
-    </AuthContextProvider>
+        <App />
+      </AuthContextProvider>
     </Router>
   </React.StrictMode>
 );

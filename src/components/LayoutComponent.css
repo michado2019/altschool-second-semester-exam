@@ -20,7 +20,7 @@
   padding-top: 25px;
   color: #7a7878;
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 900;
   margin-right: auto;
   margin-left: -30px;
 }
@@ -80,6 +80,7 @@
 }
 #blog {
   border: 0;
+  font-size: 16px;
 }
 #blog:hover {
   background-color: none;
@@ -99,13 +100,14 @@
   align-items: center;
   cursor: pointer;
 }
-.coursesDisplayDiv{
+.coursesDisplayDiv {
   margin-top: -70px;
 }
 #courses {
   color: #ffffff;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 900;
 }
 #loginFirst {
   width: 183px;
@@ -235,7 +237,7 @@
   .coursesContents {
     font-size: 10px;
   }
-  #loginFirst{
+  #loginFirst {
     margin-left: -61px;
   }
   #login {
@@ -275,7 +277,7 @@
   #login {
     padding: 2px 6px;
   }
-  #loginFirst{
+  #loginFirst {
     margin-left: -75px;
   }
   .menuIcon {
@@ -286,4 +288,79 @@
 .displayControlled-navbar_text {
   color: #737373;
   margin-top: 10px;
+}
+
+/*Sidebar*/
+.sidebarWrapper {
+  position: sticky;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 74vh;
+  min-width: 300px;
+  top: 150px;
+  left: 0;
+  background-color: #212121;
+  overflow-y: scroll;
+}
+.sidebarBlog-title_list {
+  color: #ffffff;
+  font-weight: 600;
+  list-style-type: none;
+  font-size: 14px;
+  text-align: center;
+  margin-left: -40px;
+}
+.sidebarBlog-title_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.sidebarBlog-title_div h3{
+  font-size: 20px;
+  color: #ffffff;
+}
+.sidebarTitle {
+  padding: 10px 0;
+  padding-left: 40px;
+  margin-bottom: 40px;
+  color: #ffffff;
+  font-size: 20px;
+  background-color: rgb(167, 52, 52);
+}
+.sidebarFooterDiv {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sidebarFooter-heading {
+  text-align: center;
+  margin-bottom: -2px;
+  cursor: pointer;
+}
+.sidebarFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebarFooterExpand {
+  cursor: pointer;
+}
+.sidebarFooterBtn {
+  background-color: #212121;
+  padding: 10px 40px;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: none;
+}
+.sidebarFooterUser {
+  background-color: #212121;
+  color: #ffffff;
+  padding: 10px 120px;
 }

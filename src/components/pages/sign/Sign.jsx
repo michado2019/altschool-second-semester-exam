@@ -6,7 +6,6 @@ import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export default function Sign() {
-
   //Navigation
   const navigate = useNavigate();
 
@@ -15,10 +14,10 @@ export default function Sign() {
 
   //Set states
   const [user, setUser] = useState({});
-  const {state, dispatch } = useUserContext;
+  const { state, dispatch } = useUserContext;
   const [userLoggedIn, setUserLoggedIn] = useState(state);
   const [currentUser, setCurrentUser] = useState({});
-  const [style, setStyle] = useState(false)
+  const [style, setStyle] = useState(false);
 
   //useForm data
   const { inputs, handleChange } = useForm({
@@ -42,15 +41,15 @@ export default function Sign() {
         user,
       };
     });
-    if(user){
-      setCurrentUser(user)
+    if (user) {
+      setCurrentUser(user);
     }
-    setStyle(prev => !prev)
+    setStyle((prev) => !prev);
     if (userLoggedIn) {
       dispatch("LOGIN");
     }
   };
-  const userStyle = {visibility: style ? 'visible' : 'hidden'}
+  const userStyle = { visibility: style ? "visible" : "hidden" };
   return (
     <div className="signWrapper">
       <Helmet>
@@ -60,7 +59,9 @@ export default function Sign() {
       </Helmet>
       <div className="currentUser" style={userStyle}>
         <h1 className="currentUser-name">{`Welcome, ${currentUser.firstName} ${currentUser.lastName}!`}</h1>
-        <button className="currentUser-btn" onClick={() => navigate('/')}>Click to go home and explore our courses</button>
+        <button className="currentUser-btn" onClick={() => navigate("/")}>
+          Click to go home and explore our courses
+        </button>
       </div>
       <form className="signForm" onSubmit={handleSubmit}>
         <label htmlFor="first_name" className="signForm-labels">
