@@ -24,7 +24,7 @@ export default function Blog() {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [dbRef]);
   return (
     <div className="blogWrapper">
       <Helmet>
@@ -37,8 +37,8 @@ export default function Blog() {
           {AllContributions.map((doc) => {
             return (
               <div key={doc.id}>
-                <h1>{doc.id}</h1>
-                <p>{doc.contributionTitle}</p>
+                <h2>{doc.contributionTitle}</h2>
+                <p>{doc.contributionText}</p>
               </div>
             );
           })}
