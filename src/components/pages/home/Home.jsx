@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { AuthContext } from "../../context/AuthContext";
 import AppGuide from '../../AppGuide'
 
 export default function Home() {
@@ -11,17 +10,6 @@ export default function Home() {
   // State 
   const [expandFAQs, setExpandFAQs] = useState(false);
   const [guide, setGuide] = useState(false);
-
-  //use context
-  const { state, dispatch } = useContext(AuthContext);
-  const [userLoggedIn, setUserLoggedIn] = useState(true);
-
-  useEffect(() => {
-    setUserLoggedIn((prev) => !prev);
-    if (state === null) {
-      dispatch("LOGOUT");
-    }
-  }, [dispatch, state]);
 
   //Handle the dropdown menu
   const handleFAQsExpand = (e) => {
@@ -63,48 +51,6 @@ export default function Home() {
         <button className="homeBigBtn">Get Started</button>
         </Link>
           <button className="homeBigBtn" id="homeBigBtn" onClick={handleGuide}>Guide</button>
-        </div>
-      </div>
-      <div
-        className="homeCourses"
-        style={{ display: userLoggedIn ? "block" : "none" }}
-      >
-        <h1 className="homeCourses-gen_title">Available Courses</h1>
-        <div className="homeCoursesFlex">
-          <Link to="/courses/html" className="link">
-            <div className="homeCourses-contents">
-              <div className="aboutDesign"></div>
-              <h3 className="homeCourses-titles">HTML</h3>
-              <p className="homeCourses-details">
-                HTML is the standard markup language for Web pages. With HTML
-                you can create your own Website. HTML is easy to learn - You
-                will enjoy it!
-              </p>
-            </div>
-          </Link>
-          <Link to="/courses/css" className="link">
-            <div className="homeCourses-contents">
-              <div className="aboutDesign"></div>
-              <h3 className="homeCourses-titles">CSS</h3>
-              <p className="homeCourses-details">
-                CSS is the language we use to style an HTML document. CSS
-                describes how HTML elements should be displayed. This tutorial
-                will teach you CSS from basic to advanced.
-              </p>
-            </div>
-          </Link>
-          <Link to="/courses/javascript" className="link">
-            <div className="homeCourses-contents" id="javascript">
-              <div className="aboutDesign"></div>
-              <h3 className="homeCourses-titles">JAVASCRIPT</h3>
-              <p className="homeCourses-details">
-                JavaScript is the world's most popular programming language.
-                JavaScript is the programming language of the Web. JavaScript is
-                easy to learn. This tutorial will teach you JavaScript from
-                basic to advanced.
-              </p>
-            </div>
-          </Link>
         </div>
       </div>
       <div className="homeFAQs">
@@ -170,58 +116,11 @@ export default function Home() {
       <div className="homeContacts">
         <h1 className="homeContacts-gen_title">Contact Us</h1>
         <div className="homeContacts-flex">
-          <div className="homeContacts-social_div">
-            <img
-              src="contact.webp"
-              alt="contactImg"
-              className="homeContacts-img"
-            />
-            <div className="footerSocial">
-              <div className="footerSocial-flex">
-                <a
-                  href="https://twitter.com/Mike_Adeshina"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src="twitter--icon.png"
-                    alt="img"
-                    className="footerSocial-img"
-                  />
-                </a>
-                <a
-                  href="https://github.com/michado2019"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src="github--icon.png"
-                    alt="img"
-                    className="footerSocial-img"
-                  />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/michado2019"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <img
-                    src="linked--in_icon.png"
-                    alt="img"
-                    className="footerSocial-img"
-                  />
-                </a>
-              </div>
-              <footer className="footerCopyright">
-                <p className="copyright"> &copy;Michado 2022</p>
-              </footer>
-            </div>
-          </div>
           <div className="homeContact-newsletter">
             <h3 className="homeContact-newsletter-title">
               Subscribe for our newsletter:
             </h3>
-            <form>
+            <form className="subForm">
               <input
                 type="email"
                 placeholder="Enter your email"

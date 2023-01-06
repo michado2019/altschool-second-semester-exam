@@ -227,7 +227,7 @@ export const Sidebar = () => {
 
   const blogs = AllContributions.map((blog) => {
     return (
-      <div key={blog.id}>
+      <div key={blog.id} className='sidebarBlog-title_lists'>
         <h2>{blog.contributionTitle}</h2>
       </div>
     );
@@ -236,8 +236,7 @@ export const Sidebar = () => {
     <div className="sidebarWrapper">
       <h2 className="sidebarTitle">Blogs:</h2>
       <div className="sidebarBlog-title_div">
-        <h3>{blogs}</h3>
-        <div></div>
+        <h4 className="sidebarBlog-title_list">{blogs}</h4>
       </div>
       <div className="sidebarFooterDiv">
         <div onClick={handleOpenSource}>

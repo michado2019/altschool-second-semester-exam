@@ -293,24 +293,34 @@
 /*Sidebar*/
 .sidebarWrapper {
   position: sticky;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
   height: 74vh;
   min-width: 300px;
-
   max-width: 300px;
   top: 150px;
   left: 0;
+  bottom: 0;
   background-color: #212121;
   overflow-y: scroll;
+}
+.sidebarBlog-title_lists{
+  border: 1px solid #ffffff;
+  margin: 20px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0 10px;
+}
+.sidebarBlog-title_lists:hover{
+  background-color: #fff;
+  color: #212121;
+  transition: all 0.3s;
 }
 .sidebarBlog-title_list {
   color: #ffffff;
   font-weight: 600;
   list-style-type: none;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
-  margin-left: -40px;
+  margin-top: -45px;
 }
 .sidebarBlog-title_div {
   display: flex;
@@ -319,10 +329,6 @@
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-}
-.sidebarBlog-title_div h3{
-  font-size: 20px;
-  color: #ffffff;
 }
 .sidebarTitle {
   padding: 10px 0;
