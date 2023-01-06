@@ -1,5 +1,5 @@
 .homeWrapper {
-  margin: 320px 10px;
+  margin: 35% 10px;
   height: 320vh;
   margin-bottom: 0;
 }
@@ -64,7 +64,7 @@
   font-size: 20px;
 }
 .homeBigBtnsDiv {
-  margin-left: 75px;
+  margin-left: 65px;
 }
 .homeBigBtns {
   display: flex;
@@ -81,9 +81,8 @@
   font-weight: 700;
 }
 .homeBigBtn:hover {
-  background-color: #ffffff;
+  background-color: #cccccc;
   color: rgb(167, 52, 52);
-  border: 1px solid rgb(167, 52, 52);
   transition: all 0.3s;
 }
 #homeBigBtn {

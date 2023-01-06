@@ -49,9 +49,8 @@
   font-weight: 700;
 }
 .contributeGoogleBtn:hover {
-  background-color: #ffffff;
+  background-color: #cccccc;
   color: rgb(73, 88, 73);
-  border: 1px solid rgb(73, 88, 73);
   transition: all 0.3s;
 }
 .contributeFlex-3 {
@@ -70,14 +69,17 @@
   border-radius: 4px;
 }
 .contributeFlex-3 button:hover {
-  border: 1px solid rgb(167, 52, 52);
   color: rgb(167, 52, 52);
-  background-color: #fff;
+  background-color: #cccccc;
 }
 .contributeAuthorizedUser {
   color: #555555;
   font-size: 18px;
   margin-left: 72px;
+}
+.displayName{
+  color: rgb(167, 52, 52);
+  font-style: italic;
 }
 .contributeFormDiv {
   margin-left: 72px;

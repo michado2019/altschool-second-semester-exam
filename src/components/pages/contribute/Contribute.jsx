@@ -2,15 +2,15 @@ import React, { useState, useContext, useEffect } from "react";
 import AppGuide from "../../AppGuide";
 import "./Contribute.css";
 import { Link } from "react-router-dom";
-import {addDoc, collection} from '@firebase/firestore'
+import { addDoc, collection } from "@firebase/firestore";
 import { DbContext } from "../../../App";
+import { auth, signOut } from "../../../firebase";
 
 function Contribute({ contribute, setContribute, user, handleAuth }) {
+  //useContext
+  const db = useContext(DbContext);
+  const dbRef = collection(db, "contribution");
 
-   //useContext
-   const db = useContext(DbContext)
-   const dbRef = collection(db, 'contribution')
-   
   // State
   const [guide, setGuide] = useState(false);
   const [showForm, setShowForm] = useState(false);
@@ -36,25 +36,31 @@ function Contribute({ contribute, setContribute, user, handleAuth }) {
     });
   };
 
-  const handleContributionSubmit = async(e) => {
+  const handleContributionSubmit = async (e) => {
     e.preventDefault();
-    if(contribute){
-     await addDoc(dbRef, contribute)
+    if (contribute) {
+      await addDoc(dbRef, contribute);
     }
+  };
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
   };
 
   // useEffect
   useEffect(() => {
-    function setContribution(){
+    function setContribution() {
       setContribute(form);
     }
-      setContribution()
-  }, [setContribute, form])
+    setContribution();
+  }, [setContribute, form]);
 
-  useEffect(() => {
-    if(user)
-    console.log(user)
-  }, [user])
   return (
     <div className="contributeWrapper">
       <div className="contributeFlex-1">
@@ -66,9 +72,23 @@ function Contribute({ contribute, setContribute, user, handleAuth }) {
             <button className="homeBigBtn" onClick={handleGuide}>
               Guide
             </button>
-            <div className="contributeFlex-2">
-              <button className="contributeGoogleBtn" onClick={handleAuth}>Sign with Google</button>
-            </div>
+            {user ? (
+              <div className="contributeFlex-2">
+                <button
+                  className="contributeGoogleBtn"
+                  id="contributeGoogleBtn"
+                  onClick={handleSignOut}
+                >
+                  Sign out
+                </button>
+              </div>
+            ) : (
+              <div className="contributeFlex-2">
+                <button className="contributeGoogleBtn" onClick={handleAuth}>
+                  Sign with Google
+                </button>
+              </div>
+            )}
           </div>
         </div>
         <div
@@ -78,16 +98,28 @@ function Contribute({ contribute, setContribute, user, handleAuth }) {
           <AppGuide guide={guide} />
         </div>
       </div>
+      {user ? (
+        <h2 className="contributeAuthorizedUser">
+          Hi, <span className="displayName">{user.displayName}</span>. You are
+          now authorized to contribute!
+        </h2>
+      ) : (
+        <h2 className="contributeAuthorizedUser">
+          Sign in with google to be able to make your contribution
+        </h2>
+      )}
       <div className="contributeGuideDiv">
         <div className="contributeFlex-3">
-          <button onClick={handleFormShow}>Contribute</button>
+          <button
+            onClick={handleFormShow}
+            style={{ display: user ? "block" : "none" }}
+          >
+            Contribute
+          </button>
           <Link to="/">
             <button>Home</button>
           </Link>
         </div>
-        <h2 className="contributeAuthorizedUser">
-          Hi {}. You are now authorized to contribute!
-        </h2>
         <div
           className="contributeFormDiv"
           style={{ display: showForm ? "block" : "none" }}
