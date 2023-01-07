@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import "./Sign.css";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -6,15 +6,10 @@ import useForm from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import googleImg from "../sign/assets/googleImg.png";
 import { UserContext } from "../../../App";
-import { auth, createUserWithEmailAndPassword } from "../../../firebase";
 
 export default function Sign({ handleAuth }) {
   // usecontext
   const userData = useContext(UserContext);
-
-  // State
-  const [notify, setNotify] = useState(false);
-  const [user, setUser] = useState(null)
 
   //Navigation
   const navigate = useNavigate();
@@ -27,39 +22,17 @@ export default function Sign({ handleAuth }) {
     password: "",
   });
 
-  const handleSignup = (e) => {
-
-    if (
-      inputs.password.length < 8 ||
-      inputs.password.includes(!Number && String)
-    ) {
-      setNotify(true);
-    } else {
-
-      const email = inputs.email
-      const password = inputs.password
-
-      //Email/Password auth
-      e.preventDefault();
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          setUser(user)
-        })
-        .catch((error) => {
-          const errorMessage = error.message;
-          console.log(errorMessage);
-        });
-    }
-  };
-
+  // Handlers
+  const handleSubmit = (e) => {
+   e.preventDefault()
+  }
   // useEffect
   useEffect(() => {
-    if (userData || user) {
+    if (userData) {
       navigate("/");
     }
-  }, [navigate, userData, user]);
-
+  }, [navigate, userData]);
+  
   return (
     <div className="signWrapper">
       <Helmet>
@@ -68,7 +41,7 @@ export default function Sign({ handleAuth }) {
         <link rel="canonical" href="/sign" />
       </Helmet>
       <div>
-        <form className="signForm">
+        <form className="signForm" onSubmit={handleSubmit}>
           <label htmlFor="first_name" className="signForm-labels">
             First name
           </label>
@@ -119,21 +92,13 @@ export default function Sign({ handleAuth }) {
             onChange={handleChange}
             required
           />
-          <div
-            className="notify"
-            style={{ display: notify ? "none" : "block" }}
-          >
-            <small>
-              (Password must include string, number and must not be less than 8)
-            </small>
-          </div>
-          <button className="signInput" id="btn__submit" onClick={handleSignup}>
+          <button className="signInput" id="btn__submit">
             Sign up
           </button>
         </form>
         <div className="signGoogle">
           <p>Sign in here:</p>
-          <Link to='/signIn' className='signLink'>
+          <Link className='signLink'>
             Sign in
           </Link>
           <img

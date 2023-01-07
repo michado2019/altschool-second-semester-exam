@@ -1,6 +1,7 @@
 .signWrapper {
   padding: 50px 15%;
   margin-top: 30%;
+  height: 100vh;
 }
 .currentUser {
   display: flex;
@@ -84,6 +85,7 @@
   width: 100%;
   padding: 12px 20px;
   margin-top: 32px;
+  margin-left: 15px;
   cursor: pointer;
 }
 #btn__submit:hover {
