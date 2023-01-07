@@ -8,6 +8,7 @@ import googleImg from "../sign/assets/googleImg.png";
 import { UserContext } from "../../../App";
 
 export default function Sign({ handleAuth }) {
+
   // usecontext
   const userData = useContext(UserContext);
 
@@ -26,13 +27,13 @@ export default function Sign({ handleAuth }) {
   const handleSubmit = (e) => {
    e.preventDefault()
   }
+
   // useEffect
   useEffect(() => {
     if (userData) {
       navigate("/");
     }
   }, [navigate, userData]);
-  
   return (
     <div className="signWrapper">
       <Helmet>

@@ -15,12 +15,12 @@ import {
   onAuthStateChanged,
 } from "./firebase";
 
-// create context
-export const DbContext = createContext();
-export const UserContext = createContext();
+ // create context
+ export const DbContext = createContext();
+ export const UserContext = createContext();
 
-// ErrorBoundary
-const ErrorBoundaryComponent = ({ error }) => {
+ // ErrorBoundary
+ const ErrorBoundaryComponent = ({ error }) => {
   return (
     <div role="alert" className="errorBoundary">
       <h1 className="errorBoundary-title">Something went wrong!</h1>
@@ -59,7 +59,6 @@ function App() {
   };
 
   // Auth
-
   const handleAuth = () => {
     signInWithPopup(auth, provider)
       .then((result) => {})
@@ -77,19 +76,15 @@ function App() {
         console.log(errorMessage);
       });
   }, []);
-  
+
   useEffect(() => {
     //Get signedIn user
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        if(user){
+        if (user) {
           const { displayName, photoURL, email } = user;
-        setUser({ displayName, photoURL, email });
-        }
-  console.log(user)
+          setUser({ displayName, photoURL, email });
+        console.log(user);
       } else {
-        // User is signed out
-        // ...
         console.log("user signed out");
         setUser(null);
       }

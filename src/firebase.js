@@ -4,12 +4,12 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, getRedirectResult, signOu
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyD4NXAURf4GjUUu5JCH6S-ORh02mho29pg",
-    authDomain: "fir-firebase-89ee2.firebaseapp.com",
-    projectId: "fir-firebase-89ee2",
-    storageBucket: "fir-firebase-89ee2.appspot.com",
-    messagingSenderId: "799571971414",
-    appId: "1:799571971414:web:1fae7d8f7bca910fbbdaf7"
+  apiKey: "AIzaSyB_UwqV9U3_lO4aRtoktPmP937i_oW_CmQ",
+  authDomain: "altschool-new.firebaseapp.com",
+  projectId: "altschool-new",
+  storageBucket: "altschool-new.appspot.com",
+  messagingSenderId: "487060055117",
+  appId: "1:487060055117:web:de2ad7ffe64f4bcf9ce804"
   };
 
 // Initialize Firebase
