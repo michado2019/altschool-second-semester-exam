@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 import { addDoc, collection } from "@firebase/firestore";
 import { DbContext } from "../../../App";
 import { auth, signOut } from "../../../firebase";
+import { UserContext } from "../../../App";
 
-function Contribute({ contribute, setContribute, user, handleAuth }) {
+function Contribute({ contribute, setContribute, handleAuth }) {
+
   //useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
+  const user = useContext(UserContext)
 
   // State
   const [guide, setGuide] = useState(false);

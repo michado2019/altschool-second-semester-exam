@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../pages/home/Home";
 import Contribute from "../pages/contribute/Contribute";
@@ -12,70 +12,11 @@ import HtmlExample from "../pages/courses/html/htmlTopics/HtmlExample";
 import HtmlBasic from "../pages/courses/html/htmlTopics/HtmlBasic";
 import HtmlBasicExample from "../pages/courses/html/htmlTopics/HtmlBasicExample";
 import ErrorPage from "../pages/errorPage/ErrorPage";
-import {
-  provider,
-  auth,
-  signInWithPopup,
-  getRedirectResult,
-  onAuthStateChanged,
-} from "../../firebase";
 
-export default function AppRouter() {
+export default function AppRouter({handleAuth}) {
+
   // State
   const [contribute, setContribute] = useState("");
-
-  //Set user state
-  const [user, setUser] = useState(null);
-
-  const handleAuth = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {})
-      .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
-  };
-  useEffect(() => {
-    getRedirectResult(auth)
-      .then((result) => {})
-      .catch((error) => {
-        // Handle Errors here.
-        const errorMessage = error.message;
-        console.log(errorMessage);
-      });
-  }, []);
-  useEffect(() => {
-    //Get signedIn user
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // ...
-        setUser(user);
-      } else {
-        // User is signed out
-        // ...
-        console.log("user signed out");
-        setUser(null);
-      }
-    });
-  }, []);
-  useEffect(() => {
-
-    //Get signedIn user
-    onAuthStateChanged(auth, (user) => {
-
-      if (user) {
-        // ...
-        const { displayName } = user;
-        setUser({ displayName });
-      } else {
-        // User is signed out
-        // ...
-        console.log("user signed out");
-        setUser(null);
-      }
-    });
-  }, []);
-
   return (
     <div className="appRouter">
       <Routes>
@@ -86,13 +27,12 @@ export default function AppRouter() {
             <Contribute
               contribute={contribute}
               setContribute={setContribute}
-              user={user}
-              handleAuth={handleAuth}
+              handleAuth = {handleAuth}
             />
           }
         />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/sign" element={<Sign />} />
+        <Route path="/sign" element={<Sign handleAuth = {handleAuth} />} />
         <Route path="/courses/html" element={<Html />} />
         <Route path="/htmlIntro" element={<HtmlIntro />}>
           <Route path="/htmlIntro/example" element={<HtmlExample />} />

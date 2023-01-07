@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { UserContext } from "../App";
 import "./LayoutComponent.css";
 import appLogo from "../images/logoImg.png";
 import { collection, getDocs } from "@firebase/firestore";
@@ -17,8 +18,10 @@ import {
   ExpandCircleDownSharp,
   ExpandLessRounded,
 } from "@mui/icons-material";
+import { auth } from "../firebase";
 
 export const Navbar = (props) => {
+  const user = useContext(UserContext);
 
   //Set state for the dropdown menu
   const [expandCourses, setExpandCourses] = useState(false);
@@ -43,11 +46,12 @@ export const Navbar = (props) => {
   //Handle signout
   const handleSignout = (e) => {
     e.preventDefault();
+    auth.signOut()
   };
 
   const CustomNavbarLink = ({ to, ...props }) => {
     let activeStyle = {
-      color: "red",
+      color: "rgb(167, 52, 52)",
       transition: "all 0.3s",
     };
     return (
@@ -99,13 +103,7 @@ export const Navbar = (props) => {
               )}
             </div>
             <div className="coursesDisplayDiv">
-                <div
-                  style={style}
-                  className="layoutNavbar-links"
-                  id="loginFirst"
-                >
-                  Login to view courses!
-                </div>
+              {user ? (
                 <div id="coursesContents" style={style}>
                   <CustomNavbarLink
                     to="/courses/html"
@@ -129,14 +127,26 @@ export const Navbar = (props) => {
                     <h1 className="coursesContents">JAVASCRIPT</h1>
                   </CustomNavbarLink>
                 </div>
+              ) : (
+                <div
+                  style={style}
+                  className="layoutNavbar-links"
+                  id="loginFirst"
+                >
+                  Login to view courses!
+                </div>
+              )}
             </div>
           </div>
-            <CustomNavbarLink to="/sign" className="layoutNavbar-links">
-              <Login id="login" />
-            </CustomNavbarLink>
+          {user ? (
             <CustomNavbarLink className="layoutNavbar-links" id="logout">
               <Logout onClick={handleSignout} />
             </CustomNavbarLink>
+          ) : (
+            <CustomNavbarLink to="/sign" className="layoutNavbar-links">
+              <Login id="login" />
+            </CustomNavbarLink>
+          )}
           {menuContentsDisplay ? (
             <CancelOutlined
               className="menuIcon"
@@ -160,17 +170,14 @@ export const Navbar = (props) => {
         <Link to="blog" className="link">
           <h1 className="displayControlled-navbar_text">Blog</h1>
         </Link>
-          <Link to="sign" className="link">
-            <h1 className="displayControlled-navbar_text">Sign in</h1>
-          </Link>
-          <Link>
-            <h1
-              className="displayControlled-navbar_text"
-              onClick={handleSignout}
-            >
-              Sign out
-            </h1>
-          </Link>
+        <Link to="sign" className="link">
+          <h1 className="displayControlled-navbar_text">Sign in</h1>
+        </Link>
+        <Link>
+          <h1 className="displayControlled-navbar_text" onClick={handleSignout}>
+            Sign out
+          </h1>
+        </Link>
       </div>
     </nav>
   );
@@ -206,7 +213,7 @@ export const Sidebar = () => {
 
   const blogs = AllContributions.map((blog) => {
     return (
-      <div key={blog.id} className='sidebarBlog-title_lists'>
+      <div key={blog.id} className="sidebarBlog-title_lists">
         <h2>{blog.contributionTitle}</h2>
       </div>
     );

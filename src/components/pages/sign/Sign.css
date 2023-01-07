@@ -1,6 +1,6 @@
 .signWrapper {
   padding: 50px 15%;
-  margin-top: 20%;
+  margin-top: 30%;
 }
 .currentUser {
   display: flex;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 .currentUser-btn:hover {
-  background-color: #1570ef;;
+  background-color: #1570ef;
   color: #ffffff;
   transition: all 0.3s;
 }
@@ -86,4 +86,20 @@
   background-color: #1570ef;
   transition: all 0.3s;
   color: #ffffff;
+}
+.signGoogle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+}
+.signGoogle p {
+  font-size: 14px;
+  color: #344054;
+}
+.signGoogleImg {
+  width: 70px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
 }

@@ -16,6 +16,7 @@
 }
 .contributeGuide-heading {
   color: #555555;
+  font-size: 18px;
 }
 .contributeGuideFlex {
   display: flex;
@@ -40,7 +41,7 @@
   justify-content: space-between;
 }
 .contributeGoogleBtn {
-  padding: 15px 20px;
+  padding: 10px 20px;
   border: 0;
   border-radius: 7px;
   cursor: pointer;
