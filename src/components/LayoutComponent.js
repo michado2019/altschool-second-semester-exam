@@ -19,6 +19,7 @@ import {
   ExpandLessRounded,
 } from "@mui/icons-material";
 import { auth } from "../firebase";
+import CodingSchools from "./pages/courses/CodingSchools";
 
 export const Navbar = (props) => {
   const user = useContext(UserContext);
@@ -105,27 +106,7 @@ export const Navbar = (props) => {
             <div className="coursesDisplayDiv">
               {user ? (
                 <div id="coursesContents" style={style}>
-                  <CustomNavbarLink
-                    to="/courses/html"
-                    className="layoutNavbar-links"
-                    id="coursesLinks1"
-                  >
-                    <h1 className="coursesContents">HTML</h1>
-                  </CustomNavbarLink>
-                  <CustomNavbarLink
-                    to="/courses/css"
-                    className="layoutNavbar-links"
-                    id="coursesLinks2"
-                  >
-                    <h1 className="coursesContents">CSS</h1>
-                  </CustomNavbarLink>
-                  <CustomNavbarLink
-                    to="/courses/javascript"
-                    className="layoutNavbar-links"
-                    id="coursesLinks3"
-                  >
-                    <h1 className="coursesContents">JAVASCRIPT</h1>
-                  </CustomNavbarLink>
+                  <CodingSchools />
                 </div>
               ) : (
                 <div

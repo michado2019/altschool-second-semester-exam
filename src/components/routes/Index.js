@@ -4,13 +4,7 @@ import Home from "../pages/home/Home";
 import Contribute from "../pages/contribute/Contribute";
 import Blog from "../pages/blog/Blog";
 import Sign from "../pages/sign/Sign";
-import Html from "../pages/courses/html/Html";
-import Css from "../pages/courses/css/Css";
-import JavaScript from "../pages/courses/javascript/JavaScript";
-import HtmlIntro from "../pages/courses/html/htmlTopics/HtmlIntro";
-import HtmlExample from "../pages/courses/html/htmlTopics/HtmlExample";
-import HtmlBasic from "../pages/courses/html/htmlTopics/HtmlBasic";
-import HtmlBasicExample from "../pages/courses/html/htmlTopics/HtmlBasicExample";
+import CodingSchools from "../pages/courses/CodingSchools";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 
 export default function AppRouter({handleAuth}) {
@@ -33,15 +27,7 @@ export default function AppRouter({handleAuth}) {
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/sign" element={<Sign handleAuth = {handleAuth} />} />
-        <Route path="/courses/html" element={<Html />} />
-        <Route path="/htmlIntro" element={<HtmlIntro />}>
-          <Route path="/htmlIntro/example" element={<HtmlExample />} />
-        </Route>
-        <Route exact path="/htmlBasic" element={<HtmlBasic />}>
-          <Route path="/htmlBasic/example" element={<HtmlBasicExample />} />
-        </Route>
-        <Route path="/courses/css" element={<Css />} />
-        <Route path="/courses/javascript" element={<JavaScript />} />
+        <Route path="/courses" element={<CodingSchools />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
