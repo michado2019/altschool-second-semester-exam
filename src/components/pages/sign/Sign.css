@@ -1,5 +1,7 @@
 .signWrapper {
   padding: 50px 15%;
+  margin-top: 30%;
+  height: 100vh;
 }
 .currentUser {
   display: flex;
@@ -23,7 +25,7 @@
   cursor: pointer;
 }
 .currentUser-btn:hover {
-  background-color: #1570ef;;
+  background-color: #1570ef;
   color: #ffffff;
   transition: all 0.3s;
 }
@@ -47,6 +49,10 @@
   width: 100%;
   margin-bottom: 10px;
   padding: 4px 12px;
+}
+.notify small{
+  color: #1570ef;
+  margin-top: -10px;
 }
 #message {
   background: #ffffff;
@@ -79,10 +85,33 @@
   width: 100%;
   padding: 12px 20px;
   margin-top: 32px;
+  margin-left: 15px;
   cursor: pointer;
 }
 #btn__submit:hover {
   background-color: #1570ef;
   transition: all 0.3s;
   color: #ffffff;
+}
+.signGoogle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -10px;
+}
+.signGoogle p {
+  font-size: 14px;
+  color: #344054;
+}
+.signGoogleImg {
+  width: 70px;
+  height: 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.signLink{
+  color: #1570ef;
+  text-decoration: none;  cursor: pointer;
+  font-weight: 700;
+  margin-left: 10px;
 }

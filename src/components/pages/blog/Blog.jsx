@@ -36,9 +36,9 @@ export default function Blog() {
         <div>
           {AllContributions.map((doc) => {
             return (
-              <div key={doc.id}>
-                <h2>{doc.contributionTitle}</h2>
-                <p>{doc.contributionText}</p>
+              <div key={doc.id} className='blogDiv'>
+                <h2 className="blogTitle">{doc.contributionTitle}</h2>
+                <p className="blogText">{doc.contributionText}</p>
               </div>
             );
           })}

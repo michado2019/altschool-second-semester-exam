@@ -4,8 +4,15 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: fit-content;
 }
 .blogContributeWrapper {
   margin: 0 20%;
   margin-top: 30%;
+}
+.blogDiv{
+  width: 100%;
+}
+.blogTitle{
+  background-color: rgb(167, 52, 52);
 }

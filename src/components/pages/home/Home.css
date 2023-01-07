@@ -1,5 +1,5 @@
 .homeWrapper {
-  margin: 320px 10px;
+  margin: 40% 10px;
   height: 320vh;
   margin-bottom: 0;
 }
@@ -64,14 +64,14 @@
   font-size: 20px;
 }
 .homeBigBtnsDiv {
-  margin-left: 75px;
+  margin-left: 65px;
 }
 .homeBigBtns {
   display: flex;
 }
 .homeBigBtn {
   width: 200px;
-  padding: 15px 25px;
+  padding: 10px 25px;
   border: 0;
   border-radius: 7px;
   cursor: pointer;
@@ -81,9 +81,8 @@
   font-weight: 700;
 }
 .homeBigBtn:hover {
-  background-color: #ffffff;
+  background-color: #cccccc;
   color: rgb(167, 52, 52);
-  border: 1px solid rgb(167, 52, 52);
   transition: all 0.3s;
 }
 #homeBigBtn {
@@ -195,7 +194,7 @@
 }
 .homeContact-sub_btn {
   border-radius: 5px;
-  background-color: red;
+  background-color: rgb(167, 52, 52);
   border: 0;
   padding: 20px 10px;
   color: #ffffff;
@@ -203,6 +202,9 @@
   cursor: pointer;
   width: 70%;
   margin-top: 10px;
+}
+.homeContact-sub_btn:hover {
+  background-color: red;
 }
 .textarea {
   width: 70%;
@@ -222,7 +224,7 @@
 }
 .homeContact-comment_btn {
   border-radius: 5px;
-  background-color: red;
+  background-color: rgb(167, 52, 52);
   border: 0;
   margin-top: 10px;
   padding: 15px 10px;
@@ -230,6 +232,9 @@
   color: #ffffff;
   font-weight: 700;
   cursor: pointer;
+}
+.homeContact-comment_btn:hover {
+  background-color: red;
 }
 .homeContacts-img2 {
   width: 50px;
