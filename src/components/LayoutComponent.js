@@ -10,7 +10,6 @@ import {
   LightMode,
   HomeOutlined,
   Login,
-  Logout,
   ExpandMore,
   ExpandLess,
   MenuOutlined,
@@ -24,9 +23,10 @@ import CodingSchools from "./pages/courses/CodingSchools";
 export const Navbar = (props) => {
   const user = useContext(UserContext);
 
-  //Set state for the dropdown menu
+  // States
   const [expandCourses, setExpandCourses] = useState(false);
   const [menuContentsDisplay, setMenuContentsDisplay] = useState(false);
+  const [userDisplay, setUserDisplay] = useState(false)
 
   //Handle the dropdown menu
   const handleCoursesExpand = (e) => {
@@ -50,6 +50,12 @@ export const Navbar = (props) => {
     auth.signOut()
   };
 
+  const handleUser = () => {
+    setUserDisplay(prev => !prev)
+  }
+  const handleUserHid = () => {
+    setUserDisplay(false)
+  }
   const CustomNavbarLink = ({ to, ...props }) => {
     let activeStyle = {
       color: "rgb(167, 52, 52)",
@@ -120,14 +126,17 @@ export const Navbar = (props) => {
             </div>
           </div>
           {user ? (
-            <CustomNavbarLink className="layoutNavbar-links" id="logout">
-              <Logout onClick={handleSignout} />
-            </CustomNavbarLink>
+            <img src={user.photoURL} alt='img' className="layoutNavbar-links" id="userImg" onMouseOver={handleUser} />
           ) : (
             <CustomNavbarLink to="/sign" className="layoutNavbar-links">
               <Login id="login" />
             </CustomNavbarLink>
           )}
+          <div className="layoutNavbar-user_div" style={{display: userDisplay ? 'block' : 'none'}} onMouseLeave={handleUserHid}>
+              <p>Signed in as:</p>
+              <p>{user?.email}</p>
+              <h2 onClick={handleSignout}>Sign out</h2>
+          </div>
           {menuContentsDisplay ? (
             <CancelOutlined
               className="menuIcon"

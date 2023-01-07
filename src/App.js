@@ -77,27 +77,16 @@ function App() {
         console.log(errorMessage);
       });
   }, []);
+  
   useEffect(() => {
     //Get signedIn user
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        // ...
-        setUser(user);
-      } else {
-        // User is signed out
-        // ...
-        console.log("user signed out");
-        setUser(null);
-      }
-    });
-  }, []);
-  useEffect(() => {
-    //Get signedIn user
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // ...
-        const { displayName } = user;
-        setUser({ displayName });
+        if(user){
+          const { displayName, photoURL, email } = user;
+        setUser({ displayName, photoURL, email });
+        }
+  console.log(user)
       } else {
         // User is signed out
         // ...
