@@ -49,6 +49,10 @@
   margin-bottom: 10px;
   padding: 4px 12px;
 }
+.notify small{
+  color: #1570ef;
+  margin-top: -10px;
+}
 #message {
   background: #ffffff;
   border: 1px solid #d0d5dd;
@@ -102,4 +106,10 @@
   height: 50px;
   border-radius: 5px;
   cursor: pointer;
+}
+.signLink{
+  color: #1570ef;
+  text-decoration: none;  cursor: pointer;
+  font-weight: 700;
+  margin-left: 10px;
 }

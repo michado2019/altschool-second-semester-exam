@@ -6,6 +6,7 @@ import Blog from "../pages/blog/Blog";
 import Sign from "../pages/sign/Sign";
 import CodingSchools from "../pages/courses/CodingSchools";
 import ErrorPage from "../pages/errorPage/ErrorPage";
+import SignIn from "../pages/signIn/SignIn";
 
 export default function AppRouter({handleAuth}) {
 
@@ -27,6 +28,7 @@ export default function AppRouter({handleAuth}) {
         />
         <Route path="/blog" element={<Blog />} />
         <Route path="/sign" element={<Sign handleAuth = {handleAuth} />} />
+        <Route path="/signIn" element={<SignIn  />} />
         <Route path="/courses" element={<CodingSchools />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

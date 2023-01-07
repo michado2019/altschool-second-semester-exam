@@ -1,0 +1,33 @@
+.signIn-wrapper{
+  padding: 50px 15%;
+  margin-top: 40%;
+}
+.signIn-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.signLabel{
+    color: #555555;
+}
+.signIn-form_input{
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+}
+.signIn-form_btn{
+    width: 100%;
+    background-color: #598fc6;
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 10px 0;
+    border: 0;
+    margin-left: 10px;
+}
+.signIn-form_btn:hover{
+    background-color: #1069c1;
+}

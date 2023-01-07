@@ -200,11 +200,14 @@
 .layoutNavbar-user_div p{
   margin-bottom: -10px;
   font-weight: 600;
+  text-align: center;
   color: #212121;
 }
 .layoutNavbar-user_div h2{
   cursor: pointer;
-  color: #f2f2f2;
+  font-size: 20px;
+  margin-top: 40px;
+  text-align: center;
   color: rgb(252, 0, 0);
   font-weight: 900;
 }
