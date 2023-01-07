@@ -41,6 +41,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
 
   const handleContributionSubmit = async (e) => {
     e.preventDefault();
+    e.stopPropagation()
     if (contribute) {
       await addDoc(dbRef, contribute);
     }

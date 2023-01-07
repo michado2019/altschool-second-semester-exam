@@ -6,13 +6,13 @@ import AppRouter from "./components/routes/Index";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
 import { ArrowUpward } from "@mui/icons-material";
-import { db } from "./firebase";
 import {
   auth,
   provider,
   signInWithPopup,
   getRedirectResult,
   onAuthStateChanged,
+  db
 } from "./firebase";
 
  // create context
