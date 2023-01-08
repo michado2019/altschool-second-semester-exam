@@ -2,13 +2,14 @@ import React, { useEffect, useState, useContext } from "react";
 import "./Blog.css";
 import { Helmet } from "react-helmet-async";
 import { collection, getDocs } from "@firebase/firestore";
-import { DbContext } from "../../../App";
+import { DbContext, UserContext } from "../../../App";
+import { NoBlog } from "../../Loading";
 
 export default function Blog() {
   //useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
-
+  const user = useContext(UserContext)
   // State
   const [AllContributions, setAllContributions] = useState([]);
 
@@ -33,7 +34,9 @@ export default function Blog() {
         <link rel="canonical" href="/blog" />
       </Helmet>
       <div className="blogContributeWrapper">
-        <div>
+        {
+          user ?
+          <div>
           {AllContributions.map((doc) => {
             return (
               <div key={doc.id} className='blogDiv'>
@@ -42,7 +45,9 @@ export default function Blog() {
               </div>
             );
           })}
-        </div>
+        </div> :
+        <NoBlog />
+        }
       </div>
     </div>
   );
