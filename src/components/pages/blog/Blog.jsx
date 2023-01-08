@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./Blog.css";
 import { Helmet } from "react-helmet-async";
 import { collection, getDocs } from "@firebase/firestore";
@@ -13,21 +13,19 @@ export default function Blog() {
   // State
   const [AllContributions, setAllContributions] = useState([]);
 
-  useEffect(() => {
-    try {
+    // useEffect
+    useEffect(() => {
       async function getAllContributions() {
         const contributions = await getDocs(dbRef);
+        if(user)
         setAllContributions(
           contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
         );
       }
       getAllContributions();
-    } catch (error) {
-      console.log(error);
-    }
-  }, [dbRef]);
+    })
   return (
-    <div className="blogWrapper">
+    <div className="blogWrapper" style={{height: user ? 'fit-content' : '130vh'}}>
       <Helmet>
         <title>Blogpage</title>
         <meta name="description" content="Welcome to my Blogpage" />

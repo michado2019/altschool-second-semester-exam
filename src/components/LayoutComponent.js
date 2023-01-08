@@ -26,7 +26,7 @@ export const Navbar = (props) => {
   // States
   const [expandCourses, setExpandCourses] = useState(false);
   const [menuContentsDisplay, setMenuContentsDisplay] = useState(false);
-  const [userDisplay, setUserDisplay] = useState(false)
+  const [userDisplay, setUserDisplay] = useState(false);
 
   //Handle the dropdown menu
   const handleCoursesExpand = (e) => {
@@ -47,15 +47,15 @@ export const Navbar = (props) => {
   //Handle signout
   const handleSignout = (e) => {
     e.preventDefault();
-    auth.signOut()
+    auth.signOut();
   };
 
   const handleUser = () => {
-    setUserDisplay(prev => !prev)
-  }
+    setUserDisplay((prev) => !prev);
+  };
   const handleUserHid = () => {
-    setUserDisplay(false)
-  }
+    setUserDisplay(false);
+  };
   const CustomNavbarLink = ({ to, ...props }) => {
     let activeStyle = {
       color: "rgb(167, 52, 52)",
@@ -126,16 +126,26 @@ export const Navbar = (props) => {
             </div>
           </div>
           {user ? (
-            <img src={user.photoURL} alt='img' className="layoutNavbar-links" id="userImg" onMouseOver={handleUser} />
+            <img
+              src={user.photoURL}
+              alt="img"
+              className="layoutNavbar-links"
+              id="userImg"
+              onMouseOver={handleUser}
+            />
           ) : (
             <CustomNavbarLink to="/sign" className="layoutNavbar-links">
               <Login id="login" />
             </CustomNavbarLink>
           )}
-          <div className="layoutNavbar-user_div" style={{display: userDisplay ? 'block' : 'none'}} onMouseLeave={handleUserHid}>
-              <p>Signed in as:</p>
-              <p>{user?.email}</p>
-              <h2 onClick={handleSignout}>Sign out</h2>
+          <div
+            className="layoutNavbar-user_div"
+            style={{ display: userDisplay ? "block" : "none" }}
+            onMouseLeave={handleUserHid}
+          >
+            <p>Signed in as:</p>
+            <p>{user?.email}</p>
+            <h2 onClick={handleSignout}>Sign out</h2>
           </div>
           {menuContentsDisplay ? (
             <CancelOutlined
@@ -186,21 +196,17 @@ export const Sidebar = () => {
   const handleOpenSource = () => {
     setOpenSource((prev) => !prev);
   };
+
+  async function getAllContributions() {
+    const contributions = await getDocs(dbRef);
+    setAllContributions(
+      contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    );
+  }
   // useEffect
   useEffect(() => {
-    try {
-      async function getAllContributions() {
-        const contributions = await getDocs(dbRef);
-        setAllContributions(
-          contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        );
-      }
-      getAllContributions();
-    } catch (error) {
-      console.log(error);
-    }
-  }, [dbRef]);
-
+    getAllContributions();
+  })
   const blogs = AllContributions.map((blog) => {
     return (
       <div key={blog.id} className="sidebarBlog-title_lists">

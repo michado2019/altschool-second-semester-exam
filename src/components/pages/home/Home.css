@@ -1,7 +1,6 @@
 .homeWrapper {
   margin: 40% 10px;
   height: 320vh;
-  margin-bottom: 0;
 }
 .homeAbout-div {
   display: flex;
@@ -10,17 +9,10 @@
   animation-duration: 1s;
 }
 .homeAbout {
-  margin: 100px 3% 2% 7%;
+  margin: 120px 70px 50px 70px;
   line-height: 32px;
   border-radius: 10px;
   width: 100%;
-}
-.aboutDesign {
-  width: 70px;
-  height: 70px;
-  background-color: red;
-  border-radius: 50%;
-  float: right;
 }
 .About-title {
   font-size: 32px;
@@ -43,10 +35,11 @@
   color: rgb(167, 52, 52);
 }
 .homeAbout-img {
-  width: 80%;
-  height: 60%;
+  width: 250px;
+  height: 250px;
   border-radius: 10px;
-  margin-top: 30%;
+  margin-top: 90px;
+  margin-right: -70px;
 }
 .appGuide {
   display: flex;
@@ -96,13 +89,20 @@
   color: #ffffff;
   border: 0;
 }
+.faqContactDiv{
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
 .homeFAQs {
   box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
   border-radius: 10px;
-  padding: 20px;
-  width: 80%;
-  margin-left: 8%;
+  width: 100%;
+  margin-left: 70px;
   margin-top: 100px;
+  padding: 20px 0;
 }
 .homeFAQs-gen_title {
   margin-left: 40px;
@@ -145,14 +145,15 @@
 }
 .homeContacts {
   margin: 0 auto;
+  margin-left: 70px;
+  margin-top: 100px;
   height: 590px;
   border-radius: 10px;
-  width: 85%;
+  width: 100%;
   box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
 }
 .homeContacts-gen_title {
   text-align: center;
-  margin: 100px 0;
   margin-bottom: 0;
   color: #737373;
   padding-top: 30px;
@@ -219,7 +220,7 @@
   width: 100%;
   border: 1px solid #d7d7d7;
   outline: none;
-  height: 150px;
+  height: 140px;
   border-radius: 5px;
 }
 .homeContact-comment_btn {
@@ -244,69 +245,35 @@
 }
 
 /*Media Queries*/
-@media screen and (max-width: 940px) {
-  .homeAbout {
-    margin: 7% 15% 2% 15%;
+@media screen and (max-width: 1200px) {
+  .homeAbout-div{
+    margin-top: -10px;
+    width: 120%;
   }
   .homeAbout-img {
     display: none;
   }
-  .homeCourses {
-    margin: 50px 10px;
-  }
-  .homeCourses-contents {
-    width: 200px;
-    height: 250px;
-  }
-  .homeCourses-details {
-    font-size: 16px;
-  }
-  .footerSocial {
-    width: 90%;
+  .homeFAQs-img{
+    display: none;
   }
 }
-@media screen and (max-width: 768px) {
-  .homeCoursesFlex {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+@media screen and (max-width: 940px) {
+  .homeWrapper{
+    height: fit-content;
   }
-  #javascript {
-    width: 250px;
-    margin-left: 50%;
-    margin-top: 50px;
+  .homeAbout-img {
+    display: none;
   }
-  .homeCourses-contents {
-    width: 250px;
-    height: 300px;
+  .faqContactDiv{
+    width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
   .homeWrapper {
     max-width: 100%;
   }
-  .homeCoursesFlex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .homeCourses-gen_title {
-    font-size: 22px;
-  }
-  #javascript {
-    width: 80%;
-    margin-left: 5%;
-  }
-  .homeCourses-contents {
-    width: 80%;
-    margin: 20px 5%;
-    height: 300px;
-  }
-  .homeCourses-details {
-    font-size: 20px;
-  }
-  .homeFAQs {
-    margin-left: 5%;
+  .faqContactDiv{
+    margin-left: -10%
   }
   .homeFAQs-img {
     display: none;
@@ -317,13 +284,6 @@
   .homeContacts-img {
     display: none;
   }
-  .footerSocial {
-    width: 100%;
-    position: sticky;
-    left: 0;
-    top: 100%;
-    margin-bottom: -50px;
-  }
   .homeContact-newsletter {
     width: 88%;
     margin: 0 0;
@@ -331,40 +291,19 @@
   }
 }
 @media screen and (max-width: 480px) {
-  .homeAbout {
-    width: 90%;
-    margin: 7% 0 2% 0;
+  .faqContactDiv{
+    width: 140%;
+    margin: -105px;
+  }
+  .homeAbout-div {
+    width:140%;
   }
 }
-@media screen and (max-width: 375px) {
-  .homeAbout {
-    width: 100%;
-    margin: 0 0 0 0;
-  }
-  #javascript {
-    width: 98%;
-    margin-left: -6%;
-  }
-  .homeFAQs {
-    width: 91%;
-    margin-left: -3%;
-  }
-  .homeCourses-contents {
-    width: 96%;
-    height: 320px;
-    margin-left: -5%;
-  }
-  .homeCourses-details {
+@media screen and (max-width: 350px) {
+  .About-details{
     font-size: 20px;
   }
-  .homeContact-newsletter {
-    width: 101%;
-    margin: 0 0;
-    margin-left: 0;
-  }
-}
-@media screen and (max-width: 320px) {
-  .homeContact-newsletter {
-    margin: 0 0;
+  .homeBigBtn{
+    width: 170px;
   }
 }

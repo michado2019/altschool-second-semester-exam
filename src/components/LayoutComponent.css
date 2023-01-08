@@ -342,8 +342,8 @@
 .sidebarWrapper {
   position: sticky;
   height: 74vh;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 350px;
+  max-width: 350px;
   top: 150px;
   left: 0;
   bottom: 0;
@@ -419,4 +419,9 @@
   background-color: #212121;
   color: #ffffff;
   padding: 10px 120px;
+}
+@media screen and (max-width: 940px) {
+  .sidebarWrapper {
+    display: none;
+  }
 }
