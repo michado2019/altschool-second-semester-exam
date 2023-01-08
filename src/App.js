@@ -83,7 +83,6 @@ function App() {
         if (user) {
           const { displayName, photoURL, email } = user;
           setUser({ displayName, photoURL, email });
-        console.log(user);
       } else {
         console.log("user signed out");
         setUser(null);
