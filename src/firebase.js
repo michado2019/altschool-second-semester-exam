@@ -4,12 +4,12 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, getRedirectResult, signOu
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAH3-Sr6YsrY4-H_p9YJsHR4ap_WuIhUGQ",
-  authDomain: "miller1-b839e.firebaseapp.com",
-  projectId: "miller1-b839e",
-  storageBucket: "miller1-b839e.appspot.com",
-  messagingSenderId: "60634516530",
-  appId: "1:60634516530:web:7d1f0075d8f9d255fb002b"
+  apiKey: "AIzaSyDw9k7ddM6_ODyemDSiPyMbz8HgMMSuPoA",
+  authDomain: "miller3-16963.firebaseapp.com",
+  projectId: "miller3-16963",
+  storageBucket: "miller3-16963.appspot.com",
+  messagingSenderId: "753431329535",
+  appId: "1:753431329535:web:fbdcf9f1f6b793b0726aca"
 };
 
 // Initialize Firebase

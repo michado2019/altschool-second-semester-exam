@@ -1,6 +1,6 @@
 .signWrapper {
   padding: 50px 15%;
-  margin-top: 30%;
+  margin-top: 300px;
   height: 100vh;
 }
 .currentUser {
@@ -114,4 +114,21 @@
   text-decoration: none;  cursor: pointer;
   font-weight: 700;
   margin-left: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .signWrapper {
+    margin-top: 250px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .signWrapper {
+    width: 100%;
+    margin-top: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+    .signWrapper {
+      margin-top: 120px;
+      margin-left: -20px;
+    }
 }

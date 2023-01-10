@@ -31,7 +31,8 @@
   color: #ffffff;
   padding: 0 10px;
 }
-.layoutNavbar-links {
+.layoutNavbar-links,
+.s-layoutNavbar-links {
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
@@ -42,7 +43,8 @@
   color: #ffffff;
   cursor: pointer;
 }
-.layoutNavbar-links:hover {
+.layoutNavbar-links:hover,
+.s-layoutNavbar-links:hover {
   animation-name: links;
   animation-duration: 1s;
 }
@@ -62,7 +64,10 @@
 }
 #coursesLinks1,
 #coursesLinks2,
-#coursesLinks3 {
+#coursesLinks3,
+#s-coursesLinks1,
+#s-coursesLinks2,
+#s-coursesLinks3 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,47 +80,51 @@
   padding: 0 55px;
   border-color: #ffffff;
 }
-#home {
+#home,
+#s-home {
   padding: 0 7px;
 }
-#blog {
+#blog,
+#s-blog {
   border: 0;
   font-size: 16px;
 }
-#blog:hover {
+#blog:hover,
+#s-blog:hover {
   background-color: none;
 }
 #lightMode,
-#darkMode {
+#darkMode #s-lightMode,
+#s-darkMode {
   padding: 5px 5px;
 }
-.coursesDiv {
+.coursesDiv .s-coursesDiv {
   display: flex;
   color: #ffffff;
   flex-direction: column;
-  margin-top: -60px;
 }
-.expand {
+.coursesDisplayDiv,
+.s-coursesDisplayDiv {
+  margin-top: -30px;
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
-.coursesDisplayDiv {
-  margin-top: -70px;
-}
-#courses {
+#courses,
+#s-courses {
   color: #ffffff;
   cursor: pointer;
   font-size: 22px;
   font-weight: 900;
+  margin-top: -13px;
 }
-#loginFirst {
+#loginFirst,
+#s-loginFirst {
   width: 183px;
   height: 40px;
   border-radius: 10px;
   padding: 5px;
-  margin-top: 70px;
-  margin-left: -10px;
+  margin-top: 90px;
+  margin-left: -40px;
   position: absolute;
   background-color: #737373;
   color: #ffffff;
@@ -128,11 +137,12 @@
   animation-duration: 0.1s;
   cursor: none;
 }
-#coursesContents {
+#coursesContents,
+#s-coursesContents {
   display: flex;
   flex-direction: column;
   position: absolute;
-  margin-top: 70px;
+  margin-top: 234px;
   margin-left: -40px;
   background-color: #f2f2f2;
   border-color: red;
@@ -151,26 +161,31 @@
     opacity: 0;
   }
   100% {
-    margin-top: 70px;
+    margin-top: 170px;
     opacity: 1;
   }
 }
-.coursesContents {
+.coursesContents,
+#s-coursesContents {
   font-size: 12px;
   color: #737373;
   font-weight: 900;
 }
 #login,
-#logout {
-  padding: 3px 10px;
+#s-login #logout,
+#s-logout {
+  width: 35px;
+  padding: 2px;
 }
-#userImg{
+#userImg,
+#s-userImg {
   width: 40px;
   height: 40px;
   cursor: pointer;
   border-radius: 50%;
 }
-.layoutNavbar-user_div{
+.layoutNavbar-user_div,
+.s-layoutNavbar-user_div {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -197,13 +212,15 @@
     opacity: 1;
   }
 }
-.layoutNavbar-user_div p{
+.layoutNavbar-user_div p,
+.s-layoutNavbar-user_div p {
   margin-bottom: -10px;
   font-weight: 600;
   text-align: center;
   color: #212121;
 }
-.layoutNavbar-user_div h2{
+.layoutNavbar-user_div h2,
+.s-layoutNavbar-user_div h2 {
   cursor: pointer;
   font-size: 20px;
   margin-top: 40px;
@@ -211,51 +228,95 @@
   color: rgb(252, 0, 0);
   font-weight: 900;
 }
+.s-navbar {
+  display: none;
+  color: #f2f2f2;
+  position: absolute;
+  right: 0;
+  padding: 15px 15px;
+  background-color: #f3f3f3;
+  width: 150px;
+  border-radius: 7px;
+}
+#login1{
+  display: none;
+}
 .menuIcon {
   display: none !important;
-}
-.displayControlled-navbar {
-  visibility: hidden;
 }
 
 /*Media Queries*/
 @media screen and (max-width: 940px) {
-  .layoutNavbar-links {
+  .layoutNavbar-user_div {
     display: none;
   }
-  #loginFirst {
-    margin-left: -35px;
+  .coursesDiv {
+    display: none;
   }
   .menuIcon {
+    width: 40px !important;
+    height: 40px !important;
+    display: block !important;
+    color: rgb(167, 52, 52) !important;
+  }
+  .s-navbar {
+    display: block;
+    background-color: #f3f3f3;
+    width: 280px;
+    height: 400px;
+    padding: 10px 10px;
+    padding-right: 0;
+    margin-top: 10px;
+  }
+  .s-navbarFlex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .s-navbar h1,
+  #s-darkMode,
+  #s-lightMode {
+    color: #212121 !important;
+  }
+  #s-darkMode, #s-lightMode {
+    width: 10px !important;
+    height: 10px !important;
+    margin-bottom: 15px;
+  }
+  #s-blog {
+    font-size: 16px;
+  }
+  #s-courses {
+    font-size: 18px;
+    margin: 5px 0;
+    margin-bottom: 20px;
+    margin-left: 5px;
+  }
+  #s-userImg {
+    width: 30px;
+    height: 30px;
+    margin-top: 40px;
+  }
+  .s-coursesDisplayDiv{
+    margin-left: 10px;
+    padding-top: 40px;
+  }
+  .s-layoutNavbar-user_div {
+    margin-top: 340px;
+  }
+  #s-loginFirst {
+    margin-left: -35px;
+  }
+  #s-login{
+    color: #212121 !important;
+  }
+  .s-menuIcon {
     display: block !important;
     width: 50px !important;
     height: 50px !important;
     color: red;
     cursor: pointer;
-  }
-  .displayControlled-navbar {
-    margin-top: -30px;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
-    animation-name: menu;
-    animation-duration: 0.1s;
-    visibility: visible;
-  }
-  @keyframes menu {
-    0% {
-      margin-top: -200px;
-    }
-    100% {
-      margin-top: -30px;
-    }
-  }
-  .displayControlled-navbar_text {
-    font-size: 18px;
-    margin: 0 20px;
-    text-decoration: none;
-    color: #212121;
-    font-weight: 900;
   }
 }
 @media screen and (max-width: 480px) {
@@ -288,20 +349,9 @@
   #loginFirst {
     margin-left: -61px;
   }
-  #login {
-    padding: 2px 8px;
-  }
   .menuIcon {
     width: 35px !important;
     height: 35px !important;
-  }
-  .displayControlled-navbar {
-    margin-top: -10px;
-    padding: 10px 15px;
-  }
-  .displayControlled-navbar_text {
-    font-size: 16px;
-    margin: 0 15px;
   }
 }
 @media screen and (max-width: 319px) {
@@ -322,9 +372,6 @@
   .coursesContents {
     font-size: 8px;
   }
-  #login {
-    padding: 2px 6px;
-  }
   #loginFirst {
     margin-left: -75px;
   }
@@ -333,9 +380,8 @@
     height: 30px !important;
   }
 }
-.displayControlled-navbar_text {
-  color: #737373;
-  margin-top: 10px;
+.smallScreen-nav_div {
+  display: none;
 }
 
 /*Sidebar*/
@@ -350,14 +396,14 @@
   background-color: #212121;
   overflow-y: scroll;
 }
-.sidebarBlog-title_lists{
+.sidebarBlog-title_lists {
   border: 1px solid #ffffff;
   margin: 20px 10px;
   border-radius: 4px;
   cursor: pointer;
   padding: 0 10px;
 }
-.sidebarBlog-title_lists:hover{
+.sidebarBlog-title_lists:hover {
   background-color: #fff;
   color: #212121;
   transition: all 0.3s;
@@ -370,6 +416,9 @@
   text-align: center;
   margin-top: -45px;
 }
+.arrowRight {
+  display: none !important;
+}
 .sidebarBlog-title_div {
   display: flex;
   flex-direction: column;
@@ -377,6 +426,15 @@
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
+}
+.arrowRight {
+  background-color: #555555 !important;
+  color: #f2f2f2;
+  cursor: pointer;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  margin-left: 290px;
 }
 .sidebarTitle {
   padding: 10px 0;
@@ -415,13 +473,37 @@
   font-weight: 700;
   text-decoration: none;
 }
+.appUser{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .sidebarFooterUser {
   background-color: #212121;
   color: #ffffff;
-  padding: 10px 120px;
 }
 @media screen and (max-width: 940px) {
-  .sidebarWrapper {
+  #blog,
+  #course,
+  .expand,
+  #darkMode,
+  #lightMode,
+  #userImg {
     display: none;
+  }
+  .sidebarWrapper {
+    position: fixed;
+  }
+  .sidebarBlog-title_list {
+    width: 80%;
+  }
+  .arrowRight {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 370px) {
+  .arrowRight {
+    margin-left: 260px;
   }
 }

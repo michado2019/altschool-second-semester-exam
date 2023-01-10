@@ -10,8 +10,6 @@ import {
   LightMode,
   HomeOutlined,
   Login,
-  ExpandMore,
-  ExpandLess,
   MenuOutlined,
   CancelOutlined,
   ExpandCircleDownSharp,
@@ -25,8 +23,8 @@ export const Navbar = (props) => {
 
   // States
   const [expandCourses, setExpandCourses] = useState(false);
-  const [menuContentsDisplay, setMenuContentsDisplay] = useState(false);
   const [userDisplay, setUserDisplay] = useState(false);
+  const [menu, setMenu] = useState(false);
 
   //Handle the dropdown menu
   const handleCoursesExpand = (e) => {
@@ -37,12 +35,9 @@ export const Navbar = (props) => {
     e.preventDefault();
     setExpandCourses(false);
   };
-
-  //Handle menu display
-  const handleDisplayMenuContents = (e) => {
-    e.preventDefault();
-    setMenuContentsDisplay((prev) => !prev);
-  };
+  const handleMenu = () => {
+    setMenu(prev => !prev)
+  }
 
   //Handle signout
   const handleSignout = (e) => {
@@ -103,11 +98,6 @@ export const Navbar = (props) => {
               <h1 to="/courses" id="courses">
                 Courses
               </h1>
-              {expandCourses ? (
-                <ExpandLess className="expand" />
-              ) : (
-                <ExpandMore className="expand" />
-              )}
             </div>
             <div className="coursesDisplayDiv">
               {user ? (
@@ -125,19 +115,21 @@ export const Navbar = (props) => {
               )}
             </div>
           </div>
-          {user ? (
-            <img
-              src={user.photoURL}
-              alt="img"
-              className="layoutNavbar-links"
-              id="userImg"
-              onMouseOver={handleUser}
-            />
-          ) : (
-            <CustomNavbarLink to="/sign" className="layoutNavbar-links">
-              <Login id="login" />
-            </CustomNavbarLink>
-          )}
+          <div>
+            {user ? (
+              <img
+                src={user.photoURL}
+                alt="img"
+                className="layoutNavbar-links"
+                id="userImg"
+                onMouseOver={handleUser}
+              />
+            ) : (
+              <CustomNavbarLink to="/sign" className="layoutNavbar-links" id="login1">
+                <Login id="login" />
+              </CustomNavbarLink>
+            )}
+          </div>
           <div
             className="layoutNavbar-user_div"
             style={{ display: userDisplay ? "block" : "none" }}
@@ -147,46 +139,92 @@ export const Navbar = (props) => {
             <p>{user?.email}</p>
             <h2 onClick={handleSignout}>Sign out</h2>
           </div>
-          {menuContentsDisplay ? (
+          {menu ? (
             <CancelOutlined
               className="menuIcon"
-              onClick={handleDisplayMenuContents}
+              onClick={handleMenu}
             />
           ) : (
             <MenuOutlined
               className="menuIcon"
-              onClick={handleDisplayMenuContents}
+              onClick={handleMenu}
             />
           )}
         </li>
+        <div className="s-navbar" style={{display: menu ? 'block' : 'none'}}>
+          <div className="s-navbarFlex">
+          <CustomNavbarLink
+            to="/blog"
+            className="s-layoutNavbar-links"
+            id="s-blog"
+          >
+            <h1>Blogs</h1>
+          </CustomNavbarLink>
+          <div onClick={props.toggle}>
+            {props.darkMode ? (
+              <LightMode className="s-layoutNavbar-links" id="s-lightMode" />
+            ) : (
+              <DarkMode className="s-layoutNavbar-links" id="s-darkMode" />
+            )}
+          </div>
+          <div className="s-coursesDiv">
+            <div className="s-expand" onMouseOver={handleCoursesExpand} onClick={handleCoursesClose}>
+              <h1 to="/courses" id="s-courses">
+                Courses
+              </h1>
+            </div>
+            <div className="s-coursesDisplayDiv" onMouseLeave={handleCoursesClose}>
+              {user ? (
+                <div id="s-coursesContents" style={style}>
+                  <CodingSchools />
+                </div>
+              ) : (
+                <div
+                  style={style}
+                  className="s-layoutNavbar-links"
+                  id="s-loginFirst"
+                >
+                  Login to view courses!
+                </div>
+              )}
+            </div>
+          </div>
+          <div>
+            {user ? (
+              <img
+                src={user.photoURL}
+                alt="img"
+                className="s-layoutNavbar-links"
+                id="s-userImg"
+                onMouseOver={handleUser}
+              />
+            ) : (
+              <CustomNavbarLink to="/sign" className="s-layoutNavbar-links" >
+                <Login id="s-login" />
+              </CustomNavbarLink>
+            )}
+          </div>
+          <div
+            className="s-layoutNavbar-user_div"
+            style={{ display: userDisplay ? "block" : "none" }}
+            onMouseLeave={handleUserHid}
+          >
+            <p>Signed in as:</p>
+            <p>{user?.email}</p>
+            <h2 onClick={handleSignout}>Sign out</h2>
+          </div>
+          </div>
+        </div>
       </ul>
-      <div
-        className="displayControlled-navbar"
-        style={{ display: menuContentsDisplay ? "flex" : "none" }}
-      >
-        <Link to="/" className="link">
-          <h1 className="displayControlled-navbar_text">Home</h1>
-        </Link>
-        <Link to="blog" className="link">
-          <h1 className="displayControlled-navbar_text">Blog</h1>
-        </Link>
-        <Link to="sign" className="link">
-          <h1 className="displayControlled-navbar_text">Sign in</h1>
-        </Link>
-        <Link>
-          <h1 className="displayControlled-navbar_text" onClick={handleSignout}>
-            Sign out
-          </h1>
-        </Link>
-      </div>
     </nav>
   );
 };
 
-export const Sidebar = () => {
+export const Sidebar = ({sidebar}) => {
   // useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
+  const user = useContext(UserContext);
 
   // States
   const [openSource, setOpenSource] = useState(false);
@@ -196,17 +234,19 @@ export const Sidebar = () => {
   const handleOpenSource = () => {
     setOpenSource((prev) => !prev);
   };
-
+  
   async function getAllContributions() {
     const contributions = await getDocs(dbRef);
     setAllContributions(
       contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
     );
   }
+
   // useEffect
   useEffect(() => {
     getAllContributions();
-  })
+  });
+
   const blogs = AllContributions.map((blog) => {
     return (
       <div key={blog.id} className="sidebarBlog-title_lists">
@@ -215,10 +255,19 @@ export const Sidebar = () => {
     );
   });
   return (
-    <div className="sidebarWrapper">
+    <div
+      className="sidebarWrapper"
+      style={{
+        marginLeft: sidebar ? "-350px" : "0",
+        transition: "all 0.3s",
+        position: sidebar ? "fixed" : "",
+      }}
+    >
       <h2 className="sidebarTitle">Blogs:</h2>
+      <div className="sidebarHid">
+          <h4 className="sidebarBlog-title_list">{blogs}</h4>
+        </div>
       <div className="sidebarBlog-title_div">
-        <h4 className="sidebarBlog-title_list">{blogs}</h4>
       </div>
       <div className="sidebarFooterDiv">
         <div onClick={handleOpenSource}>
@@ -245,7 +294,9 @@ export const Sidebar = () => {
           Github Link
         </a>
       </div>
-      <h2 className="sidebarFooterUser">Users:</h2>
+      <div className="appUser">
+      <h2 className="sidebarFooterUser">User: {user?.displayName}</h2>
+      </div>
     </div>
   );
 };

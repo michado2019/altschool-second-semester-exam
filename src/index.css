@@ -20,8 +20,25 @@ body {
   margin: 0 20px;
   padding: 3px 7px;
 }
+#circleArrow{
+  display: none;
+  position: fixed;
+  border-radius: 50%;
+  top: 125px;
+  left: 5px;
+}
+.arrows{
+  width: 40px !important;
+  height: 40px !important;
+  color: #555555 !important;
+}
 #topRegion:hover {
   background-color: #555555;
   color: #ffffff;
   cursor: pointer;
+}
+@media screen and (max-width: 940px) {
+  #circleArrow{
+    display: block;
+  }
 }
