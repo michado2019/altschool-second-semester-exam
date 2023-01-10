@@ -439,7 +439,7 @@
 .sidebarTitle {
   padding: 10px 0;
   padding-left: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   color: #ffffff;
   font-size: 20px;
   background-color: rgb(167, 52, 52);
@@ -503,6 +503,13 @@
   }
 }
 @media screen and (max-width: 370px) {
+  .sidebarWrapper {
+    max-width: 300px;
+    min-width: 300px;
+  }
+  .sidebarBlog-title_list {
+    width: 100%;
+  }
   .arrowRight {
     margin-left: 260px;
   }

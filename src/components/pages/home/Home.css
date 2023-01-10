@@ -292,6 +292,9 @@
   }
 }
 @media screen and (max-width: 480px) {
+  .homeWrapper {
+    margin: 55% 10px;
+  }
   .faqContactDiv{
     width: 140%;
     margin: -105px;

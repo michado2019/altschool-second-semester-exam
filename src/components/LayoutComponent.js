@@ -36,8 +36,8 @@ export const Navbar = (props) => {
     setExpandCourses(false);
   };
   const handleMenu = () => {
-    setMenu(prev => !prev)
-  }
+    setMenu((prev) => !prev);
+  };
 
   //Handle signout
   const handleSignout = (e) => {
@@ -125,7 +125,11 @@ export const Navbar = (props) => {
                 onMouseOver={handleUser}
               />
             ) : (
-              <CustomNavbarLink to="/sign" className="layoutNavbar-links" id="login1">
+              <CustomNavbarLink
+                to="/sign"
+                className="layoutNavbar-links"
+                id="login1"
+              >
                 <Login id="login" />
               </CustomNavbarLink>
             )}
@@ -140,79 +144,80 @@ export const Navbar = (props) => {
             <h2 onClick={handleSignout}>Sign out</h2>
           </div>
           {menu ? (
-            <CancelOutlined
-              className="menuIcon"
-              onClick={handleMenu}
-            />
+            <CancelOutlined className="menuIcon" onClick={handleMenu} />
           ) : (
-            <MenuOutlined
-              className="menuIcon"
-              onClick={handleMenu}
-            />
+            <MenuOutlined className="menuIcon" onClick={handleMenu} />
           )}
         </li>
-        <div className="s-navbar" style={{display: menu ? 'block' : 'none'}}>
+        <div className="s-navbar" style={{ display: menu ? "block" : "none" }}>
           <div className="s-navbarFlex">
-          <CustomNavbarLink
-            to="/blog"
-            className="s-layoutNavbar-links"
-            id="s-blog"
-          >
-            <h1>Blogs</h1>
-          </CustomNavbarLink>
-          <div onClick={props.toggle}>
-            {props.darkMode ? (
-              <LightMode className="s-layoutNavbar-links" id="s-lightMode" />
-            ) : (
-              <DarkMode className="s-layoutNavbar-links" id="s-darkMode" />
-            )}
-          </div>
-          <div className="s-coursesDiv">
-            <div className="s-expand" onMouseOver={handleCoursesExpand} onClick={handleCoursesClose}>
-              <h1 to="/courses" id="s-courses">
-                Courses
-              </h1>
-            </div>
-            <div className="s-coursesDisplayDiv" onMouseLeave={handleCoursesClose}>
-              {user ? (
-                <div id="s-coursesContents" style={style}>
-                  <CodingSchools />
-                </div>
+            <CustomNavbarLink
+              to="/blog"
+              className="s-layoutNavbar-links"
+              id="s-blog"
+            >
+              <h1>Blogs</h1>
+            </CustomNavbarLink>
+            <div onClick={props.toggle}>
+              {props.darkMode ? (
+                <LightMode className="s-layoutNavbar-links" id="s-lightMode" />
               ) : (
-                <div
-                  style={style}
-                  className="s-layoutNavbar-links"
-                  id="s-loginFirst"
-                >
-                  Login to view courses!
-                </div>
+                <DarkMode className="s-layoutNavbar-links" id="s-darkMode" />
               )}
             </div>
-          </div>
-          <div>
-            {user ? (
-              <img
-                src={user.photoURL}
-                alt="img"
-                className="s-layoutNavbar-links"
-                id="s-userImg"
-                onMouseOver={handleUser}
-              />
-            ) : (
-              <CustomNavbarLink to="/sign" className="s-layoutNavbar-links" >
-                <Login id="s-login" />
-              </CustomNavbarLink>
-            )}
-          </div>
-          <div
-            className="s-layoutNavbar-user_div"
-            style={{ display: userDisplay ? "block" : "none" }}
-            onMouseLeave={handleUserHid}
-          >
-            <p>Signed in as:</p>
-            <p>{user?.email}</p>
-            <h2 onClick={handleSignout}>Sign out</h2>
-          </div>
+            <div className="s-coursesDiv">
+              <div
+                className="s-expand"
+                onMouseOver={handleCoursesExpand}
+                onClick={handleCoursesClose}
+              >
+                <h1 to="/courses" id="s-courses">
+                  Courses
+                </h1>
+              </div>
+              <div
+                className="s-coursesDisplayDiv"
+                onMouseLeave={handleCoursesClose}
+              >
+                {user ? (
+                  <div id="s-coursesContents" style={style}>
+                    <CodingSchools />
+                  </div>
+                ) : (
+                  <div
+                    style={style}
+                    className="s-layoutNavbar-links"
+                    id="s-loginFirst"
+                  >
+                    Login to view courses!
+                  </div>
+                )}
+              </div>
+            </div>
+            <div>
+              {user ? (
+                <img
+                  src={user.photoURL}
+                  alt="img"
+                  className="s-layoutNavbar-links"
+                  id="s-userImg"
+                  onMouseOver={handleUser}
+                />
+              ) : (
+                <CustomNavbarLink to="/sign" className="s-layoutNavbar-links">
+                  <Login id="s-login" />
+                </CustomNavbarLink>
+              )}
+            </div>
+            <div
+              className="s-layoutNavbar-user_div"
+              style={{ display: userDisplay ? "block" : "none" }}
+              onMouseLeave={handleUserHid}
+            >
+              <p>Signed in as:</p>
+              <p>{user?.email}</p>
+              <h2 onClick={handleSignout}>Sign out</h2>
+            </div>
           </div>
         </div>
       </ul>
@@ -220,7 +225,7 @@ export const Navbar = (props) => {
   );
 };
 
-export const Sidebar = ({sidebar}) => {
+export const Sidebar = ({ sidebar }) => {
   // useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
@@ -234,7 +239,7 @@ export const Sidebar = ({sidebar}) => {
   const handleOpenSource = () => {
     setOpenSource((prev) => !prev);
   };
-  
+
   async function getAllContributions() {
     const contributions = await getDocs(dbRef);
     setAllContributions(
@@ -265,10 +270,9 @@ export const Sidebar = ({sidebar}) => {
     >
       <h2 className="sidebarTitle">Blogs:</h2>
       <div className="sidebarHid">
-          <h4 className="sidebarBlog-title_list">{blogs}</h4>
-        </div>
-      <div className="sidebarBlog-title_div">
+        <h4 className="sidebarBlog-title_list">{blogs}</h4>
       </div>
+      <div className="sidebarBlog-title_div"></div>
       <div className="sidebarFooterDiv">
         <div onClick={handleOpenSource}>
           <h2 className="sidebarFooter-heading">Open source</h2>
@@ -295,7 +299,11 @@ export const Sidebar = ({sidebar}) => {
         </a>
       </div>
       <div className="appUser">
-      <h2 className="sidebarFooterUser">User: {user?.displayName}</h2>
+        {user ? (
+          <h2 className="sidebarFooterUser">User: {user?.displayName}</h2>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

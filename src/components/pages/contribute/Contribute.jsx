@@ -8,11 +8,10 @@ import { auth, signOut } from "../../../firebase";
 import { UserContext } from "../../../App";
 
 function Contribute({ contribute, setContribute, handleAuth }) {
-
   //useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
-  const user = useContext(UserContext)
+  const user = useContext(UserContext);
 
   // State
   const [guide, setGuide] = useState(false);
@@ -20,6 +19,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
   const [form, setForm] = useState({
     contributionTitle: "",
     contributionText: "",
+    contributor: "",
     email: "",
   });
 
@@ -41,7 +41,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
 
   const handleContributionSubmit = async (e) => {
     e.preventDefault();
-    e.stopPropagation()
+    e.stopPropagation();
     if (contribute) {
       await addDoc(dbRef, contribute);
     }
@@ -64,7 +64,6 @@ function Contribute({ contribute, setContribute, handleAuth }) {
     }
     setContribution();
   }, [setContribute, form]);
-
   return (
     <div className="contributeWrapper">
       <div className="contributeFlex-1">
@@ -126,7 +125,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
         </div>
         <div
           className="contributeFormDiv"
-          style={{ display: showForm ? "block" : "none" }}
+          style={{ display: showForm ? "none" : "block" }}
         >
           <form className="contributeForm" onSubmit={handleContributionSubmit}>
             <label className="contributeLabel">Title:</label>
@@ -137,6 +136,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
               onChange={handleChange}
               name="contributionTitle"
               value={form.contributionTitle}
+              required
             />
             <label className="contributeLabel">Contribution:</label>
             <textarea
@@ -145,6 +145,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
               onChange={handleChange}
               name="contributionText"
               value={form.contributionText}
+              required
             />
             <label className="contributeLabel">Email:</label>
             <input
@@ -154,6 +155,17 @@ function Contribute({ contribute, setContribute, handleAuth }) {
               onChange={handleChange}
               name="email"
               value={form.email}
+              required
+            />
+            <label className="contributeLabel">Contributor's name:</label>
+            <input
+              type="text"
+              placeholder="Enter contributor's name"
+              className="contributeFormInput"
+              onChange={handleChange}
+              name="contributor"
+              value={form.contributor}
+              required
             />
             <button id="contributeSubmitBtn" className="contributeFormInput">
               Contribute
