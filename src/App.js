@@ -5,22 +5,26 @@ import { Sidebar } from "./components/LayoutComponent";
 import AppRouter from "./components/routes/Index";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
-import { ArrowUpward, ArrowCircleLeft, ArrowCircleRight } from "@mui/icons-material";
+import {
+  ArrowUpward,
+  ArrowCircleLeft,
+  ArrowCircleRight,
+} from "@mui/icons-material";
 import {
   auth,
   provider,
   signInWithPopup,
   getRedirectResult,
   onAuthStateChanged,
-  db
+  db,
 } from "./firebase";
 
- // create context
- export const DbContext = createContext();
- export const UserContext = createContext();
+// create context
+export const DbContext = createContext();
+export const UserContext = createContext();
 
- // ErrorBoundary
- const ErrorBoundaryComponent = ({ error }) => {
+// ErrorBoundary
+const ErrorBoundaryComponent = ({ error }) => {
   return (
     <div role="alert" className="errorBoundary">
       <h1 className="errorBoundary-title">Something went wrong!</h1>
@@ -86,9 +90,9 @@ function App() {
   useEffect(() => {
     //Get signedIn user
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-          const { displayName, photoURL, email } = user;
-          setUser({ displayName, photoURL, email });
+      if (user) {
+        const { displayName, photoURL, email } = user;
+        setUser({ displayName, photoURL, email });
       } else {
         console.log("user signed out");
         setUser(null);
@@ -113,18 +117,18 @@ function App() {
       >
         <div id="topRegion-locator"></div>
         <div id="circleArrow">
-          {
-            sidebar ?
-            <ArrowCircleRight   className="arrows" onClick={handleSidebar}/> :
-            <ArrowCircleLeft  className="arrows" onClick={handleSidebar}/> 
-          }
-          </div>
+          {sidebar ? (
+            <ArrowCircleRight className="arrows" onClick={handleSidebar} />
+          ) : (
+            <ArrowCircleLeft className="arrows" onClick={handleSidebar} />
+          )}
+        </div>
         <ErrorBoundary FallbackComponent={ErrorBoundaryComponent}>
           <HelmetProvider>
             <UserContext.Provider value={user}>
               <Navbar toggle={handleDarkMode} darkMode={darkMode} />
               <div className="sidebarAppDiv">
-                <Sidebar sidebar= {sidebar} />
+                <Sidebar sidebar={sidebar} />
                 <a href="#topRegion-locator" id="topRegion">
                   <ArrowUpward />
                 </a>

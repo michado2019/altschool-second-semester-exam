@@ -3,9 +3,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 130vh;
-  margin-top: 7%;
+  width: 120%;
+  height: fit-content;
+  margin-top: 0;
+  margin-left: -10%;
 }
 .blogContributeWrapper {
   margin: 0 20%;
@@ -20,6 +21,9 @@
   text-align: center;
   padding: 10px 25px;
 }
+.blogText{
+  font-size: 20px;
+}
 .blogContributor{
   color: #ffffff;
   background-color: #212121;
@@ -28,6 +32,17 @@
   background-color: rgb(167, 52, 52);
   padding: 0 15px;
   font-weight: 800;
+}
+.blogTwitter{
+  cursor: pointer;
+  text-decoration: none;
+  color: #555555;
+}
+.blogTwitterImg{
+  width: 35px;
+  height: 35px;
+  margin: 10px 0 0 20px;
+  border-radius: 4px;
 }
 .blogBtnsDiv{
   position: fixed;

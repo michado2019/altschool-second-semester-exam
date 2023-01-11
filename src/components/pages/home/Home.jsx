@@ -32,36 +32,40 @@ export default function Home() {
         <meta name="description" content="Welcome to my Homepage" />
         <link rel="canonical" href="/" />
       </Helmet>
-      
+
       <div className="faqContactDiv">
-      <div className="homeAbout-div">
-        <div className="homeAbout">
-          <h1 className="About-title">About</h1>
-          <p className="About-details">
-            <span className="codeMiller-span">Code miller</span> is an app that
-            permits coders break codes complexity, such that starters would
-            understand. And share via our{" "}
+        <div className="homeAbout-div">
+          <div className="homeAbout">
+            <h1 className="About-title">About</h1>
+            <p className="About-details">
+              <span className="codeMiller-span">Code miller</span> is an app
+              that permits coders break codes complexity, such that starters
+              would understand. And share via our{" "}
+              <Link to="contribute" className="contributeLink">
+                'contribute platform'
+              </Link>
+              .
+            </p>
+          </div>
+          <div>
+            <img src="aboutImg.jpg" alt="aboutImg" className="homeAbout-img" />
+          </div>
+        </div>
+        <AppGuide guide={guide} />
+        <div className="homeBigBtnsDiv">
+          <div className="homeBigBtns">
             <Link to="contribute" className="contributeLink">
-              'contribute platform'
+              <button className="homeBigBtn">Get Started</button>
             </Link>
-            .
-          </p>
+            <button
+              className="homeBigBtn"
+              id="homeBigBtn"
+              onClick={handleGuide}
+            >
+              Guide
+            </button>
+          </div>
         </div>
-        <div>
-          <img src="aboutImg.jpg" alt="aboutImg" className="homeAbout-img" />
-        </div>
-      </div>
-      <AppGuide guide={guide} />
-      <div className="homeBigBtnsDiv">
-        <div className="homeBigBtns">
-          <Link to="contribute" className="contributeLink">
-            <button className="homeBigBtn">Get Started</button>
-          </Link>
-          <button className="homeBigBtn" id="homeBigBtn" onClick={handleGuide}>
-            Guide
-          </button>
-        </div>
-      </div>
         <div className="homeFAQs">
           <h1 className="homeFAQs-gen_title">FAQs</h1>
           <div className="homeFAQs-main_flex">

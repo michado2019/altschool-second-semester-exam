@@ -149,7 +149,11 @@ export const Navbar = (props) => {
             <MenuOutlined className="menuIcon" onClick={handleMenu} />
           )}
         </li>
-        <div className="s-navbar" style={{ display: menu ? "block" : "none" }}>
+        <div
+          className="s-navbar"
+          style={{ display: menu ? "block" : "none" }}
+          onMouseLeave={handleMenu}
+        >
           <div className="s-navbarFlex">
             <CustomNavbarLink
               to="/blog"
@@ -302,7 +306,7 @@ export const Sidebar = ({ sidebar }) => {
         {user ? (
           <h2 className="sidebarFooterUser">User: {user?.displayName}</h2>
         ) : (
-          ''
+          ""
         )}
       </div>
     </div>

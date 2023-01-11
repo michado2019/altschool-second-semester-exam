@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { collection, getDocs } from "@firebase/firestore";
 import { DbContext, UserContext } from "../../../App";
 import { NoBlog } from "../../Loading";
-
+import twitterLogo from "../blog/assets/logo-3491390.png";
 export default function Blog() {
   //useContext
   const db = useContext(DbContext);
@@ -53,18 +53,34 @@ export default function Blog() {
                   <p className="blogContributor">
                     Contributor: <span id="contributor">{doc.contributor}</span>
                   </p>
+                  <a
+                    href={`https://twitter.com/${doc.twitter}`}
+                    className="blogTwitter"
+                  >
+                    Follow me on twitter:{" "}
+                    <span>
+                      <img
+                        src={twitterLogo}
+                        alt="img"
+                        className="blogTwitterImg"
+                      />
+                    </span>
+                  </a>
                   <p className="pagination">
                     Pages: {page} of {pages}
                   </p>
                   <div className="blogBtnsDiv">
                     <button
                       className="blogBtns"
+                      disabled={page <= 1}
                       onClick={() => setPage((prev) => prev - 1)}
                     >
                       Prev
                     </button>
                     <button
                       className="blogBtns"
+                      disabled={page >= pages}
+                      aria-disabled={page >= pages}
                       onClick={() => setPage((prev) => prev + 1)}
                     >
                       Next

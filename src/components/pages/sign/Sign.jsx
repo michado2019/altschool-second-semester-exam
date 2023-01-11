@@ -8,7 +8,6 @@ import googleImg from "../sign/assets/googleImg.png";
 import { UserContext } from "../../../App";
 
 export default function Sign({ handleAuth }) {
-
   // usecontext
   const userData = useContext(UserContext);
 
@@ -25,8 +24,8 @@ export default function Sign({ handleAuth }) {
 
   // Handlers
   const handleSubmit = (e) => {
-   e.preventDefault()
-  }
+    e.preventDefault();
+  };
 
   // useEffect
   useEffect(() => {
@@ -99,9 +98,7 @@ export default function Sign({ handleAuth }) {
         </form>
         <div className="signGoogle">
           <p>Sign in here:</p>
-          <Link className='signLink'>
-            Sign in
-          </Link>
+          <Link className="signLink">Sign in</Link>
           <img
             src={googleImg}
             alt="img"

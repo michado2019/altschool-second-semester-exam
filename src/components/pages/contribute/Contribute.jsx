@@ -21,6 +21,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
     contributionText: "",
     contributor: "",
     email: "",
+    twitter: ''
   });
 
   // Handlers
@@ -165,6 +166,16 @@ function Contribute({ contribute, setContribute, handleAuth }) {
               onChange={handleChange}
               name="contributor"
               value={form.contributor}
+              required
+            />
+            <label className="contributeLabel">Twitter username:</label>
+            <input
+              type="text"
+              placeholder="Enter twitter username"
+              className="contributeFormInput"
+              onChange={handleChange}
+              name="twitter"
+              value={form.twitter}
               required
             />
             <button id="contributeSubmitBtn" className="contributeFormInput">

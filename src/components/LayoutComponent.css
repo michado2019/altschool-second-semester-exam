@@ -243,6 +243,7 @@
 }
 .menuIcon {
   display: none !important;
+  cursor: pointer;
 }
 
 /*Media Queries*/
@@ -387,10 +388,10 @@
 /*Sidebar*/
 .sidebarWrapper {
   position: sticky;
-  height: 74vh;
+  height: 80vh;
   min-width: 350px;
   max-width: 350px;
-  top: 150px;
+  top: 130px;
   left: 0;
   bottom: 0;
   background-color: #212121;

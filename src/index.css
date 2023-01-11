@@ -20,14 +20,14 @@ body {
   margin: 0 20px;
   padding: 3px 7px;
 }
-#circleArrow{
+#circleArrow {
   display: none;
   position: fixed;
   border-radius: 50%;
-  top: 125px;
+  top: 100px;
   left: 5px;
 }
-.arrows{
+.arrows {
   width: 40px !important;
   height: 40px !important;
   color: #555555 !important;
@@ -38,7 +38,7 @@ body {
   cursor: pointer;
 }
 @media screen and (max-width: 940px) {
-  #circleArrow{
+  #circleArrow {
     display: block;
     cursor: pointer;
   }
