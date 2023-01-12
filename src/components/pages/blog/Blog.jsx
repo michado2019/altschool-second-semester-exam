@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { collection, getDocs } from "@firebase/firestore";
 import { DbContext, UserContext } from "../../../App";
 import { NoBlog } from "../../Loading";
-import twitterLogo from '../blog/assets/logo-3491390.png'
+import twitterLogo from "../blog/assets/logo-3491390.png";
 export default function Blog() {
   //useContext
   const db = useContext(DbContext);

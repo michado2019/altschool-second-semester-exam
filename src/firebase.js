@@ -12,12 +12,12 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBKZrLyQ6Ow0d_ZP_j4q-PWoCKcCWIRs8M",
-  authDomain: "miller4-6ec46.firebaseapp.com",
-  projectId: "miller4-6ec46",
-  storageBucket: "miller4-6ec46.appspot.com",
-  messagingSenderId: "213984475978",
-  appId: "1:213984475978:web:adddb192d44e2419d01fb3",
+  apiKey: "AIzaSyChMfx1IoOaY8XN18nF_usDmiL6PiMy7KI",
+  authDomain: "miller5.firebaseapp.com",
+  projectId: "miller5",
+  storageBucket: "miller5.appspot.com",
+  messagingSenderId: "667469280042",
+  appId: "1:667469280042:web:fc6ed5531fca583da16453"
 };
 
 // Initialize Firebase
