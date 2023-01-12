@@ -132,7 +132,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
           className="contributeFormDiv"
           style={{ display: showForm ? "none" : "block" }}
         >
-          <form className="contributeForm" onSubmit={handleContributionSubmit}>
+          <form className="contributeForm" onSubmit={handleContributionSubmit} style={{display: user ? 'block' : 'none'}}>
             <label className="contributeLabel">Title:</label>
             <input
               type="text"
