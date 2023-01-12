@@ -193,12 +193,12 @@
   justify-content: center;
   width: fit-content;
   background-color: #f2f2f2;
-  height: fit-content;
+  height: 200px;
   padding: 10px 15px;
   position: absolute;
   border-radius: 5px;
   right: 0;
-  margin-top: 220px;
+  margin-top: 280px;
   animation-name: user;
   animation-duration: 0.3s;
 }
@@ -238,9 +238,6 @@
   width: 150px;
   border-radius: 7px;
 }
-#login1{
-  display: none;
-}
 .menuIcon {
   display: none !important;
   cursor: pointer;
@@ -264,7 +261,7 @@
     display: block;
     background-color: #f3f3f3;
     width: 280px;
-    height: 400px;
+    height: 450px;
     padding: 10px 10px;
     padding-right: 0;
     margin-top: 10px;
@@ -294,6 +291,9 @@
     margin-bottom: 20px;
     margin-left: 5px;
   }
+  #login1{
+    display: none;
+  }
   #s-userImg {
     width: 30px;
     height: 30px;
@@ -304,7 +304,7 @@
     padding-top: 40px;
   }
   .s-layoutNavbar-user_div {
-    margin-top: 340px;
+    margin-top: 320px;
   }
   #s-loginFirst {
     margin-left: -35px;

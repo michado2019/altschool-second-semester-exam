@@ -10,6 +10,33 @@
   align-items: flex-start;
   justify-content: center;
 }
+.homeBigBtn {
+  width: 200px;
+  padding: 10px 25px;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-right: 20px;
+  background-color: rgb(167, 52, 52);
+  color: #ffffff;
+  font-weight: 700;
+}
+.homeBigBtn:hover {
+  background-color: #cccccc;
+  color: rgb(167, 52, 52);
+  transition: all 0.3s;
+}
+#homeBigBtn {
+  background-color: #ffffff;
+  color: rgb(167, 52, 52);
+  border: 1px solid rgb(167, 52, 52);
+}
+#homeBigBtn:hover {
+  background-color: rgb(167, 52, 52);
+  transition: all 0.3s;
+  color: #ffffff;
+  border: 0;
+}
 .contributeGuide-div {
   margin-left: 72px;
   margin-bottom: 40px;

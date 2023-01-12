@@ -18,7 +18,7 @@ export default function AppRouter({ handleAuth }) {
   const [contribute, setContribute] = useState("");
   return (
     <div className="appRouter">
-      <Suspense fallback={Loading}>
+      <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route

@@ -73,7 +73,11 @@ function Contribute({ contribute, setContribute, handleAuth }) {
             Click the 'Guide' button to read the guide before contributing
           </h2>
           <div className="contributeGuideFlex">
-            <button className="homeBigBtn" onClick={handleGuide}>
+          <button
+              className="homeBigBtn"
+              id="homeBigBtn"
+              onClick={handleGuide}
+            >
               Guide
             </button>
             {user ? (
