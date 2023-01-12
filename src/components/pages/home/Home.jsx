@@ -51,7 +51,7 @@ export default function Home() {
             <img src="aboutImg.jpg" alt="aboutImg" className="homeAbout-img" />
           </div>
         </div>
-        <AppGuide guide={guide} />
+        <AppGuide guide={guide} id='appGuide'/>
         <div className="homeBigBtnsDiv">
           <div className="homeBigBtns">
             <Link to="contribute" className="contributeLink">

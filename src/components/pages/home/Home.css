@@ -46,7 +46,9 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  margin-left: 72px;
+}
+#appGuide{
+  margin-left: 120px;
 }
 .appGuide-title {
   color: #555555;
@@ -307,7 +309,11 @@
   .About-details{
     font-size: 20px;
   }
+  .homeBigBtns{
+    display: flex;
+    flex-direction: column;
+  }
   .homeBigBtn{
-    width: 170px;
+    margin-bottom: 4px;
   }
 }
