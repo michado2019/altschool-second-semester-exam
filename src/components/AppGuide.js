@@ -1,5 +1,5 @@
 import React from "react";
-
+import './AppGuide.css'
 function AppGuide({ guide }) {
   return (
     <div>

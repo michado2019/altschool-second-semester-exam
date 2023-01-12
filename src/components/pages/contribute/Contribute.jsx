@@ -70,7 +70,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
       <div className="contributeFlex-1">
         <div className="contributeGuide-div">
           <h2 className="contributeGuide-heading">
-            Click the 'Guide' button to read the guide before contributing
+            Click the 'Guide' button before contributing
           </h2>
           <div className="contributeGuideFlex">
           <button

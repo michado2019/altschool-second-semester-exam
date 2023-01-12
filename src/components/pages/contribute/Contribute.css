@@ -1,6 +1,6 @@
 .contributeWrapper {
   margin: 100px 10px;
-  height: 150vh;
+  height: 175vh;
   width: 80%;
   margin-top: 32%;
 }
@@ -38,7 +38,10 @@
   border: 0;
 }
 .contributeGuide-div {
-  margin-left: 72px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 auto;
+  margin-left: 30px;
   margin-bottom: 40px;
 }
 .contributeGuide-heading {
@@ -64,7 +67,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-left: 72px;
+  margin-left: 30px;
   justify-content: space-between;
 }
 .contributeGoogleBtn {
@@ -84,7 +87,7 @@
 .contributeFlex-3 {
   display: flex;
   align-items: flex-start;
-  margin-left: 72px;
+  margin-left: 30px;
   margin-top: 20px;
 }
 .contributeFlex-3 button {
@@ -103,14 +106,14 @@
 .contributeAuthorizedUser {
   color: #555555;
   font-size: 18px;
-  margin-left: 72px;
+  margin-left: 30px;
 }
-.displayName{
+.displayName {
   color: rgb(167, 52, 52);
   font-style: italic;
 }
 .contributeFormDiv {
-  margin-left: 72px;
+  margin-left: 30px;
   width: 100%;
 }
 .contributeForm {
@@ -145,11 +148,12 @@
 #contributeSubmitBtn {
   padding: 15px 0;
   margin-top: 40px;
-  margin-left: 3%;
+  margin-left: 2%;
+  margin-bottom: 50px;
   width: 100%;
   cursor: pointer;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 900;
   border: 0;
   border-radius: 7px;
   background-color: rgb(167, 52, 52);
@@ -164,43 +168,39 @@
     margin: 150px 10px;
     width: 80%;
     margin-top: 45%;
-    margin-left: 12%;
-  } 
+    margin-left: 17%;
+  }
 }
-@media screen and (max-width: 768px) {
-  .contributeWrapper {
-    margin-left: 5%;
-  } 
-}
+
 @media screen and (max-width: 600px) {
   .contributeWrapper {
-    margin-left: 0;
-  } 
+    margin-left: 8%;
+  }
 }
 @media screen and (max-width: 545px) {
   .contributeWrapper {
     padding-bottom: 40px;
-  } 
+  }
 }
 @media screen and (max-width: 500px) {
   .contributeWrapper {
-    margin-left: -22%;
-  } 
+    margin-left: -8%;
+  }
   .contributeFormDiv {
     width: 130%;
   }
 }
-@media screen and (max-width: 480px) {
-  .contributeWrapper {
-    margin-left: -28%;
-    padding-bottom: 100px;
-  } 
-  .contributeFormDiv {
-    width: 120%;
-  }
-}
 @media screen and (max-width: 375px) {
   .contributeWrapper {
-    margin-left: -37%;
-  } 
+    margin-left: -20%;
+  }
+  .contributeGuideFlex {
+    flex-direction: column;
+  }
+  .contributeGuideDiv {
+    width: 100%;
+  }
+  #contributeSubmitBtn {
+    margin-left: 7%;
+  }
 }
