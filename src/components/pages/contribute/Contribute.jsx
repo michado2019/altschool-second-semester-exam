@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import AppGuide from "../../AppGuide";
 import "./Contribute.css";
 import { Link } from "react-router-dom";
@@ -46,6 +46,8 @@ function Contribute({ contribute, setContribute, handleAuth }) {
     if (contribute) {
       await addDoc(dbRef, contribute);
     }
+    if(form)
+    setContribute(form);
   };
 
   const handleSignOut = () => {
@@ -57,14 +59,6 @@ function Contribute({ contribute, setContribute, handleAuth }) {
         // An error happened.
       });
   };
-
-  // useEffect
-  useEffect(() => {
-    function setContribution() {
-      setContribute(form);
-    }
-    setContribution();
-  }, [setContribute, form]);
   return (
     <div className="contributeWrapper">
       <div className="contributeFlex-1">
