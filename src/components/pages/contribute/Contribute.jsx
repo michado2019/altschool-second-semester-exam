@@ -41,9 +41,9 @@ function Contribute({ contribute, setContribute, handleAuth }) {
 
   const handleContributionSubmit = async (e) => {
     e.preventDefault();
-    if(contribute !== ""){
+    if (contribute !== "") {
       await addDoc(dbRef, contribute);
-      alert("Your contribution successfully saved! Thanks")
+      alert("Your contribution successfully saved! Thanks");
     }
   };
   const handleSignOut = () => {
@@ -55,12 +55,11 @@ function Contribute({ contribute, setContribute, handleAuth }) {
         // An error happened.
       });
   };
-  
+
   // useEffect
   useEffect(() => {
-    if(form.twitter.length > 7 )
-      setContribute(form)
-  }, [form, setContribute])
+    if (form.twitter.length > 7) setContribute(form);
+  }, [form, setContribute]);
   return (
     <div className="contributeWrapper">
       <div className="contributeFlex-1">
