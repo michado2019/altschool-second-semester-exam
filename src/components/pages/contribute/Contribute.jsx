@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import AppGuide from "../../AppGuide";
 import "./Contribute.css";
 import { Link } from "react-router-dom";
@@ -12,7 +12,6 @@ function Contribute({ contribute, setContribute, handleAuth }) {
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
   const user = useContext(UserContext);
-
   // State
   const [guide, setGuide] = useState(false);
   const [showForm, setShowForm] = useState(false);
@@ -21,7 +20,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
     contributionText: "",
     contributor: "",
     email: "",
-    twitter: ''
+    twitter: "",
   });
 
   // Handlers
@@ -42,14 +41,11 @@ function Contribute({ contribute, setContribute, handleAuth }) {
 
   const handleContributionSubmit = async (e) => {
     e.preventDefault();
-    e.stopPropagation();
-    if (contribute) {
+    if(contribute !== ""){
       await addDoc(dbRef, contribute);
+      alert("Your contribution successfully saved! Thanks")
     }
-    if(form)
-    setContribute(form);
   };
-
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -59,6 +55,12 @@ function Contribute({ contribute, setContribute, handleAuth }) {
         // An error happened.
       });
   };
+  
+  // useEffect
+  useEffect(() => {
+    if(form.twitter.length > 7 )
+      setContribute(form)
+  }, [form, setContribute])
   return (
     <div className="contributeWrapper">
       <div className="contributeFlex-1">
@@ -67,7 +69,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
             Click the 'Guide' button before contributing
           </h2>
           <div className="contributeGuideFlex">
-          <button
+            <button
               className="homeBigBtn"
               id="homeBigBtn"
               onClick={handleGuide}
@@ -126,7 +128,11 @@ function Contribute({ contribute, setContribute, handleAuth }) {
           className="contributeFormDiv"
           style={{ display: showForm ? "none" : "block" }}
         >
-          <form className="contributeForm" onSubmit={handleContributionSubmit} style={{display: user ? 'block' : 'none'}}>
+          <form
+            className="contributeForm"
+            onSubmit={handleContributionSubmit}
+            style={{ display: user ? "block" : "none" }}
+          >
             <label className="contributeLabel">Title:</label>
             <input
               type="text"
