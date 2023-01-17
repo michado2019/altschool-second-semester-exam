@@ -56,6 +56,16 @@ function Contribute({ contribute, setContribute, handleAuth }) {
       });
   };
 
+  const handleFormReset = () => {
+    setForm({
+      contributionTitle: "",
+      contributionText: "",
+      contributor: "",
+      email: "",
+      twitter: "",
+    });
+  }
+
   // useEffect
   useEffect(() => {
     if (form.twitter.length > 7) setContribute(form);
@@ -122,6 +132,12 @@ function Contribute({ contribute, setContribute, handleAuth }) {
           <Link to="/">
             <button>Home</button>
           </Link>
+          <button
+            onClick={handleFormReset}
+            style={{ display: user ? "block" : "none" }}
+          >
+            Reset form
+          </button>
         </div>
         <div
           className="contributeFormDiv"
