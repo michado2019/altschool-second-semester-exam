@@ -1,25 +1,19 @@
-import React, { lazy, Suspense, useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import BlogDetails from "../pages/blogDetails/BlogDetails";
-
-const Loading = () => {
-  return <div>Loading....</div>;
-};
-
+import Home from '../pages/home/Home'
+import Contribute from '../pages/contribute/Contribute'
+import Blog from '../pages/blog/Blog'
+import Sign from '../pages/sign/Sign'
+import SignIn from '../pages/signIn/SignIn'
+import CodingSchools from "../pages/courses/CodingSchools";
+import ErrorPage from '../pages/errorPage/ErrorPage'
 export default function AppRouter({ handleAuth }) {
-  const Home = lazy(() => import("../pages/home/Home"));
-  const Contribute = lazy(() => import("../pages/contribute/Contribute"));
-  const Sign = lazy(() => import("../pages/sign/Sign"));
-  const CodingSchools = lazy(() => import("../pages/courses/CodingSchools"));
-  const ErrorPage = lazy(() => import("../pages/errorPage/ErrorPage"));
-  const SignIn = lazy(() => import("../pages/signIn/SignIn"));
-  const Blog = lazy(() => import("../pages/blog/Blog"));
 
   // State
   const [contribute, setContribute] = useState("");
   return (
     <div className="appRouter">
-      <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -39,7 +33,6 @@ export default function AppRouter({ handleAuth }) {
           <Route path="/courses" element={<CodingSchools />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
-      </Suspense>
     </div>
   );
 }

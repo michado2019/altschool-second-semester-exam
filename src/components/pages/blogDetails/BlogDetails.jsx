@@ -16,7 +16,7 @@ export default function BlogDetails() {
   const user = useContext(UserContext);
 
   // State
-  const [AllContributions, setAllContributions] = useState([]);
+  const [allContributions, setAllContributions] = useState([]);
 
   // useEffect
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function BlogDetails() {
         );
     }
     getAllContributions();
-  });
+  }, []);
   return (
     <div
       className="blogDetailsWrapper"
@@ -41,7 +41,7 @@ export default function BlogDetails() {
       </Helmet>
       <div className="blogDetailsContributeWrapper">
         <div>
-          {AllContributions.filter((doc) => doc.id === id).map((doc) => {
+          {allContributions.filter((doc) => doc.id === id).map((doc) => {
             return (
               <div key={doc.id} className="blogDetailsDiv">
                 <h2 className="blogDetailsTitle">{doc.contributionTitle}</h2>

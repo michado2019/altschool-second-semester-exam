@@ -61,27 +61,27 @@
     cursor: pointer;
     font-weight: 700;
   }
-  /* @media screen and (max-width: 940px) {
-    .blogWrapper {
+  @media screen and (max-width: 940px) {
+    .blogDetailsWrapper {
       margin-left: -17%;
       margin-top: 10%;
     }
-    .blogDiv{
+    .blogDetailsDiv{
       width: 160%;
     }
   }
   @media screen and (max-width: 480px) {
-    .blogWrapper {
+    .blogDetailsWrapper {
       margin-left: -30%;
       margin-top: 20%;
     }
-    .blogDiv{
+    .blogDetailsDiv{
       width: 180%;
     }
   }
   @media screen and (max-width: 375px) {
-    .blogWrapper {
+    .blogDetailsWrapper {
       margin-top: 30%;
       margin-left: -35%;
     }
-  } */
+  }

@@ -1,8 +1,9 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect, createContext, Suspense } from "react";
 import "./App.css";
 import { Navbar } from "./components/LayoutComponent";
 import { Sidebar } from "./components/LayoutComponent";
 import AppRouter from "./components/routes/Index";
+import { Loading } from "./components/Loading";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
 import {
@@ -101,43 +102,45 @@ function App() {
   }, []);
   return (
     <DbContext.Provider value={db}>
-      <div
-        className="App"
-        style={
-          darkMode
-            ? {
-                backgroundColor: darkModeStyle.dark.background,
-                color: darkModeStyle.dark.foreground,
-              }
-            : {
-                backgroundColor: darkModeStyle.light.background,
-                color: darkModeStyle.light.foreground,
-              }
-        }
-      >
-        <div id="topRegion-locator"></div>
-        <div id="circleArrow">
-          {sidebar ? (
-            <ArrowCircleRight className="arrows" onClick={handleSidebar} />
-          ) : (
-            <ArrowCircleLeft className="arrows" onClick={handleSidebar} />
-          )}
+      <Suspense fallback={<Loading />}>
+        <div
+          className="App"
+          style={
+            darkMode
+              ? {
+                  backgroundColor: darkModeStyle.dark.background,
+                  color: darkModeStyle.dark.foreground,
+                }
+              : {
+                  backgroundColor: darkModeStyle.light.background,
+                  color: darkModeStyle.light.foreground,
+                }
+          }
+        >
+          <div id="topRegion-locator"></div>
+          <div id="circleArrow">
+            {sidebar ? (
+              <ArrowCircleRight className="arrows" onClick={handleSidebar} />
+            ) : (
+              <ArrowCircleLeft className="arrows" onClick={handleSidebar} />
+            )}
+          </div>
+          <ErrorBoundary FallbackComponent={ErrorBoundaryComponent}>
+            <HelmetProvider>
+              <UserContext.Provider value={user}>
+                <Navbar toggle={handleDarkMode} darkMode={darkMode} />
+                <div className="sidebarAppDiv">
+                  <Sidebar sidebar={sidebar} />
+                  <a href="#topRegion-locator" id="topRegion">
+                    <ArrowUpward />
+                  </a>
+                  <AppRouter handleAuth={handleAuth} />
+                </div>
+              </UserContext.Provider>
+            </HelmetProvider>
+          </ErrorBoundary>
         </div>
-        <ErrorBoundary FallbackComponent={ErrorBoundaryComponent}>
-          <HelmetProvider>
-            <UserContext.Provider value={user}>
-              <Navbar toggle={handleDarkMode} darkMode={darkMode} />
-              <div className="sidebarAppDiv">
-                <Sidebar sidebar={sidebar} />
-                <a href="#topRegion-locator" id="topRegion">
-                  <ArrowUpward />
-                </a>
-                <AppRouter handleAuth={handleAuth} />
-              </div>
-            </UserContext.Provider>
-          </HelmetProvider>
-        </ErrorBoundary>
-      </div>
+      </Suspense>
     </DbContext.Provider>
   );
 }

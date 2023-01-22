@@ -45,6 +45,14 @@ function Contribute({ contribute, setContribute, handleAuth }) {
       await addDoc(dbRef, contribute);
       alert("Your contribution successfully saved! Thanks");
     }
+    setForm({
+      contributionTitle: "",
+      contributionText: "",
+      contributor: "",
+      email: "",
+      twitter: "",
+    });
+    setShowForm(true)
   };
   const handleSignOut = () => {
     signOut(auth)
@@ -54,16 +62,6 @@ function Contribute({ contribute, setContribute, handleAuth }) {
       .catch((error) => {
         // An error happened.
       });
-  };
-
-  const handleFormReset = () => {
-    setForm({
-      contributionTitle: "",
-      contributionText: "",
-      contributor: "",
-      email: "",
-      twitter: "",
-    });
   };
 
   // useEffect
@@ -133,12 +131,6 @@ function Contribute({ contribute, setContribute, handleAuth }) {
           <Link to="/">
             <button>Home</button>
           </Link>
-          <button
-            onClick={handleFormReset}
-            style={{ display: user ? "block" : "none" }}
-          >
-            Reset form
-          </button>
         </div>
         <div
           className="contributeFormDiv"

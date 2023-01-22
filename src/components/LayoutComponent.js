@@ -238,17 +238,10 @@ export const Sidebar = ({ sidebar }) => {
 
   // States
   const [openSource, setOpenSource] = useState(false);
-  const [AllContributions, setAllContributions] = useState([]);
+  const [allContributions, setAllContributions] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
   //Handle open-source
-
-  async function getAllContributions() {
-    const contributions = await getDocs(dbRef);
-    setAllContributions(
-      contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-    );
-  }
 
   const handleOpenSource = () => {
     setOpenSource((prev) => !prev);
@@ -264,10 +257,32 @@ export const Sidebar = ({ sidebar }) => {
     }
   };
 
+  const refreshTitle = () => {
+    async function getAllContributions() { 
+      const contributions = await getDocs(dbRef);
+      if(!dbRef){
+        setAllContributions({})
+      }
+      setAllContributions(
+        contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
+    }
+     getAllContributions()
+  }
+
   // useEffect
   useEffect(() => {
-    getAllContributions();
-  });
+    async function getAllContributions() { 
+    const contributions = await getDocs(dbRef);
+    if(!dbRef){
+      setAllContributions({})
+    }
+    setAllContributions(
+      contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+    );
+  }
+   getAllContributions()
+  }, []);
   return (
     <div
       className="sidebarWrapper"
@@ -285,9 +300,10 @@ export const Sidebar = ({ sidebar }) => {
           onChange={handleTitleSearch}
         />
       </form>
+      <button onClick={refreshTitle} className='refreshTitleBtn'>Refresh</button>
       <div className="sidebarHid">
         <ul>
-          {AllContributions.filter((blog) => {
+          {allContributions.filter((blog) => {
             let filter = searchParams.get("filter");
             if (!filter) return true;
             let blogTitle = blog.contributionTitle.toUpperCase();
