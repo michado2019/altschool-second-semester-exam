@@ -8,6 +8,7 @@ import Sign from '../pages/sign/Sign'
 import SignIn from '../pages/signIn/SignIn'
 import CodingSchools from "../pages/courses/CodingSchools";
 import ErrorPage from '../pages/errorPage/ErrorPage'
+
 export default function AppRouter({ handleAuth }) {
 
   // State

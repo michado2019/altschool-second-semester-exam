@@ -43,7 +43,7 @@ export default function BlogDetails() {
         <div>
           {allContributions.filter((doc) => doc.id === id).map((doc) => {
             return (
-              <div key={doc.id} className="blogDetailsDiv">
+              <div key={doc.id} className="blogDetailsDiv" >
                 <h2 className="blogDetailsTitle">{doc.contributionTitle}</h2>
                 <p className="blogDetailsText">{doc.contributionText}</p>
                 <p className="blogDetailsContributor">

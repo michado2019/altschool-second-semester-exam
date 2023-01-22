@@ -1,8 +1,7 @@
-import React, { useState, useEffect, createContext, Suspense } from "react";
+import React, { useState, useEffect, createContext, Suspense, lazy } from "react";
 import "./App.css";
 import { Navbar } from "./components/LayoutComponent";
 import { Sidebar } from "./components/LayoutComponent";
-import AppRouter from "./components/routes/Index";
 import { Loading } from "./components/Loading";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
@@ -34,6 +33,8 @@ const ErrorBoundaryComponent = ({ error }) => {
   );
 };
 function App() {
+
+  const AppRouter = lazy(() => import('./components/routes/Index'))
   const handleError = useErrorHandler();
 
   // ErrorBoundary useEffect

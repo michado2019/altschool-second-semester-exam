@@ -310,8 +310,8 @@ export const Sidebar = ({ sidebar }) => {
             return blogTitle.includes(filter.toUpperCase());
           }).map((blog) => {
             return (
-              <Link to={`blogDetails/${blog.id}`} className="sidebarBlog-title_link">
-              <li className="sidebarBlog-title_list" key={blog.id}>
+              <Link to={`blogDetails/${blog.id}`} className="sidebarBlog-title_link" key={blog.id}>
+              <li className="sidebarBlog-title_list">
                 {blog.contributionTitle}
               </li>
               </Link>
