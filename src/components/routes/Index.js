@@ -1,5 +1,6 @@
 import React, { lazy, Suspense, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import BlogDetails from "../pages/blogDetails/BlogDetails";
 
 const Loading = () => {
   return <div>Loading....</div>;
@@ -32,6 +33,7 @@ export default function AppRouter({ handleAuth }) {
             }
           />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blogDetails/:id" element={<BlogDetails />} />
           <Route path="/sign" element={<Sign handleAuth={handleAuth} />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/courses" element={<CodingSchools />} />

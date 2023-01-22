@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useSearchParams } from "react-router-dom";
 import { UserContext } from "../App";
 import "./LayoutComponent.css";
 import appLogo from "../images/logoImg.png";
@@ -230,6 +230,7 @@ export const Navbar = (props) => {
 };
 
 export const Sidebar = ({ sidebar }) => {
+
   // useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
@@ -238,11 +239,9 @@ export const Sidebar = ({ sidebar }) => {
   // States
   const [openSource, setOpenSource] = useState(false);
   const [AllContributions, setAllContributions] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   //Handle open-source
-  const handleOpenSource = () => {
-    setOpenSource((prev) => !prev);
-  };
 
   async function getAllContributions() {
     const contributions = await getDocs(dbRef);
@@ -251,17 +250,23 @@ export const Sidebar = ({ sidebar }) => {
     );
   }
 
+  const handleOpenSource = () => {
+    setOpenSource((prev) => !prev);
+  };
+
+  const handleTitleSearch = (e) => {
+    e.preventDefault();
+    let filter = e.target.value;
+    if (filter) {
+      setSearchParams({ filter: filter, y: "true" });
+    } else {
+      setSearchParams({});
+    }
+  };
+
   // useEffect
   useEffect(() => {
     getAllContributions();
-  });
-
-  const blogs = AllContributions.map((blog) => {
-    return (
-      <div key={blog.id} className="sidebarBlog-title_lists">
-        <h2>{blog.contributionTitle}</h2>
-      </div>
-    );
   });
   return (
     <div
@@ -273,8 +278,30 @@ export const Sidebar = ({ sidebar }) => {
       }}
     >
       <h2 className="sidebarTitle">Blogs:</h2>
+      <form className="sidebarSearchForm">
+        <input
+          type="text"
+          placeholder="Search blog by title"
+          onChange={handleTitleSearch}
+        />
+      </form>
       <div className="sidebarHid">
-        <h4 className="sidebarBlog-title_list">{blogs}</h4>
+        <ul>
+          {AllContributions.filter((blog) => {
+            let filter = searchParams.get("filter");
+            if (!filter) return true;
+            let blogTitle = blog.contributionTitle.toUpperCase();
+            return blogTitle.includes(filter.toUpperCase());
+          }).map((blog) => {
+            return (
+              <Link to={`blogDetails/${blog.id}`} className="sidebarBlog-title_link">
+              <li className="sidebarBlog-title_list" key={blog.id}>
+                {blog.contributionTitle}
+              </li>
+              </Link>
+            );
+          })}
+        </ul>
       </div>
       <div className="sidebarBlog-title_div"></div>
       <div className="sidebarFooterDiv">
