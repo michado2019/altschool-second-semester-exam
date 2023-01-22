@@ -66,7 +66,6 @@ function Contribute({ contribute, setContribute, handleAuth }) {
 
   // useEffect
   useEffect(() => {
-    if (form.twitter.length > 7)
      setContribute(form);
   }, [form, setContribute]);
   return (
