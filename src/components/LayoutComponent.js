@@ -93,13 +93,13 @@ export const Navbar = (props) => {
               <DarkMode className="layoutNavbar-links" id="darkMode" />
             )}
           </div>
-          <div className="coursesDiv" onMouseLeave={handleCoursesClose}>
+          <div className="coursesDiv">
             <div className="expand" onMouseOver={handleCoursesExpand}>
               <h1 to="/courses" id="courses">
                 Courses
               </h1>
             </div>
-            <div className="coursesDisplayDiv">
+            <div className="coursesDisplayDiv" onMouseLeave={handleCoursesClose}>
               {user ? (
                 <div id="coursesContents" style={style}>
                   <CodingSchools />
