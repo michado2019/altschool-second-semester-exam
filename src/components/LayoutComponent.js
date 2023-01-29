@@ -95,7 +95,7 @@ export const Navbar = (props) => {
           </div>
           <div className="coursesDiv">
             <div className="expand" onMouseOver={handleCoursesExpand}>
-              <h1 to="/courses" id="courses">
+              <h1 to="/courses" id="courses"> 
                 Courses
               </h1>
             </div>
@@ -351,6 +351,11 @@ export const Sidebar = ({ sidebar }) => {
         ) : (
           ""
         )}
+        <div className="appAdmin">
+        <Link to='/admin' className="appAdmin">
+        <h2>Admin</h2>
+        </Link>
+      </div>
       </div>
     </div>
   );

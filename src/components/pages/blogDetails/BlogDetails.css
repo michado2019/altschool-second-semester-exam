@@ -1,87 +1,89 @@
 .blogDetailsWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 110%;
-    height: fit-content;
-    margin-top: 0;
-    margin-left: -10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 110%;
+  height: 100%;
+  margin-top: 0;
+  margin-left: -10%;
+}
+.blogDetailsContributeWrapper {
+  margin: 0 20%;
+  margin-top: 30%;
+}
+.blogDetailsDiv {
+  width: 100%;
+  text-align: center;
+}
+.blogDetailsTitle {
+  background-color: rgb(167, 52, 52);
+  text-align: center;
+  padding: 10px 25px;
+  color: #ffffff;
+}
+.blogDetailsText {
+  font-size: 20px;
+}
+.blogDetailsContributor {
+  color: #ffffff;
+  background-color: #212121;
+}
+#DetailsContributor {
+  background-color: rgb(167, 52, 52);
+  padding: 0 15px;
+  font-weight: 800;
+}
+.blogDetailsTwitter {
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 800;
+  color: #555555;
+}
+.blogDetailsTwitterImg {
+  width: 35px;
+  height: 35px;
+  margin: 10px 0 0 20px;
+  border-radius: 4px;
+}
+.blogDetailsBtnsDiv {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blogDetailsBtns {
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 0;
+  background-color: #212121;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+}
+@media screen and (max-width: 940px) {
+  .blogDetailsWrapper {
+    margin-left: -17%;
+    margin-top: 10%;
   }
-  .blogDetailsContributeWrapper {
-    margin: 0 20%;
+  .blogDetailsDiv {
+    width: 160%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .blogDetailsWrapper {
+    margin-left: -30%;
+    margin-top: 20%;
+  }
+  .blogDetailsDiv {
+    width: 180%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .blogDetailsWrapper {
     margin-top: 30%;
+    margin-left: -35%;
   }
-  .blogDetailsDiv{
-    width: 100%;
-    text-align: center;
-  }
-  .blogDetailsTitle{
-    background-color: rgb(167, 52, 52);
-    text-align: center;
-    padding: 10px 25px;
-  }
-  .blogDetailsText{
-    font-size: 20px;
-  }
-  .blogDetailsContributor{
-    color: #ffffff;
-    background-color: #212121;
-  }
-  #DetailsContributor{
-    background-color: rgb(167, 52, 52);
-    padding: 0 15px;
-    font-weight: 800;
-  }
-  .blogDetailsTwitter{
-    cursor: pointer;
-    text-decoration: none;
-    color: #555555;
-  }
-  .blogDetailsTwitterImg{
-    width: 35px;
-    height: 35px;
-    margin: 10px 0 0 20px;
-    border-radius: 4px;
-  }
-  .blogDetailsBtnsDiv{
-    position: fixed;
-    right: 0;
-    top: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .blogDetailsBtns{
-    padding: 5px 20px;
-    border-radius: 5px;
-    border: 0;
-    background-color: #212121;
-    color: #ffffff;
-    cursor: pointer;
-    font-weight: 700;
-  }
-  @media screen and (max-width: 940px) {
-    .blogDetailsWrapper {
-      margin-left: -17%;
-      margin-top: 10%;
-    }
-    .blogDetailsDiv{
-      width: 160%;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .blogDetailsWrapper {
-      margin-left: -30%;
-      margin-top: 20%;
-    }
-    .blogDetailsDiv{
-      width: 180%;
-    }
-  }
-  @media screen and (max-width: 375px) {
-    .blogDetailsWrapper {
-      margin-top: 30%;
-      margin-left: -35%;
-    }
-  }
+}

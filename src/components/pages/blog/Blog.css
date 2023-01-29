@@ -12,39 +12,41 @@
   margin: 0 20%;
   margin-top: 30%;
 }
-.blogDiv{
+.blogDiv {
   width: 100%;
   text-align: center;
 }
-.blogTitle{
+.blogTitle {
   background-color: rgb(167, 52, 52);
+  color: #ffffff;
   text-align: center;
   padding: 10px 25px;
 }
-.blogText{
+.blogText {
   font-size: 20px;
 }
-.blogContributor{
+.blogContributor {
   color: #ffffff;
   background-color: #212121;
 }
-#contributor{
+#contributor {
   background-color: rgb(167, 52, 52);
   padding: 0 15px;
   font-weight: 800;
 }
-.blogTwitter{
+.blogTwitter {
   cursor: pointer;
   text-decoration: none;
   color: #555555;
+  font-weight: 800;
 }
-.blogTwitterImg{
+.blogTwitterImg {
   width: 35px;
   height: 35px;
   margin: 10px 0 0 20px;
   border-radius: 4px;
 }
-.blogBtnsDiv{
+.blogBtnsDiv {
   position: fixed;
   right: 0;
   top: 50%;
@@ -52,7 +54,7 @@
   flex-direction: column;
   align-items: center;
 }
-.blogBtns{
+.blogBtns {
   padding: 5px 20px;
   border-radius: 5px;
   border: 0;
@@ -66,7 +68,7 @@
     margin-left: -17%;
     margin-top: 10%;
   }
-  .blogDiv{
+  .blogDiv {
     width: 160%;
   }
 }
@@ -75,7 +77,7 @@
     margin-left: -30%;
     margin-top: 20%;
   }
-  .blogDiv{
+  .blogDiv {
     width: 180%;
   }
 }
