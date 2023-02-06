@@ -57,11 +57,11 @@
 .blogBtns {
   padding: 5px 20px;
   border-radius: 5px;
-  border: 0;
-  background-color: #212121;
-  color: #ffffff;
+  border: 1px dashed #ddd;
+  color: #111;
   cursor: pointer;
   font-weight: 700;
+  background-color: transparent;
 }
 @media screen and (max-width: 940px) {
   .blogWrapper {

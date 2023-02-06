@@ -62,7 +62,7 @@ function App() {
   const darkModeStyle = {
     light: {
       foreground: "#000000",
-      background: "#ffffff",
+      background: "#f2f2f2",
     },
     dark: {
       foreground: "#737737",

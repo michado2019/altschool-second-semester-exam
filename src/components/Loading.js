@@ -1,3 +1,4 @@
+import './Loading.css'
 
 export const NoBlog = () => {
     return (

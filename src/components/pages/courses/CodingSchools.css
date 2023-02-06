@@ -1,29 +1,55 @@
-.codingSchools li {
+.codingSchools-wrapper {
+  margin-top: 520px;
+}
+.codingSchools {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
   list-style: none;
+  background-color: #2f8aa5;
+  align-items: center;
   flex-wrap: wrap;
-  margin-top: 5px;
-  width: 150px;
-  margin-left: -40px;
+  width: fit-content;
+  height: 80vh;
+  overflow-y: scroll;
+  margin-left: -90px;
+  margin-top: -16px;
+  border-radius: 5px;
+  padding: 15px;
+  padding-right: 120px;
+  position: fixed;
+  padding-left: 45px;
+}
+.codingSchools-lists {
+  border-bottom: 2px solid #ffffff;
+  padding: 2px 5px;
+  padding-left: 35px;
+  padding-right: 48px;
 }
 .codingSchoolLinks {
-  width: 100%;
-  height: fit-content;
   font-size: 16px;
   text-decoration: none;
-  color: #212121;
+  color: #ffffff;
   font-weight: 700;
+  margin-top: 40px;
 }
 .schoolLogos {
   width: 25px;
+  margin-top: 40px;
   height: 25px;
   border-radius: 5px;
   margin-right: 4px;
+  margin-left: -10px;
 }
 @media screen and (max-width: 940px) {
-  .codingSchoolLinks {
-    padding: 15px 15px;
+  .codingSchools-wrapper {
+    margin-top: 75px;
+  }
+  .codingSchools {
+    height: 70vh;
+    margin-left: -100px;
+    position: fixed;
+    overflow-y: scroll;
+    padding-right: 120px;
+    padding-left: 45px;
   }
 }

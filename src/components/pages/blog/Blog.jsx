@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { collection, getDocs } from "@firebase/firestore";
 import { DbContext, UserContext } from "../../../App";
 import { NoBlog } from "../../Loading";
+import { Loading } from "../../Loading";
 import twitterLogo from "../blog/assets/logo-3491390.png";
 export default function Blog() {
   //useContext
@@ -14,15 +15,21 @@ export default function Blog() {
   // State
   const [AllContributions, setAllContributions] = useState([]);
   const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false)
 
   // useEffect
   useEffect(() => {
     async function getAllContributions() {
       const contributions = await getDocs(dbRef);
-      if (user)
+      if (user){
         setAllContributions(
           contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
         );
+        setIsLoading(true)
+        if(contributions){
+        setIsLoading(true)
+        }
+      }
     }
     getAllContributions();
   }, []);
@@ -45,50 +52,56 @@ export default function Blog() {
       <div className="blogContributeWrapper">
         {user ? (
           <div>
-            {AllContributions.slice(skip, skip + perPage).map((doc) => {
-              return (
-                <div key={doc.id} className="blogDiv">
-                  <h2 className="blogTitle">{doc.contributionTitle}</h2>
-                  <p className="blogText">{doc.contributionText}</p>
-                  <p className="blogContributor">
-                    Contributor: <span id="contributor">{doc.contributor}</span>
-                  </p>
-                  <a
-                    href={`https://twitter.com/${doc.twitter}`}
-                    className="blogTwitter"
-                  >
-                    Follow me on twitter:{" "}
-                    <span>
-                      <img
-                        src={twitterLogo}
-                        alt="img"
-                        className="blogTwitterImg"
-                      />
-                    </span>
-                  </a>
-                  <p className="pagination">
-                    Pages: {page} of {pages}
-                  </p>
-                  <div className="blogBtnsDiv">
-                    <button
-                      className="blogBtns"
-                      disabled={page <= 1}
-                      onClick={() => setPage((prev) => prev - 1)}
+            {
+              isLoading ? 
+              <div>
+              {AllContributions.slice(skip, skip + perPage).map((doc) => {
+                return (
+                  <div key={doc.id} className="blogDiv">
+                    <h2 className="blogTitle">{doc.contributionTitle}</h2>
+                    <p className="blogText">{doc.contributionText}</p>
+                    <p className="blogContributor">
+                      Contributor: <span id="contributor">{doc.contributor}</span>
+                    </p>
+                    <a
+                      href={`https://twitter.com/${doc.twitter}`}
+                      className="blogTwitter"
                     >
-                      Prev
-                    </button>
-                    <button
-                      className="blogBtns"
-                      disabled={page >= pages}
-                      aria-disabled={page >= pages}
-                      onClick={() => setPage((prev) => prev + 1)}
-                    >
-                      Next
-                    </button>
+                      Follow me on twitter:{" "}
+                      <span>
+                        <img
+                          src={twitterLogo}
+                          alt="img"
+                          className="blogTwitterImg"
+                        />
+                      </span>
+                    </a>
+                    <p className="pagination">
+                      Pages: {page} of {pages}
+                    </p>
+                    <div className="blogBtnsDiv">
+                      <button
+                        className="blogBtns"
+                        disabled={page <= 1}
+                        onClick={() => setPage((prev) => prev - 1)}
+                      >
+                        Prev
+                      </button>
+                      <button
+                        className="blogBtns"
+                        disabled={page >= pages}
+                        aria-disabled={page >= pages}
+                        onClick={() => setPage((prev) => prev + 1)}
+                      >
+                        Next
+                      </button>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+           </div> : 
+              <Loading /> 
+            }
           </div>
         ) : (
           <NoBlog />

@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { NavLink, Link, useSearchParams } from "react-router-dom";
 import { UserContext } from "../App";
 import "./LayoutComponent.css";
-import appLogo from "../images/logoImg.png";
+import appLogo from "../images/logo.png";
 import { collection, getDocs } from "@firebase/firestore";
 import { DbContext } from "../App";
 import {
@@ -52,9 +52,11 @@ export const Navbar = (props) => {
     setUserDisplay(false);
   };
   const CustomNavbarLink = ({ to, ...props }) => {
+   
     let activeStyle = {
-      color: "rgb(167, 52, 52)",
+      color: "red",
       transition: "all 0.3s",
+      conditon: true
     };
     return (
       <NavLink
@@ -75,11 +77,15 @@ export const Navbar = (props) => {
   return (
     <nav className="layoutNavbar">
       <ul>
-        <li>
-          <Link to="/">
-            <img src={appLogo} alt="logo" className="logo" />
+        <div className="logoDiv">
+          <Link to="/" className="logoLink">
+            <div className="logoLink">
+              <img src={appLogo} alt="logo" className="logo" />
+              <h1 className="logoText">Mi<span id='logoText2'>ller</span></h1>
+            </div>
           </Link>
-          <h1 className="logoText">Codemiller</h1>
+        </div>
+        <li>
           <CustomNavbarLink to="/" className="layoutNavbar-links">
             <HomeOutlined id="home" />
           </CustomNavbarLink>
@@ -95,11 +101,14 @@ export const Navbar = (props) => {
           </div>
           <div className="coursesDiv">
             <div className="expand" onMouseOver={handleCoursesExpand}>
-              <h1 to="/courses" id="courses"> 
+              <h1 to="/courses" id="courses">
                 Courses
               </h1>
             </div>
-            <div className="coursesDisplayDiv" onMouseLeave={handleCoursesClose}>
+            <div
+              className="coursesDisplayDiv"
+              onMouseLeave={handleCoursesClose}
+            >
               {user ? (
                 <div id="coursesContents" style={style}>
                   <CodingSchools />
@@ -230,7 +239,6 @@ export const Navbar = (props) => {
 };
 
 export const Sidebar = ({ sidebar }) => {
-
   // useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
@@ -258,30 +266,30 @@ export const Sidebar = ({ sidebar }) => {
   };
 
   const refreshTitle = () => {
-    async function getAllContributions() { 
+    async function getAllContributions() {
       const contributions = await getDocs(dbRef);
-      if(!dbRef){
-        setAllContributions({})
+      if (!dbRef) {
+        setAllContributions({});
       }
       setAllContributions(
         contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
       );
     }
-     getAllContributions()
-  }
+    getAllContributions();
+  };
 
   // useEffect
   useEffect(() => {
-    async function getAllContributions() { 
-    const contributions = await getDocs(dbRef);
-    if(!dbRef){
-      setAllContributions({})
+    async function getAllContributions() {
+      const contributions = await getDocs(dbRef);
+      if (!dbRef) {
+        setAllContributions({});
+      }
+      setAllContributions(
+        contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+      );
     }
-    setAllContributions(
-      contributions.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-    );
-  }
-   getAllContributions()
+    getAllContributions();
   }, []);
   return (
     <div
@@ -300,23 +308,31 @@ export const Sidebar = ({ sidebar }) => {
           onChange={handleTitleSearch}
         />
       </form>
-      <button onClick={refreshTitle} className='refreshTitleBtn'>Refresh</button>
+      <button onClick={refreshTitle} className="refreshTitleBtn">
+        Refresh
+      </button>
       <div className="sidebarHid">
         <ul>
-          {allContributions.filter((blog) => {
-            let filter = searchParams.get("filter");
-            if (!filter) return true;
-            let blogTitle = blog.contributionTitle.toUpperCase();
-            return blogTitle.includes(filter.toUpperCase());
-          }).map((blog) => {
-            return (
-              <Link to={`blogDetails/${blog.id}`} className="sidebarBlog-title_link" key={blog.id}>
-              <li className="sidebarBlog-title_list">
-                {blog.contributionTitle}
-              </li>
-              </Link>
-            );
-          })}
+          {allContributions
+            .filter((blog) => {
+              let filter = searchParams.get("filter");
+              if (!filter) return true;
+              let blogTitle = blog.contributionTitle.toUpperCase();
+              return blogTitle.includes(filter.toUpperCase());
+            })
+            .map((blog) => {
+              return (
+                <Link
+                  to={`blogDetails/${blog.id}`}
+                  className="sidebarBlog-title_link"
+                  key={blog.id}
+                >
+                  <li className="sidebarBlog-title_list">
+                    {blog.contributionTitle}
+                  </li>
+                </Link>
+              );
+            })}
         </ul>
       </div>
       <div className="sidebarBlog-title_div"></div>
@@ -352,10 +368,10 @@ export const Sidebar = ({ sidebar }) => {
           ""
         )}
         <div className="appAdmin">
-        <Link to='/admin' className="appAdmin">
-        <h2>Admin</h2>
-        </Link>
-      </div>
+          <Link to="/admin" className="appAdmin">
+            <h2>Admin</h2>
+          </Link>
+        </div>
       </div>
     </div>
   );
