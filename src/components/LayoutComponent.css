@@ -5,6 +5,7 @@
   background-color: #fff;
   margin-top: -40px;
   padding-top: 1px;
+  box-shadow: 1px 1px 10px #ccc;
 }
 .logoDiv {
   display: flex;
