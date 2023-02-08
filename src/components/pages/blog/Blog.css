@@ -8,19 +8,35 @@
   margin-top: 0;
   margin-left: -10%;
 }
+@keyframes blog {
+  0%{
+    margin-top: 200px;
+  }
+  100%{
+    margin-left: 0;
+  }
+}
 .blogContributeWrapper {
   margin: 0 20%;
   margin-top: 30%;
 }
 .blogDiv {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  animation-name: blog;
+  animation-duration: 0.3s;
 }
 .blogTitle {
-  background-color: rgb(167, 52, 52);
-  color: #ffffff;
+  background-color: #212121;
+  color: #2f8aa5;
   text-align: center;
-  padding: 10px 25px;
+  padding: 5px 25px;
+  width: 100%;
+  font-size: 20px;
+  border-radius: 5px;
 }
 .blogText {
   font-size: 20px;
@@ -45,6 +61,33 @@
   height: 35px;
   margin: 10px 0 0 20px;
   border-radius: 4px;
+  animation-name: twitter;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+@keyframes twitter {
+  0%{
+    margin-right: -21px;
+  }
+  25%{
+    margin-right: -22px;
+  }
+  50%{
+    margin-right: -23px;
+  }
+  75%{
+    margin-right: -22px;
+  }
+  100%{
+    margin-right: -20px;
+  }
+}
+.pagination{
+  color: #2f8aa5;
+  background-color: #212121;
+  padding: 4px 15px;
+  border-radius: 4px;
+  margin-top: 15px;
 }
 .blogBtnsDiv {
   position: fixed;
@@ -57,11 +100,12 @@
 .blogBtns {
   padding: 5px 20px;
   border-radius: 5px;
-  border: 1px dashed #ddd;
-  color: #111;
+  border: 1px solid #2f8aa5;
+  color: #2f8aa5;
   cursor: pointer;
   font-weight: 700;
   background-color: transparent;
+  margin-right: 5px;
 }
 @media screen and (max-width: 940px) {
   .blogWrapper {

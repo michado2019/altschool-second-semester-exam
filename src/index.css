@@ -16,9 +16,10 @@ body {
   top: 200px;
   right: 0;
   border-radius: 5px;
-  border: 2px solid red;
-  margin: 0 20px;
+  border: 1px solid #2f8aa5;
+  margin: 0 14px;
   padding: 3px 7px;
+  color: #2f8aa5;
 }
 #circleArrow {
   display: none;
