@@ -3,33 +3,48 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 110%;
-  height: 100%;
-  margin-top: 0;
-  margin-left: -10%;
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
 }
 .blogDetailsContributeWrapper {
-  margin: 0 20%;
-  margin-top: 30%;
+  margin-top: 280px;
+}
+@keyframes blog {
+  0%{
+    margin-top: 600px;
+  }
+  100%{
+    margin-top: 270px;
+  }
 }
 .blogDetailsDiv {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  animation-name: blog;
+  animation-duration: 0.3s;
 }
 .blogDetailsTitle {
-  background-color: rgb(167, 52, 52);
+  background-color: #212121;
+  color: #2f8aa5;
   text-align: center;
-  padding: 10px 25px;
-  color: #ffffff;
+  padding: 5px 0;
+  width: 80%;
+  font-size: 20px;
+  border-radius: 5px;
 }
 .blogDetailsText {
   font-size: 20px;
+  width: 80%;
 }
 .blogDetailsContributor {
   color: #ffffff;
   background-color: #212121;
 }
-#DetailsContributor {
+#detailsContributor {
   background-color: rgb(167, 52, 52);
   padding: 0 15px;
   font-weight: 800;
@@ -37,14 +52,34 @@
 .blogDetailsTwitter {
   cursor: pointer;
   text-decoration: none;
-  font-weight: 800;
   color: #555555;
+  font-weight: 800;
 }
 .blogDetailsTwitterImg {
   width: 35px;
   height: 35px;
   margin: 10px 0 0 20px;
   border-radius: 4px;
+  animation-name: twitter;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+@keyframes twitter {
+  0%{
+    margin-right: -21px;
+  }
+  25%{
+    margin-right: -22px;
+  }
+  50%{
+    margin-right: -23px;
+  }
+  75%{
+    margin-right: -22px;
+  }
+  100%{
+    margin-right: -20px;
+  }
 }
 .blogDetailsBtnsDiv {
   position: fixed;
@@ -57,33 +92,28 @@
 .blogDetailsBtns {
   padding: 5px 20px;
   border-radius: 5px;
-  border: 0;
-  background-color: #212121;
-  color: #ffffff;
+  border: 1px solid #2f8aa5;
+  color: #2f8aa5;
   cursor: pointer;
   font-weight: 700;
+  background-color: transparent;
+  margin-right: 5px;
 }
 @media screen and (max-width: 940px) {
   .blogDetailsWrapper {
-    margin-left: -17%;
-    margin-top: 10%;
+    margin: -80px -55px 0;
   }
   .blogDetailsDiv {
-    width: 160%;
+    width: 150%;
   }
 }
-@media screen and (max-width: 480px) {
+ @media screen and (max-width: 480px) {
   .blogDetailsWrapper {
-    margin-left: -30%;
-    margin-top: 20%;
-  }
-  .blogDetailsDiv {
-    width: 180%;
+    margin: -120px -50px 0;
   }
 }
-@media screen and (max-width: 375px) {
+ @media screen and (max-width: 375px) {
   .blogDetailsWrapper {
-    margin-top: 30%;
-    margin-left: -35%;
+    margin: -140px -48px 0;
   }
-}
+} 

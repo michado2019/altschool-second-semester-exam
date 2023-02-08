@@ -108,19 +108,19 @@
 }
 @media screen and (max-width: 940px) {
   .blogWrapper {
-    margin: -80px -55px 0;
+    margin: -80px -30px 0;
   }
   .blogDiv {
-    width: 150%;
+    width: 140%;
   }
 }
  @media screen and (max-width: 480px) {
   .blogWrapper {
-    margin: -120px -50px 0;
+    margin: -120px -35px 0;
   }
 }
  @media screen and (max-width: 375px) {
   .blogWrapper {
-    margin: -140px -48px 0;
+    margin: -140px -38px 0;
   }
 } 

@@ -48,7 +48,7 @@ export default function BlogDetails() {
                 <p className="blogDetailsText">{doc.contributionText}</p>
                 <p className="blogDetailsContributor">
                   Contributor:{" "}
-                  <span id="DetailsContributor">{doc.contributor}</span>
+                  <span id="detailsContributor">{doc.contributor}</span>
                 </p>
                 <a
                   href={`https://twitter.com/${doc.twitter}`}
