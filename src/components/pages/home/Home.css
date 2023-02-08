@@ -1,24 +1,36 @@
 .homeWrapper {
-  margin: 35% 10px;
-  height: 320vh;
+  padding-bottom: -30%;
+  margin-top: 38%;
+  height: 250vh;
 }
 .homeAbout-div {
   display: flex;
   justify-content: center;
-  animation-name: welcome;
-  animation-duration: 1s;
 }
 .homeAbout {
   margin: 130px 70px 50px 60px;
   line-height: 32px;
   border-radius: 10px;
   width: 100%;
+  animation-name: welcome;
+  animation-duration: 1s;
+}
+@keyframes welcome {
+  0%{
+    margin-top: -200px;
+  }
+  100%{
+    margin-top: initial;
+  }
 }
 .About-title {
   font-size: 32px;
   font-weight: 700;
-  color: #737373;
+  color: #555555;
   margin: 12px 0;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Lobster', cursive;
 }
 .About-details {
   font-size: 28px;
@@ -41,6 +53,28 @@
   margin-top: 90px;
   margin-right: -70px;
 }
+.homeAbout-img{
+  animation-name: aboutImg;
+  animation-duration: 1s;
+}
+@keyframes aboutImg {
+  0%{
+   transform: rotate(180deg);
+   margin-right: -300px;
+  }
+  25%{
+    transform: rotate(90deg);
+    margin-right: -260px;
+   }
+   50%{
+    transform: rotate(270deg);
+    margin-right: -230px;
+   }
+  100%{
+   transform: rotate(360deg);
+   margin-right: initial;
+  }
+}
 .appGuide {
   display: flex;
   flex-direction: column;
@@ -60,6 +94,17 @@
 }
 .homeBigBtnsDiv {
   margin-left: 65px;
+  animation-name: bigBtn;
+  animation-duration: 1s;
+  animation-delay: 1s;
+}
+@keyframes bigBtn {
+  0%{
+  margin-top: -50px;
+  }
+  100%{
+    margin-top: initial;
+  }
 }
 .homeBigBtns {
   display: flex;
@@ -71,12 +116,12 @@
   border-radius: 7px;
   cursor: pointer;
   margin-right: 20px;
-  background-color: rgb(167, 52, 52);
+  background-color: #2f8aa5;
   color: #ffffff;
   font-weight: 700;
 }
 .homeBigBtn:hover {
-  background-color: #cccccc;
+  background-color: #fff;
   color: rgb(167, 52, 52);
   transition: all 0.3s;
 }
@@ -99,7 +144,7 @@
 
 }
 .homeFAQs {
-  box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
+  box-shadow: 2px 2px 2px 4px #ccc;
   border-radius: 10px;
   width: 100%;
   margin-left: 70px;
@@ -108,7 +153,10 @@
 }
 .homeFAQs-gen_title {
   margin-left: 40px;
-  color: #737373;
+  color: #2f8aa5;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Lobster', cursive;
 }
 .homeFAQs-main_flex {
   display: flex;
@@ -152,13 +200,16 @@
   height: 590px;
   border-radius: 10px;
   width: 100%;
-  box-shadow: 0 2px 8px 0 rgb(167, 52, 52);
+  box-shadow: 2px 2px 2px 4px #ccc;
 }
 .homeContacts-gen_title {
   text-align: center;
   margin-bottom: 0;
   color: #737373;
   padding-top: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Lobster', cursive;
 }
 .homeContacts-flex {
   display: flex;
@@ -197,9 +248,9 @@
 }
 .homeContact-sub_btn {
   border-radius: 5px;
-  background-color: rgb(167, 52, 52);
+  background-color: #2f8aa5;
   border: 0;
-  padding: 20px 10px;
+  padding: 15px 10px;
   color: #ffffff;
   font-weight: 700;
   cursor: pointer;
@@ -207,7 +258,7 @@
   margin-top: 10px;
 }
 .homeContact-sub_btn:hover {
-  background-color: red;
+  background-color: #2f8aa5;
 }
 .textarea {
   width: 70%;
@@ -227,7 +278,7 @@
 }
 .homeContact-comment_btn {
   border-radius: 5px;
-  background-color: rgb(167, 52, 52);
+  background-color: #2f8aa5;
   border: 0;
   margin-top: 10px;
   padding: 15px 10px;
@@ -237,7 +288,7 @@
   cursor: pointer;
 }
 .homeContact-comment_btn:hover {
-  background-color: red;
+  background-color: #2f8aa5;
 }
 .homeContacts-img2 {
   width: 50px;

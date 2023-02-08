@@ -47,7 +47,7 @@ export default function Home() {
               .
             </p>
           </div>
-          <div>
+          <div className="homeAbout-img_div">
             <img src="aboutImg.jpg" alt="aboutImg" className="homeAbout-img" />
           </div>
         </div>

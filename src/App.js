@@ -84,7 +84,7 @@ function App() {
   useEffect(() => {
     //Get signedIn user
     onAuthStateChanged(auth, (user) => {
-      if (user) {
+      if (user !== null) {
         const { displayName, photoURL, email } = user;
         setUser({ displayName, photoURL, email });
       } else {
