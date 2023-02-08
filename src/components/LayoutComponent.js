@@ -77,7 +77,7 @@ export const Navbar = (props) => {
     display: expandCourses ? "block" : "none",
   };
   return (
-    <nav className="layoutNavbar">
+    <nav className="layoutNavbar" >
       <ul>
         <div className="logoDiv">
           <Link to="/" className="logoLink">

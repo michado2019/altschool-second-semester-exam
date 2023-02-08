@@ -1,8 +1,11 @@
 import React from "react";
 import './AppGuide.css'
+
 function AppGuide({ guide }) {
   return (
-    <div>
+    <div 
+    className="appGuide-wrapper"
+    >
       <div
         className="appGuide"
         style={{

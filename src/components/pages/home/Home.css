@@ -1,14 +1,16 @@
 .homeWrapper {
   padding-bottom: -30%;
+  margin: 0 auto;
   margin-top: 38%;
-  height: 250vh;
+  height: 260vh;
+  width: 90%;
 }
 .homeAbout-div {
   display: flex;
   justify-content: center;
 }
 .homeAbout {
-  margin: 130px 70px 50px 60px;
+  margin: 130px 70px 50px 67px;
   line-height: 32px;
   border-radius: 10px;
   width: 100%;
@@ -93,7 +95,8 @@
   font-size: 20px;
 }
 .homeBigBtnsDiv {
-  margin-left: 65px;
+  margin-top: -40px;
+  margin-left: 70px;
   animation-name: bigBtn;
   animation-duration: 1s;
   animation-delay: 1s;
@@ -313,6 +316,8 @@
 @media screen and (max-width: 940px) {
   .homeWrapper{
     height: fit-content;
+    margin-left: 50px;
+    
   }
   .homeAbout-img {
     display: none;
@@ -322,38 +327,35 @@
     margin-left: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  .homeWrapper{
+    width: 110%;
+    margin-left: -5%;
+    font-size: 20px;
+  }
+}
 @media screen and (max-width: 600px) {
   .homeWrapper {
-    max-width: 100%;
+    margin-left: -12%;
   }
-  .faqContactDiv{
-    margin-left: -10%
-  }
-  .homeFAQs-img {
-    display: none;
-  }
-  .homeContacts-flex {
-    flex-direction: column-reverse;
-  }
-  .homeContacts-img {
-    display: none;
-  }
-  .homeContact-newsletter {
-    width: 88%;
-    margin: 0 0;
-    margin-left: 5%;
-  }
+  
 }
 @media screen and (max-width: 480px) {
   .homeWrapper {
-    margin: 55% 10px;
+    width: 125%;
+    margin-left: -25%;
+  }
+   .About-details{
+    font-size: 20px;
   }
   .faqContactDiv{
-    width: 140%;
-    margin: -105px;
+    font-size: 20px;
   }
-  .homeAbout-div {
-    width:140%;
+  .homeFAQs-heading {
+    font-size: 20px;
+  }
+  .homeContact-newsletter-title{
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 350px) {
@@ -367,4 +369,4 @@
   .homeBigBtn{
     margin-bottom: 4px;
   }
-}
+} 

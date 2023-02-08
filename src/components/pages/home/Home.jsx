@@ -25,6 +25,7 @@ export default function Home() {
   const faqsDisplayStyles = {
     display: expandFAQs ? "block" : "none",
   };
+
   return (
     <div className="homeWrapper">
       <Helmet>
@@ -32,7 +33,6 @@ export default function Home() {
         <meta name="description" content="Welcome to my Homepage" />
         <link rel="canonical" href="/" />
       </Helmet>
-
       <div className="faqContactDiv">
         <div className="homeAbout-div">
           <div className="homeAbout">
@@ -51,9 +51,6 @@ export default function Home() {
             <img src="aboutImg.jpg" alt="aboutImg" className="homeAbout-img" />
           </div>
         </div>
-        <div id='appGuide'>
-        <AppGuide guide={guide}/>
-        </div>
         <div className="homeBigBtnsDiv">
           <div className="homeBigBtns">
             <Link to="contribute" className="contributeLink">
@@ -68,7 +65,10 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="homeFAQs">
+        <div id="appGuide">
+          <AppGuide guide={guide} />
+        </div>
+        <div className="homeFAQs" >
           <h1 className="homeFAQs-gen_title">FAQs</h1>
           <div className="homeFAQs-main_flex">
             <div className="homeFAQs-flex">
