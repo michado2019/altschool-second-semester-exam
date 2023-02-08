@@ -7,8 +7,6 @@ import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
 import {
   ArrowUpward,
-  ArrowCircleLeft,
-  ArrowCircleRight,
 } from "@mui/icons-material";
 import {
   auth,
@@ -45,12 +43,6 @@ function App() {
   //Set state for the darkmode
   const [darkMode, setDarkMode] = useState(false);
   const [user, setUser] = useState(null);
-  const [sidebar, setSidebar] = useState(false);
-
-  // Handle sidebar
-  const handleSidebar = () => {
-    setSidebar((prev) => !prev);
-  };
 
   //Handle the darkmode
   const handleDarkMode = (e) => {
@@ -119,19 +111,12 @@ function App() {
           }
         >
           <div id="topRegion-locator"></div>
-          <div id="circleArrow">
-            {sidebar ? (
-              <ArrowCircleRight className="arrows" onClick={handleSidebar} />
-            ) : (
-              <ArrowCircleLeft className="arrows" onClick={handleSidebar} />
-            )}
-          </div>
           <ErrorBoundary FallbackComponent={ErrorBoundaryComponent}>
             <HelmetProvider>
               <UserContext.Provider value={user}>
                 <Navbar toggle={handleDarkMode} darkMode={darkMode} />
                 <div className="sidebarAppDiv">
-                  <Sidebar sidebar={sidebar} />
+                  <Sidebar />
                   <a href="#topRegion-locator" id="topRegion">
                     <ArrowUpward />
                   </a>

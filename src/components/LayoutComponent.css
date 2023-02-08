@@ -10,7 +10,7 @@
   display: flex;
   margin-right: auto;
   align-items: center;
-  margin-left: -40px;
+  margin-left: -30px;
 }
 .logoLink {
   display: flex;
@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 .logoText, #logoText2 {
-  color: #7a7878;
+  color: rgb(167, 52, 52);
   font-size: 22px;
   font-weight: 600;
   margin-left: -15px;
@@ -361,24 +361,27 @@
   top: 130px;
   left: 0;
   bottom: 0;
-  background-color: #060606;
+  background-color: #f3f3f3;
   overflow-y: scroll;
+  box-shadow: 2px 2px 5px 5px #d7d7d7;
+  border-radius: 5px;
 }
 .sidebarTitle {
   padding: 10px 0;
-  padding-left: 32px;
+  padding-left: 37px;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: rgb(167, 52, 52);
   font-size: 20px;
 }
 .sidebarSearchForm {
-  padding: 15px 10%;
+  padding: 15px 11%;
   padding-bottom: 10px;
 }
 .sidebarSearchForm input {
   padding: 10px 43px;
   border-radius: 5px;
-  border: 1px solid #212121;
+  border-bottom: 4px solid #119fcb;
+  border-top: 4px solid #119fcb;
   outline: none;
   text-align: center;
   background-color: #f2f2f2;
@@ -387,24 +390,22 @@
   width: 77%;
   cursor: pointer;
   font-weight: 550px;
-  border: 0;
+  border: 1px solid #119fcb;
   border-radius: 5px;
   padding: 10px 0;
-  color: #fff;
-  margin: 0 33px;
-  background-color: #212121;
+  color: #119fcb;
+  margin: 0 38px;
+  background-color: #f3f3f3;
 }
 .refreshTitleBtn:hover {
   cursor: pointer;
-  font-weight: 800px;
-  background-color: #060606;
-  border: 1px solid #fff;
+  font-weight: 700;
 }
 .sidebarBlog-title_link {
   text-decoration: none;
 }
 .sidebarBlog-title_list {
-  margin: 20px -7px;
+  margin: 20px -2px;
   border-radius: 4px;
   width: 80%;
   font-size: 18px;
@@ -412,7 +413,7 @@
   padding: 5px 10px;
   background-color: #212121;
   list-style: none;
-  color: rgb(167, 52, 52);
+  color: #2f8aa5;
   text-align: center;
   font-weight: 700;
 }
@@ -453,6 +454,7 @@
   text-align: center;
   margin-bottom: -2px;
   cursor: pointer;
+  color: #555555;
 }
 .sidebarFooter {
   display: flex;
@@ -461,9 +463,10 @@
 }
 .sidebarFooterExpand {
   cursor: pointer;
+  color: #119fcb !important;
 }
 .sidebarFooterBtn {
-  background-color: #212121;
+  background-color: #2f8aa5;
   padding: 10px 40px;
   color: #ffffff;
   border-radius: 4px;
@@ -471,39 +474,53 @@
   font-weight: 700;
   text-decoration: none;
 }
+.sidebarFooterBtn:hover {
+  background-color: #fff;
+  color: #2f8aa5;
+  border: 1px solid #2f8aa5;
+  transition: all 0.3s;
+}
 .appUser {
   display: flex;
+  background-color: #f3f3f3;
   flex-direction: column;
-  background-color: rgb(167, 52, 52);
   width: 100%;
   align-items: center;
   justify-content: center;
 }
 .sidebarFooterUser {
-  background-color: #212121;
-  color: #ffffff;
+  color: rgb(167, 52, 52);
   font-size: 18px;
-  background-color: rgb(167, 52, 52);
   width: 100%;
   padding: 7px 0;
-  background-color: #212121;
   text-align: center;
   font-style: italic;
 }
 .appAdmin {
-  color: #060606;
+  color: rgb(167, 52, 52);
   padding: 7px 0;
+  text-decoration: none;
   text-align: center;
   font-style: italic;
 }
 .appAdminLink {
   color: #ffffff;
-  text-decoration: none;
 }
 .appAdmin h2 {
-  color: #060606;
+  color: #2f8aa5;
   font-size: 18px;
-  margin-bottom: 60px;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border: 1px solid #2f8aa5;
+  padding: 7px 60px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.appAdmin h2:hover {
+  color: #fff;
+  background-color: #2f8aa5;
+  transition: all 0.3s;
 }
 @media screen and (max-width: 940px) {
   #blog,
@@ -529,16 +546,23 @@
     max-width: 300px;
     min-width: 300px;
   }
+  .sidebarTitle{
+    margin-left: -15px;
+  }
   .sidebarSearchForm {
-    background-color: #212121;
-    padding-left: 10px;
+    padding-left: 22px;
   }
   .sidebarSearchForm input {
     padding: 10px 35px;
   }
+  .refreshTitleBtn {
+    width: 85%;
+    padding: 10px 0;
+    margin: 0 22px;
+  }
   .sidebarBlog-title_list {
     width: 90%;
-    margin-left: -30px;
+    margin-left: -17px;
   }
   .arrowRight {
     margin-left: 260px;

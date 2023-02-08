@@ -14,6 +14,8 @@ import {
   CancelOutlined,
   ExpandCircleDownSharp,
   ExpandLessRounded,
+    ArrowCircleLeft,
+    ArrowCircleRight,
 } from "@mui/icons-material";
 import { auth } from "../firebase";
 import CodingSchools from "./pages/courses/CodingSchools";
@@ -238,7 +240,8 @@ export const Navbar = (props) => {
   );
 };
 
-export const Sidebar = ({ sidebar }) => {
+export const Sidebar = () => {
+
   // useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
@@ -248,7 +251,12 @@ export const Sidebar = ({ sidebar }) => {
   const [openSource, setOpenSource] = useState(false);
   const [allContributions, setAllContributions] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [sidebar, setSidebar] = useState(false);
 
+  // Handle sidebar
+  const handleSidebar = () => {
+    setSidebar((prev) => !prev);
+  };
   //Handle open-source
 
   const handleOpenSource = () => {
@@ -301,6 +309,13 @@ export const Sidebar = ({ sidebar }) => {
       }}
     >
       <h2 className="sidebarTitle">Blogs:</h2>
+      <div id="circleArrow">
+            {sidebar ? (
+              <ArrowCircleRight className="arrows"  onClick={handleSidebar}/>
+            ) : (
+              <ArrowCircleLeft className="arrows" onClick={handleSidebar}/>
+            )}
+          </div>
       <form className="sidebarSearchForm">
         <input
           type="text"
