@@ -101,19 +101,19 @@
 }
 @media screen and (max-width: 940px) {
   .blogDetailsWrapper {
-    margin: -80px -55px 0;
+    margin: -80px -30px 0;
   }
   .blogDetailsDiv {
-    width: 150%;
+    width: 140%;
   }
 }
  @media screen and (max-width: 480px) {
   .blogDetailsWrapper {
-    margin: -120px -50px 0;
+    margin: -120px -35px 0;
   }
 }
  @media screen and (max-width: 375px) {
   .blogDetailsWrapper {
-    margin: -140px -48px 0;
+    margin: -140px -38px 0;
   }
 } 
