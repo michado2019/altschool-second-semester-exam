@@ -2,7 +2,7 @@
   padding-bottom: -30%;
   margin: 0 auto;
   margin-top: 38%;
-  height: 260vh;
+  height: 270vh;
   width: 90%;
 }
 .homeAbout-div {
@@ -304,7 +304,9 @@
 @media screen and (max-width: 1200px) {
   .homeAbout-div{
     margin-top: -10px;
-    width: 120%;
+  }
+  .homeAbout-div{
+    width: 132%;
   }
   .homeAbout-img {
     display: none;
@@ -316,8 +318,7 @@
 @media screen and (max-width: 940px) {
   .homeWrapper{
     height: fit-content;
-    margin-left: 50px;
-    
+    margin-top: 170px;
   }
   .homeAbout-img {
     display: none;
@@ -329,44 +330,71 @@
 }
 @media screen and (max-width: 768px) {
   .homeWrapper{
-    width: 110%;
-    margin-left: -5%;
-    font-size: 20px;
+      width: 100%;
+  }
+  .About-title, .homeContacts-gen_title, .homeFAQs-gen_title{
+    font-size: 22px;
   }
 }
 @media screen and (max-width: 600px) {
-  .homeWrapper {
-    margin-left: -12%;
+  .homeWrapper{
+      width: 100%;
+      margin-left: -5%;
   }
-  
 }
 @media screen and (max-width: 480px) {
-  .homeWrapper {
-    width: 125%;
-    margin-left: -25%;
+  .homeWrapper{
+    margin-left: -15%;
   }
-   .About-details{
-    font-size: 20px;
+  .homeAbout-div{
+    margin-top: -100px;
   }
-  .faqContactDiv{
-    font-size: 20px;
-  }
-  .homeFAQs-heading {
-    font-size: 20px;
-  }
-  .homeContact-newsletter-title{
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 350px) {
   .About-details{
     font-size: 20px;
   }
+  .homeBigBtn{
+    width: 130px !important;
+  }
+  .homeContact-newsletter-title{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .homeWrapper{
+    min-width: 130%;
+    margin-left: -30%;
+    padding: 0 auto;
+    text-align: center;
+  }
+  .homeAbout-div{
+    margin-left: 4px;
+  }
+  .homeBigBtnsDiv{
+    margin-left: 90px;
+  }
   .homeBigBtns{
     display: flex;
-    flex-direction: column;
   }
   .homeBigBtn{
     margin-bottom: 4px;
   }
+  .homeFAQs, .homeContacts{
+    margin-left: 50px;
+  }
 } 
+@media screen and (max-width: 320px) {
+  .homeWrapper{
+    margin-left: -35%;
+    margin-top: 90px;
+  }
+  .homeBigBtnsDiv{
+    margin-left: 75px;
+  }
+  .homeFAQs-gen_title{
+    margin-left: -10px;
+  }
+  .homeFAQs-div{
+  width: 130%;
+
+  }
+}

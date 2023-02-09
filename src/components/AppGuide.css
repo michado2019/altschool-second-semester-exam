@@ -16,3 +16,15 @@
 .appGuide-details{
     font-size: 24px;
 }
+@media screen and (max-width: 600px) {
+    .appGuide-wrapper{
+        width: 120%;
+    }
+    .appGuide-title{
+        font-size: 24px;
+        font-family: 'Lobster', cursive;
+    }
+    .appGuide-details{
+        font-size: 20px;
+    }
+}

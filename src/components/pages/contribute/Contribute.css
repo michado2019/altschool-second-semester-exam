@@ -160,10 +160,11 @@
   font-weight: 900;
   border: 0;
   border-radius: 7px;
-  background-color: rgb(167, 52, 52);
+  background-color: #2f8aa5;
 }
 #contributeSubmitBtn:hover {
-  background-color: rgb(189, 29, 29);
+  color: #2f8aa5;
+  background-color: #fff;
   transition: all 0.3s;
 }
 
@@ -179,6 +180,9 @@
 @media screen and (max-width: 600px) {
   .contributeWrapper {
     margin-left: 8%;
+  }
+  .contributeGuide-heading {
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 545px) {
