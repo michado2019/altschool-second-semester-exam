@@ -23,7 +23,8 @@
   height: 75px;
   cursor: pointer;
 }
-.logoText, #logoText2 {
+.logoText,
+#logoText2 {
   color: rgb(167, 52, 52);
   font-size: 22px;
   font-weight: 600;
@@ -77,7 +78,7 @@
 #s-home {
   padding: 0 7px;
   width: 40px !important;
-  height: 40px!important;
+  height: 40px !important;
 }
 #blog,
 #s-blog {
@@ -367,6 +368,18 @@
   box-shadow: 2px 2px 5px 5px #d7d7d7;
   border-radius: 5px;
 }
+.sidebarWrapper::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 20px; /* width of the entire scrollbar */
+}
+.sidebarWrapper::-webkit-scrollbar-track {
+  background: #212121; /* color of the tracking area */
+}
+.sidebarWrapper::-webkit-scrollbar-thumb {
+  background-color: #2f8aa5; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid; /* creates padding around scroll thumb */
+}
 .sidebarTitle {
   padding: 10px 0;
   padding-left: 37px;
@@ -547,7 +560,7 @@
     max-width: 300px;
     min-width: 300px;
   }
-  .sidebarTitle{
+  .sidebarTitle {
     margin-left: -15px;
   }
   .sidebarSearchForm {

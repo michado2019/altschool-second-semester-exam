@@ -82,6 +82,7 @@ export default function Blog() {
                     <div className="blogBtnsDiv">
                       <button
                         className="blogBtns"
+                        id='prev'
                         disabled={page <= 1}
                         onClick={() => setPage((prev) => prev - 1)}
                       >
@@ -89,6 +90,7 @@ export default function Blog() {
                       </button>
                       <button
                         className="blogBtns"
+                        id='next'
                         disabled={page >= pages}
                         aria-disabled={page >= pages}
                         onClick={() => setPage((prev) => prev + 1)}

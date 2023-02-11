@@ -107,6 +107,19 @@
   background-color: transparent;
   margin-right: 5px;
 }
+.blogBtns:hover{
+  color: #119fcb;
+}
+#prev:hover{
+  margin-bottom: 5px;
+  margin-left: -10px;
+  transition: 0.3s
+}
+#next:hover{
+  margin-left: -10px;
+  margin-top: 5px;
+  transition: 0.3s
+}
 @media screen and (max-width: 940px) {
   .blogWrapper {
     margin: -80px -30px 0;
