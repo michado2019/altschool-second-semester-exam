@@ -3,7 +3,8 @@
 }
 .appRouter {
   width: 70%;
-  margin-left: 40px;
+  margin: 0 auto;
+  margin-left: 370px;
   height: 100%;
   margin-top: -15%;
 }
@@ -24,4 +25,10 @@
 .errorBoundary-message {
   color: red;
   font-size: 24px;
+}
+@media screen and (max-width: 940px) {
+  .appRouter {
+    margin: 0 auto;
+    margin-left: 7%;
+  }
 }

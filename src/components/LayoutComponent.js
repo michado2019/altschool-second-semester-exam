@@ -303,17 +303,17 @@ export const Sidebar = () => {
     <div
       className="sidebarWrapper"
       style={{
-        marginLeft: sidebar ? "-350px" : "0",
+        marginLeft: sidebar ? "0" : "-350px",
         transition: "all 0.3s",
         position: sidebar ? "fixed" : "",
       }}
     >
       <h2 className="sidebarTitle">Blogs:</h2>
       <div id="circleArrow">
-            {sidebar ? (
-              <ArrowCircleRight className="arrows"  onClick={handleSidebar}/>
-            ) : (
+            {sidebar ?  (
               <ArrowCircleLeft className="arrows" onClick={handleSidebar}/>
+            ): (
+              <ArrowCircleRight className="arrows"  onClick={handleSidebar}/>
             )}
           </div>
       <form className="sidebarSearchForm">

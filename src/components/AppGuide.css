@@ -1,6 +1,6 @@
 .appGuide-wrapper{
     margin-bottom: -40px;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 .appGuide{
     display: flex;
@@ -14,17 +14,26 @@
     font-family: 'Lobster', cursive;
 }
 .appGuide-details{
-    font-size: 24px;
+    font-size: 28px;
+}
+@media screen and (max-width: 768px) {
+    .appGuide-title{
+    font-size: 20px !important;
+    }
 }
 @media screen and (max-width: 600px) {
     .appGuide-wrapper{
         width: 120%;
     }
     .appGuide-title{
-        font-size: 24px;
         font-family: 'Lobster', cursive;
     }
     .appGuide-details{
         font-size: 20px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .appGuide-wrapper{
+        margin-left: -11px;;
     }
 }
