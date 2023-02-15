@@ -12,18 +12,23 @@
 #modal-modal-title{
     color: #2f8aa5;
 }
-.modeBox-notifications_flex{
+.modeBox-notifications{
+    font-size: 18px;
+    text-align: center;
+}
+.adminForm{
     display: flex !important;
     flex-direction: column !important;
     align-items: center;
     justify-content: center;
 }
-.modeBox-notifications{
-    font-size: 18px;
-}
 .adminInput{
     padding: 5px 10px;
-    outline-color: #d7d7d7;
+    border: 0;
+    border: 1px solid #d7d7d7;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 .adminSubmit-btn{
     background-color: #2f8aa5;
@@ -38,4 +43,10 @@
     color: #2f8aa5;
     border: 2px solid #2f8aa5;
     transition: all 0.3s;
+}
+@media screen and (max-width: 375px) {
+    .modeBox{
+        margin-left: 50% !important;
+        width: 70% !important;
+    }
 }

@@ -62,7 +62,7 @@ function Admin() {
             </div>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <form onSubmit={handlePasswordSubmit}>
+            <form onSubmit={handlePasswordSubmit} className='adminForm'>
             <input 
             type="text/number" 
             className="adminInput" 
