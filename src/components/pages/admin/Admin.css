@@ -3,3 +3,39 @@
     margin-left: 5%;
     height: 100vh;
 }
+.modeBox{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+#modal-modal-title{
+    color: #2f8aa5;
+}
+.modeBox-notifications_flex{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+}
+.modeBox-notifications{
+    font-size: 18px;
+}
+.adminInput{
+    padding: 5px 10px;
+    outline-color: #d7d7d7;
+}
+.adminSubmit-btn{
+    background-color: #2f8aa5;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    padding: 7px 20px;
+    font-weight: 700px;
+}
+.adminSubmit-btn:hover{
+    background-color: #fff;
+    color: #2f8aa5;
+    border: 2px solid #2f8aa5;
+    transition: all 0.3s;
+}
