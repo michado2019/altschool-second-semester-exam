@@ -21,7 +21,7 @@ function Admin() {
   const handlePasswordSubmit = (e) => {
     e.preventDefault()
       setAdminPassword(getPassword)
-      if(getPassword === '0987' && getPassword !== ''){
+      if(getPassword === '0987' && adminPassword !== ''){
         handleClose()
       }else{
         setWrongPassword(true)
