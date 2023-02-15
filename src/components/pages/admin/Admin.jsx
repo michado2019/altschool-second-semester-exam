@@ -21,7 +21,7 @@ function Admin() {
   const handlePasswordSubmit = (e) => {
     e.preventDefault()
       setAdminPassword(getPassword)
-      if(getPassword === '0987654567890' && getPassword !== ''){
+      if(getPassword === '0987' && getPassword !== ''){
         handleClose()
       }else{
         setWrongPassword(true)
@@ -67,6 +67,7 @@ function Admin() {
             type="text/number" 
             className="adminInput" 
             onChange={handleChange}
+            placeholder="Use 0987 to test"
             />
             <button className='adminSubmit-btn'>Submit</button>
             </form>

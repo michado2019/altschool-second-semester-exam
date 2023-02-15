@@ -25,6 +25,7 @@
 .adminInput{
     padding: 5px 10px;
     border: 0;
+    outline: none;
     border: 1px solid #d7d7d7;
     margin-top: -20px;
     margin-bottom: 10px;
