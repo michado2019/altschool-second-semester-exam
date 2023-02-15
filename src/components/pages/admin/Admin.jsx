@@ -30,7 +30,7 @@ function Admin() {
     }
   };
   const handleCustomizeDisplay = () => {
-    setAdminCustomize((prev) => !prev);
+    setAdminCustomize(true);
   };
   const handleCustomizeHide = () => {
     setAdminCustomize(false);
@@ -126,7 +126,6 @@ function Admin() {
             <div
               className="adminDashboard-bottom_divs"
               onMouseOver={handleCustomizeDisplay}
-              onMouseLeave={handleCustomizeHide}
             >
               <img
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAY1BMVEX///8AAADW1tZFRUUKCgpJSUl4eHhgYGDLy8vg4ODGxsZkZGT5+fm/v7+NjY2wsLB+fn5SUlLy8vIfHx8WFhbp6ek6OjpwcHCpqakRERFAQEBqamqjo6OYmJgxMTEaGhooKCgMmX3BAAACsUlEQVRoge2Z6ZaiMBBG2SEgIIj7qP3+TzlDEjZJkbSVnNM9p+4/u6OX+kwwVDyPIAiCIAiCIAiC+L9hZZXG4UBTgwN3LAhae96sOPhLSuAC9/Hh+grPgR0vS/0ViXLkn/H/+50Fcb32+v5DNTKZDXjiI7+MHxZNNKqSksW13bHioeKizoMRphq5lyO77algCpMFKF0LRMXdv1nfimtocGYxuSr9QBl1Pr3oUBM8MxXLqKWsnV3FhxSGc0VGnQ2v0WbGbyCm3/FMhTaXfFZrhy2j9uRKjDDfc9V/AnyPloiKX2PUXn7lcxtzG0tNQltFHYg/aK94i9ggtOQ9arEekMs51Jtl1FPFeWfjvq0374Gon/oFgTNDUZ+wv1Q6MxT16YgU68wy6mk5DVGjxRrzKurcUtQ6s7xXr6K+4SveNkNR479jjdll1Jtmp1Fvmd1GvWEWFUerqG/Wni4AsxBfp6gzEXVoq2LI/ACitlcxYG6f3DNtp4eobTzQbJrlFjwdRNnVdtSQWYY97HZk1KHFqCFzI81+3KvzSCwnm1EDZvY1mPuqnUQNmPlOWNbdlE6iBsx8MZeyVgezGjb3qhcbtj1Qxe0jQT3FKsx8TTXeMb8vJto7/X4Zs+FWmHkr5NRMHRulmEU+bsetMJ/9JerJFfTm2Kr52C3FiXpyOTAH8yl9LqFl7NJ8u2y1+hyYd/2UbirdinFg9nZlzfR3LBdmM8j8q8xGfRIVfGuWIsxmvSEFvE9r0DoEMeyHreFhYX4mTXuAq/f1bzugWiWmfc837p9mNWHc613Ap8fsGeQjjPvbKzH2NMG8pz++Q26TkA0x4BwDJK+HEyZU11OgPLuBGMde8GLgvEqDhYp7WPFN7zdmhY71uSTMoUAupzf4WayetCrt1UsQBEEQBEEQBEH8TP4Cw5IaZnA+EdwAAAAASUVORK5CYII="
@@ -140,6 +139,7 @@ function Admin() {
             <div
               className="adminDashboard-bottom_flex"
               style={{ display: adminCustomize ? "flex" : "none" }}
+              onMouseLeave={handleCustomizeHide}
             >
               <img
                 src="https://cdn.iconscout.com/icon/free/png-256/forward-arrow-1767508-1502507.png"
@@ -153,7 +153,6 @@ function Admin() {
             <div
               className="adminDashboard-bottom_divs"
               onMouseOver={handleCustomizeDisplay}
-              onMouseLeave={handleCustomizeHide}
             >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzUR4k1BxOBZVUco0yocanzBhZISeZ-S3iew&usqp=CAU"
@@ -167,6 +166,7 @@ function Admin() {
             <div
               className="adminDashboard-bottom_flex"
               style={{ display: adminCustomize ? "flex" : "none" }}
+              onMouseLeave={handleCustomizeHide}
             >
               <img
                 src="https://cdn.iconscout.com/icon/free/png-256/forward-arrow-1767508-1502507.png"
@@ -180,7 +180,6 @@ function Admin() {
             <div
               className="adminDashboard-bottom_divs"
               onMouseOver={handleCustomizeDisplay}
-              onMouseLeave={handleCustomizeHide}
             >
               <img
                 src="data:image/png;base64,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"
@@ -194,6 +193,7 @@ function Admin() {
             <div
               className="adminDashboard-bottom_flex"
               style={{ display: adminCustomize ? "flex" : "none" }}
+              onMouseLeave={handleCustomizeHide}
             >
               <img
                 src="https://cdn.iconscout.com/icon/free/png-256/forward-arrow-1767508-1502507.png"
