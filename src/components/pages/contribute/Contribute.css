@@ -1,5 +1,5 @@
 .contributeWrapper {
-  margin: 100px 10px;
+  margin: 100px 10%;
   height: 175vh;
   width: 80%;
   margin-top: 32%;
@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  margin-left: 5px;
 }
 .homeBigBtn {
   width: 200px;
@@ -168,12 +169,17 @@
   transition: all 0.3s;
 }
 
+@media screen and (max-width: 1200px) {
+  .contributeWrapper {
+    margin-left: 5%;
+  }
+}
 @media screen and (max-width: 940px) {
   .contributeWrapper {
     margin: 150px 10px;
     width: 80%;
-    margin-top: 45%;
-    margin-left: 17%;
+    margin-top: 20%;
+    margin-left: 12%;
   }
 }
 
@@ -200,10 +206,7 @@
 }
 @media screen and (max-width: 375px) {
   .contributeWrapper {
-    margin-left: -20%;
-  }
-  .contributeGuideFlex {
-    flex-direction: column;
+    margin-left: -15%;
   }
   .contributeGuideDiv {
     width: 100%;
