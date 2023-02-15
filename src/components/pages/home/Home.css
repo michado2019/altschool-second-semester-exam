@@ -1,19 +1,19 @@
 .homeWrapper {
   padding-bottom: -30%;
-  margin: 0 auto;
+  margin: 0 7%;
   margin-top: 38%;
   height: 270vh;
-  width: 90%;
+  width: 85%;
 }
 .homeAbout-div {
   display: flex;
   justify-content: center;
 }
 .homeAbout {
-  margin: 130px 70px 50px 67px;
+  margin: 130px 40px 50px 70px;
   line-height: 32px;
   border-radius: 10px;
-  width: 100%;
+  width: 85%;
   animation-name: welcome;
   animation-duration: 1s;
 }
@@ -53,9 +53,9 @@
   height: 250px;
   border-radius: 10px;
   margin-top: 90px;
-  margin-right: -70px;
 }
 .homeAbout-img{
+  margin-right: -70px;
   animation-name: aboutImg;
   animation-duration: 1s;
 }
@@ -140,7 +140,7 @@
   border: 0;
 }
 .faqContactDiv{
-  width: 86%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -302,11 +302,13 @@
 
 /*Media Queries*/
 @media screen and (max-width: 1200px) {
-  .homeAbout-div{
-    margin-top: -10px;
+  .homeWrapper{
+  margin: 0 0;
+  height: 280vh;
   }
   .homeAbout-div{
-    width: 132%;
+    margin-top: 300px;
+    width: 115%;
   }
   .homeAbout-img {
     display: none;
@@ -318,6 +320,7 @@
 @media screen and (max-width: 940px) {
   .homeWrapper{
     height: fit-content;
+    margin: 0 10%;
     margin-top: 90px;
   }
   .homeAbout-div{
@@ -332,8 +335,11 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .homeWrapper{
-      width: 100%;
+  .homeWrapper {
+    padding-bottom: -30%;
+    margin: 0 7%;
+    margin-top: 38%;
+    width: 85%;
   }
   .About-title, .homeContacts-gen_title, .homeFAQs-gen_title{
     font-size: 22px;
