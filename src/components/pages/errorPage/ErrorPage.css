@@ -4,9 +4,16 @@
     justify-content: center;
     align-items: center;
     height: 130vh;
+    margin-top: 120px;
 }
 .errorPage-img{
     width: 300px;
     height: 300px;
     border-radius: 10px;
+}
+@media screen and (max-width: 940px) {
+    .errorPage-wrapper{
+    margin-left: 23%;
+    margin-top: -70px;
+    }
 }
