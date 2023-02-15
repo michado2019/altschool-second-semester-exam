@@ -1,6 +1,6 @@
 .adminWrapper {
   margin-top: 280px;
-  margin-left: 20px;
+  margin-left: 70px;
   margin-right: 10px;
   height: 100vh;
 }
@@ -58,8 +58,8 @@
   align-items: center;
   justify-content: space-between;
 }
-.adminDashboard-bottom{
-    margin-top: 70px;
+.adminDashboard-bottom {
+  margin-top: 70px;
 }
 .adminDashboard-top_divs {
   display: flex;
@@ -74,12 +74,12 @@
   animation-duration: 0.5s;
 }
 @keyframes adminDashboard-top_divs {
-    0%{
-      margin-top: -100px;
-    }
-   100%{
-        margin-top: initial;
-    }
+  0% {
+    margin-top: -100px;
+  }
+  100% {
+    margin-top: initial;
+  }
 }
 .adminDashboard-top_img {
   width: 50px;
@@ -106,58 +106,106 @@ h3 {
   font-size: 20px;
   color: rgb(167, 52, 52);
   font-weight: 800;
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
 }
 
 /* Bottom part*/
-
 .adminDashboard-bottom_divs {
-    display: flex;
-    align-items: center;
-    background-color: #212121;
-    box-shadow: 2px 3px 4px #ccc;
-    width: 22vw;
-    height: 100px;
-    border-radius: 10px;
-    justify-content: center;
-    animation-name: adminDashboard-bottom_divs;
-    animation-duration: 0.5s;
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  box-shadow: 2px 3px 4px #ccc;
+  width: 20vw;
+  height: 150px;
+  border-radius: 10px;
+  justify-content: center;
+  animation-name: adminDashboard-bottom_divs;
+  animation-duration: 0.5s;
+  cursor: pointer;
+}
+@keyframes adminDashboard-bottom_divs {
+  0% {
+    margin-top: -100px;
   }
-  @keyframes adminDashboard-bottom_divs {
-      0%{
-        margin-top: -100px;
-      }
-     100%{
-          margin-top: initial;
-      }
+  100% {
+    margin-top: initial;
   }
-  .adminDashboard-bottom_img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  .adminDashboard-bottom_div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .adminDashboard-bottom_divs h2,
-  h3 {
-    color: #2f8aa5;
-    font-size: 16px;
-  }
-  .adminDashboard-bottom_divs h2 {
-    margin-top: 10px;
-  }
-  .adminDashboard-bottom_divs h3 {
+}
+.adminDashboard-bottom_customization {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  border: 1px solid #2f8aa5;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.adminDashboard-bottom_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.adminDashboard-bottom_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.adminDashboard-bottom_divs h2,
+h3 {
+  color: #2f8aa5;
+  font-size: 16px;
+}
+.adminDashboard-bottom_divs h2 {
+  margin-top: 10px;
+}
+.adminDashboard-bottom_divs h3 {
+  margin-top: -10px;
+  font-size: 20px;
+  color: rgb(167, 52, 52);
+  font-weight: 800;
+  font-family: "Lobster", cursive;
+}
+.adminDashboard-bottom_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  animation-name: adminDashboard-bottom_flex;
+  animation-duration: 0.3s;
+}
+@keyframes adminDashboard-bottom_flex {
+  0% {
     margin-top: -10px;
-    font-size: 20px;
-    color: rgb(167, 52, 52);
-    font-weight: 800;
-    font-family: 'Lobster', cursive;
   }
+  100% {
+    margin-top: initial;
+  }
+}
+
+.adminBlog-arrow {
+  width: 40px !important;
+  height: 40px !important;
+  color: #555555 !important;
+  animation-name: adminArrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes adminArrow {
+  0% {
+    margin-right: -5px;
+  }
+  100% {
+    margin-right: initial;
+  }
+}
+.adminDashboard-bottom_flex h2 {
+  border: 5px dashed rgb(167, 52, 52);
+  color: #212121;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 16px;
+  text-shadow: 1px 2px 3px #2f8aa5;
+}
 @media screen and (max-width: 1023px) {
   .adminDashboard-top {
     flex-direction: column !important;
