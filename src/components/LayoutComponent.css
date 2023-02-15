@@ -358,8 +358,8 @@
 .sidebarWrapper {
   position: sticky;
   height: 77vh;
-  min-width: 350px;
-  max-width: 350px;
+  min-width: 270px;
+  max-width: 270px;
   top: 130px;
   left: 0;
   bottom: 0;
@@ -388,17 +388,18 @@
   font-size: 20px;
 }
 .sidebarSearchForm {
-  padding: 15px 11%;
   padding-bottom: 10px;
 }
 .sidebarSearchForm input {
-  padding: 10px 43px;
+  width: 250px;
+  padding: 7px 0;
   border-radius: 5px;
   border-bottom: 4px solid #119fcb;
   border-top: 4px solid #119fcb;
   outline: none;
   text-align: center;
   background-color: #f2f2f2;
+  margin-left: 2px;
 }
 .refreshTitleBtn {
   width: 77%;
@@ -408,7 +409,7 @@
   border-radius: 5px;
   padding: 10px 0;
   color: #119fcb;
-  margin: 0 38px;
+  margin: 0 28px;
   background-color: #f3f3f3;
 }
 .refreshTitleBtn:hover {
@@ -419,7 +420,7 @@
   text-decoration: none;
 }
 .sidebarBlog-title_list {
-  margin: 20px -2px;
+  margin: 20px -10px;
   border-radius: 4px;
   width: 80%;
   font-size: 18px;
@@ -556,18 +557,8 @@
   }
 }
 @media screen and (max-width: 370px) {
-  .sidebarWrapper {
-    max-width: 300px;
-    min-width: 300px;
-  }
   .sidebarTitle {
     margin-left: -15px;
-  }
-  .sidebarSearchForm {
-    padding-left: 22px;
-  }
-  .sidebarSearchForm input {
-    padding: 10px 35px;
   }
   .refreshTitleBtn {
     width: 85%;
