@@ -4,14 +4,20 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import "./Admin.css";
 import { propsData } from "../../SpecialProps";
+import { Outlet, useParams, Link } from "react-router-dom";
+import uniqid from 'uniqid'
 
 function Admin() {
+
+  const {blogCustomizeId} = useParams()
+
   // States
   const [open, setOpen] = useState(false);
   const [getPassword, setGetPassword] = useState("");
   const [adminPassword, setAdminPassword] = useState("");
   const [wrongPassword, setWrongPassword] = useState(false);
   const [adminCustomize, setAdminCustomize] = useState(false);
+  const [id, setId] = useState(uniqid())
 
   // Handlers
   const handleOpen = () => setOpen(true);
@@ -35,6 +41,9 @@ function Admin() {
   const handleCustomizeHide = () => {
     setAdminCustomize(false);
   };
+  const handleClick = (clickId) => {
+    setId(clickId)
+  }
   const style = {
     marginTop: "300px",
     transform: "translate(-50%, -50%)",
@@ -52,7 +61,7 @@ function Admin() {
   useEffect(() => {
     handleOpen();
   }, []);
-  console.log(propsData);
+
   return (
     <div className="adminWrapper">
       <Modal
@@ -146,7 +155,7 @@ function Admin() {
                 alt="img"
                 className="adminBlog-arrow"
               />
-              <h2>{propsData.text1}</h2>
+              <h2 onClick={() => handleClick(id + 1)}><Link to={`blogCustomize/${id}/editBlog`}>{propsData.text1}</Link></h2>
             </div>
           </div>
           <div className="adminDashboard-bottom_customization">
@@ -173,7 +182,7 @@ function Admin() {
                 alt="img"
                 className="adminBlog-arrow"
               />
-              <h2>{propsData.text2}</h2>
+              <h2 onClick={() => handleClick(id + 2)}><Link to={`blogCustomize/${id}/deleteBlog`}>{propsData.text2}</Link></h2>
             </div>
           </div>
           <div className="adminDashboard-bottom_customization">
@@ -200,11 +209,12 @@ function Admin() {
                 alt="img"
                 className="adminBlog-arrow"
               />
-              <h2>{propsData.text3}</h2>
+              <h2 onClick={() => handleClick(id + 3)}><Link to={`blogCustomize/${id}/viewBlogs`}>{propsData.text3}</Link></h2>
             </div>
           </div>
         </div>
       </div>
+      <Outlet />
     </div>
   );
 }

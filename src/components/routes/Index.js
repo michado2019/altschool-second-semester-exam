@@ -9,6 +9,10 @@ import SignIn from '../pages/signIn/SignIn'
 import CodingSchools from "../pages/courses/CodingSchools";
 import ErrorPage from '../pages/errorPage/ErrorPage'
 import Admin from "../pages/admin/Admin";
+import BlogCustomize from "../pages/blogCustomize/BlogCustomize";
+import EditBlog from "../pages/blogCustomize/EditBlog";
+import DeleteBlog from "../pages/blogCustomize/DeleteBlog";
+import ViewBlogs from "../pages/blogCustomize/ViewBlogs";
 
 export default function AppRouter({ handleAuth }) {
 
@@ -33,7 +37,12 @@ export default function AppRouter({ handleAuth }) {
           <Route path="/sign" element={<Sign handleAuth={handleAuth} />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/courses" element={<CodingSchools />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<Admin />} >
+            <Route path="/admin/blogCustomize/:id" element={<BlogCustomize />} />
+          </Route>
+          <Route path='/admin/blogCustomize/:id/editBlog' element={<EditBlog />} />
+          <Route path='/admin/blogCustomize/:id/deleteBlog' element={<DeleteBlog />} />
+          <Route path='/admin/blogCustomize/:id/viewBlogs' element={<ViewBlogs />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
     </div>
