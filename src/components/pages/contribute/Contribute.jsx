@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import AppGuide from "../../AppGuide";
 import "./Contribute.css";
 import { Link } from "react-router-dom";
-import { addDoc, collection } from "@firebase/firestore";
+import { addDoc, doc, collection, updateDoc } from "@firebase/firestore";
 import { DbContext } from "../../../App";
 import { auth, signOut } from "../../../firebase";
 import { UserContext } from "../../../App";
@@ -45,6 +45,11 @@ function Contribute({ contribute, setContribute, handleAuth }) {
       await addDoc(dbRef, contribute);
       alert("Your contribution successfully saved! Thanks");
     }
+
+    const updateContribute = (id, updatedContribute) => {
+      const contribute = doc(dbRef, "contribute", id);
+      return updateDoc(contribute, updatedContribute);
+    };
     setForm({
       contributionTitle: "",
       contributionText: "",
@@ -52,7 +57,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
       email: "",
       twitter: "",
     });
-    setShowForm(true)
+    setShowForm(true);
   };
   const handleSignOut = () => {
     signOut(auth)
@@ -66,7 +71,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
 
   // useEffect
   useEffect(() => {
-     setContribute(form);
+    setContribute(form);
   }, [form, setContribute]);
   return (
     <div className="contributeWrapper">

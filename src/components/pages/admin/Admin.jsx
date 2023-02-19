@@ -42,6 +42,7 @@ function Admin() {
     setAdminCustomize(false);
   };
   const handleClick = (clickId) => {
+    if(!id) return false
     setId(clickId)
   }
   const style = {
@@ -155,7 +156,7 @@ function Admin() {
                 alt="img"
                 className="adminBlog-arrow"
               />
-              <h2 onClick={() => handleClick(id + 1)}><Link to={`blogCustomize/${id}/editBlog`}>{propsData.text1}</Link></h2>
+              <h2 onClick={() => handleClick(id + 2)}><Link to={`blogCustomize/${id}/editBlog`} className='adminLinks'>{propsData.text1}</Link></h2>
             </div>
           </div>
           <div className="adminDashboard-bottom_customization">
@@ -182,7 +183,7 @@ function Admin() {
                 alt="img"
                 className="adminBlog-arrow"
               />
-              <h2 onClick={() => handleClick(id + 2)}><Link to={`blogCustomize/${id}/deleteBlog`}>{propsData.text2}</Link></h2>
+              <h2 onClick={() => handleClick(id + 4)}><Link to={`blogCustomize/${id}/deleteBlog`} className='adminLinks'>{propsData.text2}</Link></h2>
             </div>
           </div>
           <div className="adminDashboard-bottom_customization">
@@ -209,7 +210,7 @@ function Admin() {
                 alt="img"
                 className="adminBlog-arrow"
               />
-              <h2 onClick={() => handleClick(id + 3)}><Link to={`blogCustomize/${id}/viewBlogs`}>{propsData.text3}</Link></h2>
+              <h2 onClick={() => handleClick(id + 6)}><Link to={`blogCustomize/${id}/viewBlogs`} className='adminLinks'>{propsData.text3}</Link></h2>
             </div>
           </div>
         </div>

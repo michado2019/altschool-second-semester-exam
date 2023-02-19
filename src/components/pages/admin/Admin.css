@@ -2,7 +2,7 @@
   margin-top: 280px;
   margin-left: 70px;
   margin-right: 10px;
-  height: 100vh;
+  height: 80vh;
 }
 .modeBox {
   display: flex !important;
@@ -134,7 +134,7 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 20vw;
-  border: 1px solid #2f8aa5;
+  border: 3px solid #2f8aa5;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -197,6 +197,10 @@ h3 {
     margin-right: initial;
   }
 }
+.adminLinks{
+  text-decoration: none;
+  color: #2f8aa5;
+}
 .adminDashboard-bottom_flex h2 {
   border: 5px dashed rgb(167, 52, 52);
   cursor: pointer;
@@ -206,13 +210,35 @@ h3 {
   font-size: 16px;
   text-shadow: 1px 2px 3px #2f8aa5;
 }
+@media screen and (max-width: 1200px) {
+  .adminWrapper {
+    height: 70vh;
+  } 
+}
 @media screen and (max-width: 1023px) {
+  .adminWrapper {
+    height: 200vh;
+  } 
   .adminDashboard-top {
     flex-direction: column !important;
   }
   .adminDashboard-top_divs {
     width: 50vw !important;
     flex-direction: column !important;
+    margin-bottom: 20px;
+  }
+  .adminDashboard-bottom {
+    display: flex;
+    flex-direction: column !important;
+    margin-bottom: 20px;
+  }
+  .adminDashboard-bottom_divs {
+    width: 50vw !important;
+    flex-direction: column !important;
+    margin-bottom: 20px;
+  }
+  .adminDashboard-bottom_customization {
+    width: 50vw !important;
     margin-bottom: 20px;
   }
 }
@@ -223,6 +249,12 @@ h3 {
     margin-top: 100px;
   }
   .adminDashboard-top_divs {
+    width: 70vw !important;
+  }
+  .adminDashboard-bottom_divs {
+    width: 70vw !important;
+  }
+  .adminDashboard-bottom_customization {
     width: 70vw !important;
   }
 }
@@ -238,13 +270,22 @@ h3 {
 }
 @media screen and (max-width: 400px) {
   .adminWrapper {
-    margin-left: 50px;
+    margin-left: 60px;
   }
   .adminDashboard-top_divs {
     width: 90vw !important;
   }
+  .adminDashboard-bottom_divs {
+    width: 90vw !important;
+  }
+  .adminDashboard-bottom_customization {
+    width: 90vw !important;
+  }
 }
 @media screen and (max-width: 375px) {
+  .adminWrapper {
+    margin-left: 50px;
+  }
   .modeBox {
     margin-left: 50% !important;
     width: 70% !important;

@@ -54,7 +54,6 @@ export const Navbar = (props) => {
     setUserDisplay(false);
   };
   const CustomNavbarLink = ({ to, ...props }) => {
-   
     let activeStyle = {
       color: "red",
       transition: "all 0.3s",
@@ -272,7 +271,6 @@ export const Sidebar = () => {
       setSearchParams({});
     }
   };
-
   const refreshTitle = () => {
     async function getAllContributions() {
       const contributions = await getDocs(dbRef);
