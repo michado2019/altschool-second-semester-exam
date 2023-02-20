@@ -16,13 +16,13 @@ import twitterLogo from "../blog/assets/logo-3491390.png";
 import { auth, signOut } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 
-export const EditBlog = ({
+export default function EditBlog  ({
   setContributionId,
   contributionId,
   contribute,
   setContribute,
   handleAuth,
-}) => {
+}) {
 
   // useNavigate
   const navigate = useNavigate()
@@ -59,7 +59,6 @@ export const EditBlog = ({
   const handleContributionSubmit = async (e) => {
     e.preventDefault();
     if (contribute !== "") {
-      await addDoc(dbRef, contribute);
       alert("Your contribution successfully saved! Thanks");
     }
 
@@ -82,10 +81,9 @@ export const EditBlog = ({
       });
   };
   // Handlers
-  const handleEdit = async (id) => {
+  const handleEdit = async (id,) => {
     setDisplay((prev) => !prev);
     setContributionId(id);
-    if (contributionId !== undefined && contributionId !== "") {
       try {
         const singleDoc = doc(dbRef, id);
         const theDoc = getDoc(singleDoc);
@@ -94,10 +92,8 @@ export const EditBlog = ({
       } catch (e) {
         console.log(e);
       }
-    }
   };
   const handleUpdate = async (id, form) => {
-    setContributionId(id);
     if (contributionId !== undefined && contributionId !== "") {
       try {
         const singleDoc = doc(dbRef, id);
@@ -113,9 +109,6 @@ export const EditBlog = ({
       } catch (e) {
         console.log(e);
       }
-    }
-    if(form){
-      navigate("/editBlog")
     }
   };
   useEffect(() => {
