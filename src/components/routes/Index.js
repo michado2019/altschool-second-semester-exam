@@ -16,6 +16,11 @@ import ViewBlogs from "../pages/blogCustomize/ViewBlogs";
 
 export default function AppRouter({ handleAuth }) {
 
+  const [contributionId, setContributionId] = useState([])
+
+  const handleEdit = (id) => {
+    setContributionId(id)
+  }
   // State
   const [contribute, setContribute] = useState("");
   return (
@@ -40,7 +45,9 @@ export default function AppRouter({ handleAuth }) {
           <Route path="/admin" element={<Admin />} >
             <Route path="/admin/blogCustomize/:id" element={<BlogCustomize />} />
           </Route>
-          <Route path='/admin/blogCustomize/:id/editBlog' element={<EditBlog />} />
+          <Route path='/admin/blogCustomize/:id/editBlog' element={<EditBlog contribute={contribute}
+                setContribute={setContribute}
+                handleAuth={handleAuth}/>} handleEdit={handleEdit} contributionId={contributionId}/>
           <Route path='/admin/blogCustomize/:id/deleteBlog' element={<DeleteBlog />} />
           <Route path='/admin/blogCustomize/:id/viewBlogs' element={<ViewBlogs />} />
           <Route path="*" element={<ErrorPage />} />
