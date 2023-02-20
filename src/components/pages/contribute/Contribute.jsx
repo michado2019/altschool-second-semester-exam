@@ -7,7 +7,7 @@ import { DbContext } from "../../../App";
 import { auth, signOut } from "../../../firebase";
 import { UserContext } from "../../../App";
 
-function Contribute({ contribute, setContribute, handleAuth }) {
+function Contribute({ contribute, setContribute, handleAuth, setRun }) {
   //useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
@@ -41,11 +41,11 @@ function Contribute({ contribute, setContribute, handleAuth }) {
 
   const handleContributionSubmit = async (e) => {
     e.preventDefault();
+    setRun(true)
     if (contribute !== "") {
       await addDoc(dbRef, contribute);
       alert("Your contribution successfully saved! Thanks");
     }
-
     setForm({
       contributionTitle: "",
       contributionText: "",

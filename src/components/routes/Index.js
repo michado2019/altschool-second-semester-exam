@@ -14,7 +14,7 @@ import DeleteBlog from "../pages/blogCustomize/DeleteBlog";
 import ViewBlogs from "../pages/blogCustomize/ViewBlogs";
 import EditBlog from "../pages/blogCustomize/EditBlog"
 
-export default function AppRouter({ handleAuth, allContributions }) {
+export default function AppRouter({ handleAuth, allContributions, setRun }) {
 
   // State
   const [contribute, setContribute] = useState("");
@@ -30,6 +30,7 @@ export default function AppRouter({ handleAuth, allContributions }) {
                 contribute={contribute}
                 setContribute={setContribute}
                 handleAuth={handleAuth}
+                setRun={setRun}
               />
             }
           />

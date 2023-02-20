@@ -45,16 +45,18 @@ function App() {
   const [user, setUser] = useState(null);
 // State
 const [allContributions, setAllContributions] = useState('');
-
+const [run, setRun] = useState(true)
 const dbRef = collection(db, "contribution");
 // useEffect
 useEffect(() => {
-  async function getAllContributions() {
-    const contributions = await getDocs(dbRef);
-       setAllContributions(contributions.docs.length)
+  if(run === true){
+    async function getAllContributions() {
+      const contributions = await getDocs(dbRef);
+         setAllContributions(contributions.docs.length)
+    }
+    getAllContributions();
   }
-  getAllContributions();
-}, []);
+}, [dbRef, run]);
 
   //Handle the darkmode
   const handleDarkMode = (e) => {
@@ -132,7 +134,7 @@ useEffect(() => {
                   <a href="#topRegion-locator" id="topRegion">
                     <ArrowUpward />
                   </a>
-                  <AppRouter handleAuth={handleAuth} allContributions={allContributions}/>
+                  <AppRouter handleAuth={handleAuth} setRun={setRun} allContributions={allContributions}/>
                 </div>
               </UserContext.Provider>
             </HelmetProvider>
