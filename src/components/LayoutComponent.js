@@ -256,6 +256,9 @@ export const Sidebar = () => {
   const handleSidebar = () => {
     setSidebar((prev) => !prev);
   };
+  const handleClose = () => {
+    setSidebar(false)
+  }
   //Handle open-source
 
   const handleOpenSource = () => {
@@ -340,7 +343,7 @@ export const Sidebar = () => {
                   className="sidebarBlog-title_link"
                   key={blog.id}
                 >
-                  <li className="sidebarBlog-title_list">
+                  <li className="sidebarBlog-title_list"  onClick={handleClose}>
                     {blog.contributionTitle}
                   </li>
                 </Link>
@@ -381,7 +384,7 @@ export const Sidebar = () => {
           ""
         )}
         <div className="appAdmin">
-          <Link to="/admin" className="appAdmin">
+          <Link to="/admin" className="appAdmin" onClick={handleClose}>
             <h2>Admin</h2>
           </Link>
         </div>
