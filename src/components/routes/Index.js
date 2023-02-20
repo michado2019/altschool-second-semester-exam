@@ -10,19 +10,15 @@ import CodingSchools from "../pages/courses/CodingSchools";
 import ErrorPage from '../pages/errorPage/ErrorPage'
 import Admin from "../pages/admin/Admin";
 import BlogCustomize from "../pages/blogCustomize/BlogCustomize";
-import EditBlog from "../pages/blogCustomize/EditBlog";
 import DeleteBlog from "../pages/blogCustomize/DeleteBlog";
 import ViewBlogs from "../pages/blogCustomize/ViewBlogs";
+import EditBlog from "../pages/blogCustomize/EditBlog"
 
 export default function AppRouter({ handleAuth }) {
 
-  const [contributionId, setContributionId] = useState([])
-
-  const handleEdit = (id) => {
-    setContributionId(id)
-  }
   // State
   const [contribute, setContribute] = useState("");
+  const [contributionId, setContributionId] = useState("")
   return (
     <div className="appRouter">
         <Routes>
@@ -46,8 +42,10 @@ export default function AppRouter({ handleAuth }) {
             <Route path="/admin/blogCustomize/:id" element={<BlogCustomize />} />
           </Route>
           <Route path='/admin/blogCustomize/:id/editBlog' element={<EditBlog contribute={contribute}
+                setContributionId={setContributionId}
+                contributionId={contributionId}
                 setContribute={setContribute}
-                handleAuth={handleAuth}/>} handleEdit={handleEdit} contributionId={contributionId}/>
+                handleAuth={handleAuth}/>} />
           <Route path='/admin/blogCustomize/:id/deleteBlog' element={<DeleteBlog />} />
           <Route path='/admin/blogCustomize/:id/viewBlogs' element={<ViewBlogs />} />
           <Route path="*" element={<ErrorPage />} />

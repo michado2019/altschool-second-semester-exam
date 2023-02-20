@@ -69,6 +69,7 @@ function Contribute({ contribute, setContribute, handleAuth }) {
   useEffect(() => {
     setContribute(form);
   }, [form, setContribute]);
+
   return (
     <div className="contributeWrapper">
       <div className="contributeFlex-1">
