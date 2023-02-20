@@ -4,6 +4,7 @@ import { Navbar } from "./components/LayoutComponent";
 import { Sidebar } from "./components/LayoutComponent";
 import { Loading } from "./components/Loading";
 import { ErrorBoundary, useErrorHandler } from "react-error-boundary";
+import { getDocs, collection } from "@firebase/firestore";
 import { HelmetProvider } from "react-helmet-async";
 import {
   ArrowUpward,
@@ -16,7 +17,6 @@ import {
   onAuthStateChanged,
   db,
 } from "./firebase";
-
 // create context
 export const DbContext = createContext();
 export const UserContext = createContext();
@@ -43,6 +43,18 @@ function App() {
   //Set state for the darkmode
   const [darkMode, setDarkMode] = useState(false);
   const [user, setUser] = useState(null);
+// State
+const [allContributions, setAllContributions] = useState('');
+
+const dbRef = collection(db, "contribution");
+// useEffect
+useEffect(() => {
+  async function getAllContributions() {
+    const contributions = await getDocs(dbRef);
+       setAllContributions(contributions.docs.length)
+  }
+  getAllContributions();
+}, []);
 
   //Handle the darkmode
   const handleDarkMode = (e) => {
@@ -120,7 +132,7 @@ function App() {
                   <a href="#topRegion-locator" id="topRegion">
                     <ArrowUpward />
                   </a>
-                  <AppRouter handleAuth={handleAuth} />
+                  <AppRouter handleAuth={handleAuth} allContributions={allContributions}/>
                 </div>
               </UserContext.Provider>
             </HelmetProvider>

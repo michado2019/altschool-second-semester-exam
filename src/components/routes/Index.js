@@ -14,7 +14,7 @@ import DeleteBlog from "../pages/blogCustomize/DeleteBlog";
 import ViewBlogs from "../pages/blogCustomize/ViewBlogs";
 import EditBlog from "../pages/blogCustomize/EditBlog"
 
-export default function AppRouter({ handleAuth }) {
+export default function AppRouter({ handleAuth, allContributions }) {
 
   // State
   const [contribute, setContribute] = useState("");
@@ -38,7 +38,7 @@ export default function AppRouter({ handleAuth }) {
           <Route path="/sign" element={<Sign handleAuth={handleAuth} />} />
           <Route path="/signIn" element={<SignIn />} />
           <Route path="/courses" element={<CodingSchools />} />
-          <Route path="/admin" element={<Admin />} >
+          <Route path="/admin" element={<Admin allContributions={allContributions}/>} >
             <Route path="/admin/blogCustomize/:id" element={<BlogCustomize />} />
           </Route>
           <Route path='/admin/blogCustomize/:id/editBlog' element={<EditBlog contribute={contribute}

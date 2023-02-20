@@ -7,7 +7,7 @@ import { propsData } from "../../SpecialProps";
 import { Outlet, useParams, Link } from "react-router-dom";
 import uniqid from 'uniqid'
 
-function Admin() {
+function Admin({allContributions}) {
 
   const {blogCustomizeId} = useParams()
 
@@ -127,7 +127,7 @@ function Admin() {
             />
             <div className="adminDashboard-top_div">
               <h2>Total Blogs:</h2>
-              <h3>{300}</h3>
+              <h3>{allContributions}</h3>
             </div>
           </div>
         </div>
