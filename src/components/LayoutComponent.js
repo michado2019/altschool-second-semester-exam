@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { NavLink, Link, useSearchParams } from "react-router-dom";
+import { NavLink, Link, useSearchParams, Navigate, useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
 import "./LayoutComponent.css";
 import appLogo from "../images/logo.png";
@@ -241,6 +241,8 @@ export const Navbar = (props) => {
 
 export const Sidebar = () => {
 
+  //useNavigate
+  const navigate = useNavigate()
   // useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
@@ -324,9 +326,14 @@ export const Sidebar = () => {
           onChange={handleTitleSearch}
         />
       </form>
+      <div className='refreshBtn-div'>
       <button onClick={refreshTitle} className="refreshTitleBtn">
         Refresh
       </button>
+      <button onClick={() => navigate('/contribute')} className="refreshTitleBtn">
+        Contribute
+      </button>
+      </div>
       <div className="sidebarHid">
         <ul>
           {allContributions

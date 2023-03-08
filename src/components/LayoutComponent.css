@@ -400,15 +400,20 @@
   background-color: #f2f2f2;
   margin-left: 2px;
 }
+.refreshBtn-div{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: -5px;
+}
 .refreshTitleBtn {
-  width: 77%;
+  width: 30%;
   cursor: pointer;
   border: 0;
   background-color: #ddd;
   border-radius: 5px;
   padding: 5px 0;
   color: #119fcb;
-  margin: 0 28px;
 }
 .refreshTitleBtn:hover {
   background-color: rgb(167, 52, 52);
