@@ -569,10 +569,11 @@
   .sidebarTitle {
     margin-left: -15px;
   }
+  .refreshBtn-div{
+    margin-left: 2px;
+  }
   .refreshTitleBtn {
-    width: 85%;
-    padding: 10px 0;
-    margin: 0 22px;
+    width: 38%;
   }
   .sidebarBlog-title_list {
     width: 90%;
