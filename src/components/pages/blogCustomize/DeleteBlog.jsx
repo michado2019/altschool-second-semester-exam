@@ -7,8 +7,12 @@ import { NoBlog } from "../../Loading";
 import { Loading } from "../../Loading";
 import twitterLogo from "../blog/assets/logo-3491390.png";
 import { DeleteOutline } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 export default function DeleteBlog() {
+
+  //useNavigate
+  const navigate = useNavigate()
   //useContext
   const db = useContext(DbContext);
   const dbRef = collection(db, "contribution");
@@ -25,6 +29,7 @@ export default function DeleteBlog() {
       return false;
     } else {
       const getDoc = doc(dbRef, id);
+      navigate('/admin')
       return deleteDoc(getDoc);
     }
   };

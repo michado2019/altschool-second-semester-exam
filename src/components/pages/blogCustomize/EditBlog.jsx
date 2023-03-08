@@ -99,13 +99,7 @@ export default function EditBlog  ({
         const singleDoc = doc(dbRef, id);
         const updatedContribution = await updateDoc(singleDoc, form);
         if (form && updatedContribution) setForm(updatedContribution);
-        setForm({
-          contributionTitle: "",
-          contributionText: "",
-          contributor: "",
-          email: "",
-          twitter: "",
-        });
+        navigate('/admin')
       } catch (e) {
         console.log(e);
       }
