@@ -373,7 +373,7 @@
   border-radius: 20px; /* width of the entire scrollbar */
 }
 .sidebarWrapper::-webkit-scrollbar-track {
-  background: #212121; /* color of the tracking area */
+  background: #ddd; /* color of the tracking area */
 }
 .sidebarWrapper::-webkit-scrollbar-thumb {
   background-color: #2f8aa5; /* color of the scroll thumb */
@@ -394,8 +394,7 @@
   width: 250px;
   padding: 7px 0;
   border-radius: 5px;
-  border-bottom: 4px solid #119fcb;
-  border-top: 4px solid #119fcb;
+  border: 1px solid #ddd;
   outline: none;
   text-align: center;
   background-color: #f2f2f2;
@@ -404,37 +403,39 @@
 .refreshTitleBtn {
   width: 77%;
   cursor: pointer;
-  font-weight: 550px;
-  border: 1px solid #119fcb;
+  border: 0;
+  background-color: #ddd;
   border-radius: 5px;
-  padding: 10px 0;
+  padding: 5px 0;
   color: #119fcb;
   margin: 0 28px;
-  background-color: #f3f3f3;
 }
 .refreshTitleBtn:hover {
+  background-color: rgb(167, 52, 52);
   cursor: pointer;
+  color: #fff;
   font-weight: 700;
+  transition: all 0.3s;
 }
 .sidebarBlog-title_link {
   text-decoration: none;
 }
 .sidebarBlog-title_list {
-  margin: 20px -10px;
+  margin: 7px -10px;
   border-radius: 4px;
   width: 80%;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   padding: 5px 10px;
-  background-color: #212121;
+  background-color: #ddd;
   list-style: none;
   color: #2f8aa5;
   text-align: center;
-  font-weight: 700;
+  font-weight: 550;
 }
 .sidebarBlog-title_list:hover {
-  background-color: #fff;
-  color: #212121;
+  background-color: rgb(167, 52, 52);
+  color: #fff;
   transition: all 0.3s;
 }
 .arrowRight {
@@ -463,10 +464,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 10px;
 }
 .sidebarFooter-heading {
   text-align: center;
+  font-size: 16px;
   margin-bottom: -2px;
   cursor: pointer;
   color: #555555;
@@ -482,11 +484,12 @@
 }
 .sidebarFooterBtn {
   background-color: #2f8aa5;
-  padding: 10px 40px;
+  padding: 5px 40px;
   color: #ffffff;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 550;
+  cursor: pointer;
   text-decoration: none;
 }
 .sidebarFooterBtn:hover {
@@ -507,14 +510,14 @@
   color: rgb(167, 52, 52);
   font-size: 18px;
   width: 100%;
-  padding: 7px 0;
+  padding: 5px 0;
   text-align: center;
   font-style: italic;
-  margin-bottom: -50px;
+  margin-bottom: -70px;
 }
 .appAdmin {
   color: rgb(167, 52, 52);
-  padding: 7px 0;
+  padding: 5px 0;
   text-decoration: none;
   text-align: center;
   font-style: italic;
@@ -524,14 +527,14 @@
 }
 .appAdmin h2 {
   color: #2f8aa5;
-  font-size: 18px;
-  margin-top: 70px;
+  font-size: 16px;
+  margin-top: 80px;
   margin-bottom: 30px;
   background-color: #fff;
   border: 1px solid #2f8aa5;
-  padding: 7px 60px;
+  padding: 2px 60px;
   border-radius: 5px;
-  font-weight: 700;
+  font-weight: 550;
 }
 .appAdmin h2:hover {
   color: #fff;
