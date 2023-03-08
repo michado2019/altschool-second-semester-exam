@@ -330,7 +330,9 @@ export const Sidebar = () => {
       <button onClick={refreshTitle} className="refreshTitleBtn">
         Refresh
       </button>
-      <button onClick={() => navigate('/contribute')} className="refreshTitleBtn">
+      <button onClick={() => navigate('/contribute')} className="refreshTitleBtn"
+      onMouseDown={handleClose}
+      >
         Contribute
       </button>
       </div>
